@@ -20,6 +20,9 @@ final class ArsappsModuleBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @return array<string, mixed>
+   *   A render array.
    */
   public function build(): array {
     $build = [];

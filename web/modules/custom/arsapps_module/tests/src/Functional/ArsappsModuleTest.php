@@ -21,7 +21,7 @@ final class ArsappsModuleTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected static $modules = ['arsapps_module'];
+  protected static $modules = ['arsapps_module', 'block', 'help'];
 
   /**
    * Tests the module installation.
@@ -62,7 +62,7 @@ final class ArsappsModuleTest extends BrowserTestBase {
    * Tests the block plugin.
    */
   public function testBlockPlugin(): void {
-    $admin_user = $this->drupalCreateUser(['administer blocks']);
+    $admin_user = $this->drupalCreateUser(['administer blocks', 'administer themes', 'access administration pages']);
     $this->drupalLogin($admin_user);
 
     $this->drupalGet('/admin/structure/block');
@@ -75,7 +75,7 @@ final class ArsappsModuleTest extends BrowserTestBase {
    * Tests the help page.
    */
   public function testHelpPage(): void {
-    $admin_user = $this->drupalCreateUser(['access administration pages']);
+    $admin_user = $this->drupalCreateUser(['access help pages']);
     $this->drupalLogin($admin_user);
 
     $this->drupalGet('/admin/help/arsapps_module');

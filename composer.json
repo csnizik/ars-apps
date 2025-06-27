@@ -42,7 +42,8 @@
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "php-http/discovery": true,
-            "php-tuf/composer-integration": true
+            "php-tuf/composer-integration": true,
+            "tbachert/spi": true
         },
         "sort-packages": true
     },
@@ -108,6 +109,7 @@
         }
     },
     "require-dev": {
-        "drupal/claude_code": "^1.0"
+        "drupal/claude_code": "^1.0",
+        "drupal/core-dev": "^11.2"
     }
 }

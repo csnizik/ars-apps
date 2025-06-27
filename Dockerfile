@@ -6,6 +6,13 @@
 # ========================================
 FROM composer:lts AS composer
 
+# Install system packages needed to compile extensions
+RUN apt-get update && \
+    apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev && \
+    docker-php-ext-configure gd --with-freetype --with-jpeg && \
+    docker-php-ext-install gd && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 # Copy composer files first for better layer caching

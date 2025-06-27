@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   static-analysis:
-    name: Static Analysis
+    name: Code Quality (PHPCS & PHPStan)
     runs-on: ubuntu-24.04
     
     strategy:
@@ -55,7 +55,7 @@ jobs:
         run: vendor/bin/phpstan analyse --level 6 web/modules/custom web/themes/custom
 
   tests:
-    name: Tests
+    name: PHPUnit Tests (Functional & Unit)
     runs-on: ubuntu-24.04
     
     services:

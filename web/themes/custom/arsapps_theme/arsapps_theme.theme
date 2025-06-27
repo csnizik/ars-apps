@@ -13,6 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function arsapps_theme_preprocess_html(array &$variables): void {
   // Add custom body classes.
+  /** @var array<string, mixed> $variables */
   $current_path = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
   $path_alias = ltrim($path_alias, '/');
@@ -27,6 +28,7 @@ function arsapps_theme_preprocess_html(array &$variables): void {
  */
 function arsapps_theme_preprocess_page(array &$variables): void {
   // Add page-specific variables here.
+  /** @var array<string, mixed> $variables */
   $variables['site_name'] = \Drupal::config('system.site')->get('name');
   $variables['site_slogan'] = \Drupal::config('system.site')->get('slogan');
 }
@@ -36,6 +38,7 @@ function arsapps_theme_preprocess_page(array &$variables): void {
  */
 function arsapps_theme_preprocess_node(array &$variables): void {
   // Add node-specific preprocessing here.
+  /** @var array<string, mixed> $variables */
   $node = $variables['node'];
   $variables['created_formatted'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'medium');
 }
@@ -45,6 +48,8 @@ function arsapps_theme_preprocess_node(array &$variables): void {
  */
 function arsapps_theme_theme_suggestions_page_alter(array &$suggestions, array $variables): void {
   // Add custom page template suggestions.
+  /** @var array<string> $suggestions */
+  /** @var array<string, mixed> $variables */
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $content_type = $node->bundle();
     $suggestions[] = 'page__' . $content_type;
@@ -56,6 +61,7 @@ function arsapps_theme_theme_suggestions_page_alter(array &$suggestions, array $
  */
 function arsapps_theme_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
   // Add custom form alterations here.
+  /** @var array<string, mixed> $form */
   switch ($form_id) {
     case 'search_block_form':
       $form['keys']['#attributes']['placeholder'] = t('Search...');

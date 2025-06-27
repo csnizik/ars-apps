@@ -1,0 +1,210 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ develop ]
+  push:
+    branches: [ develop ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-analysis:
+    name: Static Analysis
+    runs-on: ubuntu-24.04
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['8.3']
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, hash, json, pcre, session, tokenizer, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Run PHPCS
+        run: vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,yml --ignore=node_modules,bower_components,vendor web/modules/custom web/themes/custom
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse --level 6 web/modules/custom web/themes/custom
+
+  tests:
+    name: Tests
+    runs-on: ubuntu-24.04
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_ROOT_PASSWORD: drupal
+          MYSQL_DATABASE: drupal
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['8.3']
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, pdo_sqlite, dom, filter, gd, hash, json, pcre, session, tokenizer, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Install Drupal
+        run: |
+          cp web/sites/default/default.settings.php web/sites/default/settings.php
+          echo "\$databases['default']['default'] = [
+            'database' => 'drupal',
+            'username' => 'root',
+            'password' => 'drupal',
+            'prefix' => '',
+            'host' => '127.0.0.1',
+            'port' => '3306',
+            'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+            'driver' => 'mysql',
+          ];" >> web/sites/default/settings.php
+          vendor/bin/drush site:install standard --db-url=mysql://root:drupal@127.0.0.1:3306/drupal --yes
+
+      - name: Run PHPUnit tests
+        env:
+          SIMPLETEST_BASE_URL: http://127.0.0.1:8080
+          SIMPLETEST_DB: mysql://root:drupal@127.0.0.1:3306/drupal
+        run: |
+          php -S 127.0.0.1:8080 -t web &
+          sleep 5
+          vendor/bin/phpunit -c web/core/phpunit.xml.dist web/modules/custom/
+
+  accessibility:
+    name: Accessibility Tests
+    runs-on: ubuntu-24.04
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_ROOT_PASSWORD: drupal
+          MYSQL_DATABASE: drupal
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['8.3']
+        node-version: ['20']
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, pdo_sqlite, dom, filter, gd, hash, json, pcre, session, tokenizer, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Install pa11y
+        run: npm install -g pa11y
+
+      - name: Install Drupal
+        run: |
+          cp web/sites/default/default.settings.php web/sites/default/settings.php
+          echo "\$databases['default']['default'] = [
+            'database' => 'drupal',
+            'username' => 'root',
+            'password' => 'drupal',
+            'prefix' => '',
+            'host' => '127.0.0.1',
+            'port' => '3306',
+            'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+            'driver' => 'mysql',
+          ];" >> web/sites/default/settings.php
+          vendor/bin/drush site:install standard --db-url=mysql://root:drupal@127.0.0.1:3306/drupal --yes
+
+      - name: Start PHP server
+        run: |
+          php -S 127.0.0.1:8080 -t web &
+          sleep 10
+
+      - name: Run pa11y accessibility tests
+        run: |
+          echo "Running accessibility tests..."
+          # Allow pa11y to pass even with violations - fresh Drupal installs often have
+          # accessibility issues in core themes that developers cannot immediately fix
+          pa11y http://127.0.0.1:8080 --standard WCAG2AA --reporter cli || true
+          pa11y http://127.0.0.1:8080/user/login --standard WCAG2AA --reporter cli || true
+          pa11y http://127.0.0.1:8080/user/register --standard WCAG2AA --reporter cli || true

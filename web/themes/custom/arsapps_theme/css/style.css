@@ -76,7 +76,7 @@ footer[role="contentinfo"] {
   main[role="main"] {
     flex-direction: column;
   }
-  
+
   .layout-sidebar-first,
   .layout-sidebar-second {
     flex: none;

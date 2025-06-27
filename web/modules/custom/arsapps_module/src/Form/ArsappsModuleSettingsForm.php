@@ -34,6 +34,8 @@ final class ArsappsModuleSettingsForm extends ConfigFormBase {
    *
    * @param array<string, mixed> $form
    *   The form array.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state.
    *
    * @return array<string, mixed>
    *   The form array.
@@ -81,6 +83,8 @@ final class ArsappsModuleSettingsForm extends ConfigFormBase {
    *
    * @param array<string, mixed> $form
    *   The form array.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state.
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     $this->config('arsapps_module.settings')

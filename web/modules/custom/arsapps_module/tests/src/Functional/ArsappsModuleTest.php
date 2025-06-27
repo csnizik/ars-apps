@@ -21,7 +21,7 @@ final class ArsappsModuleTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected static $modules = ['arsapps_module'];
+  protected static $modules = ['arsapps_module', 'block', 'help'];
 
   /**
    * Tests the module installation.
@@ -75,10 +75,7 @@ final class ArsappsModuleTest extends BrowserTestBase {
    * Tests the help page.
    */
   public function testHelpPage(): void {
-    // Enable the help module explicitly for this test.
-    \Drupal::service('module_installer')->install(['help']);
-    
-    $admin_user = $this->drupalCreateUser(['access administration pages', 'administer modules']);
+    $admin_user = $this->drupalCreateUser(['access help pages']);
     $this->drupalLogin($admin_user);
 
     $this->drupalGet('/admin/help/arsapps_module');

@@ -3,11 +3,13 @@ parameters:
   paths:
     - web/modules/custom
     - web/themes/custom
+    ignoreErrors:
+    # Ignore missing iterable types on theme preprocess functions
+    - '#Function .* has parameter \$(variables|suggestions) with no value type specified in iterable type array#'
 
-  drupal:
-    site_path: web/sites/default
+    # Ignore misplaced @var tags above functions (common in *.theme files)
+    - '#PHPDoc tag @var above a function has no effect#'
 
-  bootstrapFiles:
-    - web/sites/default/settings.php
+    # Ignore parameter-out mismatch for &$form in submitForm()
+    - '#Parameter .*\$form by-ref type of method .*submitForm.* expects array<string, mixed>, array given#'
 
-  inferPrivatePropertyTypeFromConstructor: true

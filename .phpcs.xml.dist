@@ -2,6 +2,15 @@
 <ruleset name="Drupal Standards">
   <description>Drupal coding standards for custom code.</description>
 
+  <!-- Use colors in output. Oooh pretty. -->
+  <arg name="colors" />
+
+  <!-- Show progress. Soothes ADD-related complaints. -->
+  <arg value="p" />
+
+  <!-- Run in parallel. Why not. -->
+  <arg name="parallel" value="10" />
+
   <rule ref="Drupal"/>
   <rule ref="DrupalPractice"/>
 

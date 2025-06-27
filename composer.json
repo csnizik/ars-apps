@@ -26,7 +26,8 @@
         "drupal/field_group": "^4.0",
         "drupal/pathauto": "^1.13",
         "drupal/token": "^1.15",
-        "drush/drush": "^13.6"
+        "drush/drush": "^13.6",
+        "mglaman/phpstan-drupal": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -42,7 +43,8 @@
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "php-http/discovery": true,
-            "php-tuf/composer-integration": true
+            "php-tuf/composer-integration": true,
+            "tbachert/spi": true
         },
         "sort-packages": true
     },

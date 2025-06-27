@@ -40,3 +40,5 @@ vendor/
 
 # Ignore Node.js dependency folder
 **/node_modules/
+
+.dev/personal/

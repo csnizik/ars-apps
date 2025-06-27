@@ -5,6 +5,7 @@
  * Functions to support theming in the ARSApps Theme.
  */
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -15,9 +16,9 @@ function arsapps_theme_preprocess_html(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
   $path_alias = ltrim($path_alias, '/');
-  
+
   if (!empty($path_alias)) {
-    $variables['attributes']['class'][] = 'path--' . \Drupal\Component\Utility\Html::cleanCssIdentifier($path_alias);
+    $variables['attributes']['class'][] = 'path--' . Html::cleanCssIdentifier($path_alias);
   }
 }
 

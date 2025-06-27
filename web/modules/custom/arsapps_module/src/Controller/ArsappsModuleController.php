@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\arsapps_module\Controller;
 
+use Drupal\Core\Url;
 use Drupal\Core\Controller\ControllerBase;
 
 /**
@@ -59,7 +60,7 @@ final class ArsappsModuleController extends ControllerBase {
     $build['content']['links']['settings_link'] = [
       '#type' => 'link',
       '#title' => $this->t('Module Settings'),
-      '#url' => \Drupal\Core\Url::fromRoute('arsapps_module.settings'),
+      '#url' => Url::fromRoute('arsapps_module.settings'),
       '#attributes' => ['class' => ['button']],
     ];
 

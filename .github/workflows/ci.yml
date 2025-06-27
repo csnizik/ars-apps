@@ -14,7 +14,7 @@ jobs:
   static-analysis:
     name: Code Quality (PHPCS & PHPStan)
     runs-on: ubuntu-24.04
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -44,7 +44,7 @@ jobs:
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Run PHPCS
-        run: vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,yml --ignore=node_modules,bower_components,vendor web/modules/custom web/themes/custom
+        run: vendor/bin/phpcs --standard=.phpcs.xml.dist
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse --level 6 web/modules/custom web/themes/custom
@@ -52,7 +52,7 @@ jobs:
   tests:
     name: PHPUnit Tests (Functional & Unit)
     runs-on: ubuntu-24.04
-    
+
     services:
       mysql:
         image: mysql:8.0
@@ -63,7 +63,7 @@ jobs:
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -117,7 +117,7 @@ jobs:
   accessibility:
     name: Accessibility Tests
     runs-on: ubuntu-24.04
-    
+
     services:
       mysql:
         image: mysql:8.0
@@ -128,7 +128,7 @@ jobs:
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

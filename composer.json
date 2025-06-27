@@ -26,8 +26,7 @@
         "drupal/field_group": "^4.0",
         "drupal/pathauto": "^1.13",
         "drupal/token": "^1.15",
-        "drush/drush": "^13.6",
-        "mglaman/phpstan-drupal": "^2.0"
+        "drush/drush": "^13.6"
     },
     "conflict": {
         "drupal/drupal": "*"

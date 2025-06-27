@@ -21,6 +21,9 @@ final class ArsappsModuleSettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @return array<string>
+   *   An array of configuration names.
    */
   protected function getEditableConfigNames(): array {
     return ['arsapps_module.settings'];
@@ -28,6 +31,12 @@ final class ArsappsModuleSettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @param array<string, mixed> $form
+   *   The form array.
+   *
+   * @return array<string, mixed>
+   *   The form array.
    */
   public function buildForm(array $form, FormStateInterface $form_state): array {
     $config = $this->config('arsapps_module.settings');
@@ -69,6 +78,9 @@ final class ArsappsModuleSettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @param array<string, mixed> $form
+   *   The form array.
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     $this->config('arsapps_module.settings')

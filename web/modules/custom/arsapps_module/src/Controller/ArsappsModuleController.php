@@ -14,6 +14,9 @@ final class ArsappsModuleController extends ControllerBase {
 
   /**
    * Builds the response for the info page.
+   *
+   * @return array<string, mixed>
+   *   A render array.
    */
   public function info(): array {
     $build = [];

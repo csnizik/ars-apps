@@ -62,7 +62,7 @@ final class ArsappsModuleTest extends BrowserTestBase {
    * Tests the block plugin.
    */
   public function testBlockPlugin(): void {
-    $admin_user = $this->drupalCreateUser(['administer blocks', 'administer themes']);
+    $admin_user = $this->drupalCreateUser(['administer blocks', 'administer themes', 'access administration pages']);
     $this->drupalLogin($admin_user);
 
     $this->drupalGet('/admin/structure/block');
@@ -75,6 +75,9 @@ final class ArsappsModuleTest extends BrowserTestBase {
    * Tests the help page.
    */
   public function testHelpPage(): void {
+    // Enable the help module explicitly for this test.
+    \Drupal::service('module_installer')->install(['help']);
+    
     $admin_user = $this->drupalCreateUser(['access administration pages', 'administer modules']);
     $this->drupalLogin($admin_user);
 

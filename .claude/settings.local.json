@@ -31,7 +31,8 @@
       "Bash(mv:*)",
       "Bash(vendor/bin/phpcs:*)",
       "Bash(vendor/bin/phpstan analyse:*)",
-      "Bash(vendor/bin/phpcbf:*)"
+      "Bash(vendor/bin/phpcbf:*)",
+      "Bash(vendor/bin/drush pm:list:*)"
     ],
     "deny": []
   }

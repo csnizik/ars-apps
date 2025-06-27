@@ -1,0 +1,311 @@
+name: Quality Checks
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  COMPOSER_CACHE_FILES_DIR: /tmp/composer-cache-files
+
+jobs:
+  quality-matrix:
+    name: Quality Checks (PHP ${{ matrix.php-version }}, Drupal ${{ matrix.drupal-version }})
+    runs-on: ubuntu-22.04
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['8.3', '8.4']
+        drupal-version: ['11.0.x-dev', '11.1.x-dev']
+        include:
+          - php-version: '8.3'
+            drupal-version: '11.0.x-dev'
+            coverage: true
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: dom, curl, libxml, mbstring, zip, pdo, mysql, pdo_mysql, bcmath, soap, intl, gd, exif, iconv, imagick, opcache
+          coverage: ${{ matrix.coverage && 'xdebug' || 'none' }}
+          tools: composer:v2
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Cache PHPStan results
+        uses: actions/cache@v4
+        with:
+          path: /tmp/phpstan
+          key: phpstan-${{ runner.os }}-${{ matrix.php-version }}-${{ github.sha }}
+          restore-keys: |
+            phpstan-${{ runner.os }}-${{ matrix.php-version }}-
+            phpstan-${{ runner.os }}-
+
+      - name: Install Composer dependencies
+        run: |
+          composer install --no-progress --prefer-dist --optimize-autoloader
+          # Install dev dependencies for quality tools if not present
+          if ! composer show drupal/core-dev --quiet 2>/dev/null; then
+            composer require --dev drupal/core-dev --no-update
+            composer update drupal/core-dev --no-progress
+          fi
+
+      - name: Setup Drupal environment
+        run: |
+          cp web/sites/default/default.settings.php web/sites/default/settings.php
+          echo "\$databases['default']['default'] = [
+            'database' => 'drupal',
+            'username' => 'drupal', 
+            'password' => 'drupal',
+            'host' => '127.0.0.1',
+            'port' => '3306',
+            'driver' => 'mysql',
+            'prefix' => '',
+            'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+            'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+          ];" >> web/sites/default/settings.php
+          echo "\$settings['config_sync_directory'] = '../config/sync';" >> web/sites/default/settings.php
+
+  phpstan:
+    name: PHPStan Static Analysis
+    runs-on: ubuntu-22.04
+    needs: quality-matrix
+    if: always()
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, libxml, mbstring, zip, pdo, mysql, pdo_mysql, bcmath, soap, intl, gd, exif, iconv
+          tools: composer:v2
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Cache PHPStan results
+        uses: actions/cache@v4
+        with:
+          path: /tmp/phpstan
+          key: phpstan-${{ runner.os }}-8.3-${{ github.sha }}
+          restore-keys: |
+            phpstan-${{ runner.os }}-8.3-
+            phpstan-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Run PHPStan
+        run: |
+          mkdir -p /tmp/phpstan
+          if [ -f "phpstan.neon.dist" ]; then
+            vendor/bin/phpstan analyse --configuration=phpstan.neon.dist --error-format=github --no-progress
+          else
+            vendor/bin/phpstan analyse web/modules/custom web/themes/custom --level=6 --error-format=github --no-progress
+          fi
+
+      - name: Upload PHPStan results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: phpstan-results
+          path: /tmp/phpstan/
+          retention-days: 7
+
+  phpcs:
+    name: PHPCS Code Standards
+    runs-on: ubuntu-22.04
+    needs: quality-matrix
+    if: always()
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, libxml, mbstring, zip, pdo, mysql, pdo_mysql, bcmath, soap, intl, gd, exif, iconv
+          tools: composer:v2
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Run PHPCS
+        run: |
+          if [ -f "phpcs.xml.dist" ]; then
+            vendor/bin/phpcs --report=checkstyle --report-file=phpcs-report.xml
+          else
+            vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml --ignore=node_modules,bower_components,vendor --report=checkstyle --report-file=phpcs-report.xml web/modules/custom web/themes/custom
+          fi
+
+      - name: Upload PHPCS results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: phpcs-results
+          path: phpcs-report.xml
+          retention-days: 7
+
+  phpunit:
+    name: PHPUnit Tests
+    runs-on: ubuntu-22.04
+    needs: quality-matrix
+    if: always()
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: drupal_test
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, libxml, mbstring, zip, pdo, mysql, pdo_mysql, bcmath, soap, intl, gd, exif, iconv
+          coverage: xdebug
+          tools: composer:v2
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Setup test environment
+        run: |
+          cp web/sites/default/default.settings.php web/sites/default/settings.php
+          echo "\$databases['default']['default'] = [
+            'database' => 'drupal_test',
+            'username' => 'drupal',
+            'password' => 'drupal', 
+            'host' => '127.0.0.1',
+            'port' => '3306',
+            'driver' => 'mysql',
+            'prefix' => '',
+            'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+            'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+          ];" >> web/sites/default/settings.php
+
+      - name: Run PHPUnit tests
+        run: |
+          if [ -f "phpunit.xml.dist" ]; then
+            vendor/bin/phpunit --configuration=phpunit.xml.dist --coverage-clover=coverage.xml --coverage-text
+          else
+            vendor/bin/phpunit --configuration=web/core/phpunit.xml.dist --testsuite=unit --coverage-clover=coverage.xml --coverage-text
+          fi
+
+      - name: Upload test coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
+          retention-days: 7
+
+      - name: Upload PHPUnit results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: phpunit-results
+          path: |
+            *.xml
+            *.log
+          retention-days: 7
+
+  composer-validate:
+    name: Composer Validation
+    runs-on: ubuntu-22.04
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+
+      - name: Validate composer.json
+        run: composer validate --strict --no-check-all
+
+      - name: Check composer.lock
+        run: composer install --dry-run --no-dev
+
+      - name: Security audit
+        run: composer audit --no-dev || true

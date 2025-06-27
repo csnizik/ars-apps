@@ -1,0 +1,16 @@
+includes:
+  - vendor/mglaman/phpstan-drupal/extension.neon
+
+parameters:
+  level: 6
+  paths:
+    - web/modules/custom
+    - web/themes/custom
+
+  drupal:
+    site_path: web/sites/default
+
+  bootstrapFiles:
+    - web/sites/default/settings.php
+
+  inferPrivatePropertyTypeFromConstructor: true

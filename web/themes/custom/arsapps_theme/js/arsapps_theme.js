@@ -14,7 +14,7 @@
       // Initialize theme-specific JavaScript here
       once('arsapps-theme-init', 'html', context).forEach(function (element) {
         console.log('ARSApps Theme initialized');
-        
+
         // Add any theme-specific JavaScript functionality here
         // For example: mobile menu toggles, smooth scrolling, etc.
       });

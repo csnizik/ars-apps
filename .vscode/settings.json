@@ -1,4 +1,5 @@
 {
-  "phpcs.standard": "Drupal",
-  "phpcs.executablePath": "vendor/bin/phpcs"
+  "phpcs.standard": "${workspaceFolder}/.phpcs.xml.dist",
+  "phpcs.executablePath": "${workspaceFolder}/vendor/bin/phpcs",
+  "phpcs.ignorePatterns": ["node_modules", "bower_components", "vendor"]
 }

@@ -15,11 +15,6 @@ jobs:
     name: Code Quality (PHPCS & PHPStan)
     runs-on: ubuntu-24.04
     
-    strategy:
-      fail-fast: false
-      matrix:
-        php-version: ['8.3']
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,7 +24,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
+          php-version: '8.3'
           extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, hash, json, pcre, session, tokenizer, zip
           coverage: none
           tools: composer:v2
@@ -68,11 +63,6 @@ jobs:
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
-    strategy:
-      fail-fast: false
-      matrix:
-        php-version: ['8.3']
     
     steps:
       - name: Checkout code
@@ -81,7 +71,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
+          php-version: '8.3'
           extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, pdo_sqlite, dom, filter, gd, hash, json, pcre, session, tokenizer, zip
           coverage: none
           tools: composer:v2
@@ -138,12 +128,6 @@ jobs:
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
-    strategy:
-      fail-fast: false
-      matrix:
-        php-version: ['8.3']
-        node-version: ['20']
     
     steps:
       - name: Checkout code
@@ -152,7 +136,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
+          php-version: '8.3'
           extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, pdo_sqlite, dom, filter, gd, hash, json, pcre, session, tokenizer, zip
           coverage: none
           tools: composer:v2
@@ -160,7 +144,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '20'
 
       - name: Get composer cache directory
         id: composer-cache

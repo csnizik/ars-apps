@@ -3,11 +3,25 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel serve src/index.html --open",
-    "build": "parcel build src/assets/css/styles.css src/assets/js/main.js --dist-dir dist --public-url ./",
-    "watch": "parcel watch src/assets/css/styles.css src/assets/js/main.js --dist-dir dist --public-url ./",
-    "clean": "rm -rf dist .parcel-cache"
+    "dev": "parcel watch",
+    "build": "parcel build"
   },
+  "targets": {
+    "js": {
+      "source": "src/assets/js/main.js",
+      "distDir": "build/js"
+    },
+    "css": {
+      "source": "src/assets/css/styles.css",
+      "distDir": "build/css"
+    }
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "IE 11",
+    "not dead"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",

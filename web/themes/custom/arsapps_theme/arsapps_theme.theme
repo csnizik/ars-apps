@@ -7,6 +7,9 @@
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * @param array<string, mixed> $variables
+ *   Template variables.
  */
 function arsapps_theme_preprocess_html(array &$variables): void {
   // Theme preprocessing for HTML.
@@ -14,6 +17,9 @@ function arsapps_theme_preprocess_html(array &$variables): void {
 
 /**
  * Implements hook_preprocess_HOOK() for page templates.
+ *
+ * @param array<string, mixed> $variables
+ *   Template variables.
  */
 function arsapps_theme_preprocess_page(array &$variables): void {
   // Theme preprocessing for pages.

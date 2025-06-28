@@ -52,7 +52,7 @@ final class ArsappsModuleBlockTest extends UnitTestCase {
    */
   public function testBuild(): void {
     $expected_text = 'This is a placeholder block from ARSApps Module. It demonstrates basic block plugin functionality for testing and development purposes.';
-    
+
     $this->stringTranslation
       ->expects($this->once())
       ->method('translate')
@@ -66,7 +66,7 @@ final class ArsappsModuleBlockTest extends UnitTestCase {
     $this->assertArrayHasKey('#markup', $build['content']);
     $this->assertArrayHasKey('#prefix', $build['content']);
     $this->assertArrayHasKey('#suffix', $build['content']);
-    
+
     $this->assertEquals($expected_text, $build['content']['#markup']);
     $this->assertEquals('<div class="arsapps-module-block">', $build['content']['#prefix']);
     $this->assertEquals('</div>', $build['content']['#suffix']);

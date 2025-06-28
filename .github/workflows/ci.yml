@@ -270,7 +270,7 @@ jobs:
     name: Docker Image Security Scan
     runs-on: ubuntu-24.04
     if: github.event_name == 'push'
-    needs: [static-analysis, unit-tests, filesystem-security-scan]
+    needs: [static-analysis, full-tests, filesystem-security-scan]
 
     permissions:
       contents: read

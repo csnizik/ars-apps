@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [ develop ]
+    branches: [ develop, main ]
   push:
-    branches: [ develop ]
+    branches: [ develop, main ]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -14,7 +14,7 @@ jobs:
   static-analysis:
     name: Code Quality (PHPCS & PHPStan)
     runs-on: ubuntu-24.04
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -44,26 +44,15 @@ jobs:
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Run PHPCS
-        run: vendor/bin/phpcs --standard=.phpcs.xml.dist
+        run: vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,yml --ignore=node_modules,bower_components,vendor web/modules/custom web/themes/custom
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse --level 6 web/modules/custom web/themes/custom
 
-  tests:
-    name: PHPUnit Tests (Functional & Unit)
+  unit-tests:
+    name: PHPUnit Unit Tests
     runs-on: ubuntu-24.04
-
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: false
-          MYSQL_ROOT_PASSWORD: drupal
-          MYSQL_DATABASE: drupal
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -72,7 +61,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
-          extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, pdo_sqlite, dom, filter, gd, hash, json, pcre, session, tokenizer, zip
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, hash, json, pcre, session, tokenizer, zip
           coverage: none
           tools: composer:v2
 
@@ -90,34 +79,29 @@ jobs:
       - name: Install dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
-      - name: Install Drupal
-        run: |
-          cp web/sites/default/default.settings.php web/sites/default/settings.php
-          echo "\$databases['default']['default'] = [
-            'database' => 'drupal',
-            'username' => 'root',
-            'password' => 'drupal',
-            'prefix' => '',
-            'host' => '127.0.0.1',
-            'port' => '3306',
-            'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-            'driver' => 'mysql',
-          ];" >> web/sites/default/settings.php
-          vendor/bin/drush site:install standard --db-url=mysql://root:drupal@127.0.0.1:3306/drupal --yes
+      - name: Run PHPUnit unit tests
+        run: vendor/bin/phpunit -c web/core/phpunit.xml.dist --testsuite unit-component,unit web/modules/custom/
 
-      - name: Run PHPUnit tests
-        env:
-          SIMPLETEST_BASE_URL: http://127.0.0.1:8080
-          SIMPLETEST_DB: mysql://root:drupal@127.0.0.1:3306/drupal
-        run: |
-          php -S 127.0.0.1:8080 -t web &
-          sleep 5
-          vendor/bin/phpunit -c web/core/phpunit.xml.dist web/modules/custom/
+  filesystem-security-scan:
+    name: Filesystem Security Scan
+    runs-on: ubuntu-24.04
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-  accessibility:
+      - name: Run Trivy filesystem scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'table'
+          severity: 'CRITICAL,HIGH,MEDIUM'
+
+  accessibility-tests:
     name: Accessibility Tests
     runs-on: ubuntu-24.04
-
+    
     services:
       mysql:
         image: mysql:8.0
@@ -128,7 +112,7 @@ jobs:
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -192,11 +176,79 @@ jobs:
           pa11y http://127.0.0.1:8080/user/login --standard WCAG2AA --reporter cli || true
           pa11y http://127.0.0.1:8080/user/register --standard WCAG2AA --reporter cli || true
 
-  docker-security-scan:
-    name: Docker Security Scan
+  # Additional jobs that only run on merge (push) to develop/main
+  full-tests:
+    name: PHPUnit Full Tests (Database Required)
     runs-on: ubuntu-24.04
-    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
-    needs: [static-analysis, tests, accessibility]
+    if: github.event_name == 'push'
+    needs: [static-analysis, unit-tests, filesystem-security-scan]
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_ROOT_PASSWORD: drupal
+          MYSQL_DATABASE: drupal
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, pdo_sqlite, dom, filter, gd, hash, json, pcre, session, tokenizer, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Install Drupal
+        run: |
+          cp web/sites/default/default.settings.php web/sites/default/settings.php
+          echo "\$databases['default']['default'] = [
+            'database' => 'drupal',
+            'username' => 'root',
+            'password' => 'drupal',
+            'prefix' => '',
+            'host' => '127.0.0.1',
+            'port' => '3306',
+            'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+            'driver' => 'mysql',
+          ];" >> web/sites/default/settings.php
+          vendor/bin/drush site:install standard --db-url=mysql://root:drupal@127.0.0.1:3306/drupal --yes
+
+      - name: Run PHPUnit full test suite
+        env:
+          SIMPLETEST_BASE_URL: http://127.0.0.1:8080
+          SIMPLETEST_DB: mysql://root:drupal@127.0.0.1:3306/drupal
+        run: |
+          php -S 127.0.0.1:8080 -t web &
+          sleep 5
+          vendor/bin/phpunit -c web/core/phpunit.xml.dist web/modules/custom/
+
+  docker-security-scan:
+    name: Docker Image Security Scan
+    runs-on: ubuntu-24.04
+    if: github.event_name == 'push'
+    needs: [static-analysis, unit-tests, filesystem-security-scan]
     
     permissions:
       contents: read
@@ -219,14 +271,14 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Run Trivy vulnerability scanner (Table format)
+      - name: Run Trivy image vulnerability scanner (Table format)
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'arsapps:security-scan'
           format: 'table'
           severity: 'CRITICAL,HIGH,MEDIUM'
 
-      - name: Run Trivy vulnerability scanner (SARIF format)
+      - name: Run Trivy image vulnerability scanner (SARIF format)
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'arsapps:security-scan'

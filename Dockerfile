@@ -11,7 +11,8 @@ WORKDIR /app
 # Copy composer files first for better layer caching
 COPY composer.json composer.lock ./
 
-# Install production dependencies only
+# Install production dependencies only, ignoring platform requirements
+# The production stage will have all required extensions
 RUN --mount=type=cache,target=/tmp/cache \
     composer install \
     --no-dev \
@@ -19,11 +20,12 @@ RUN --mount=type=cache,target=/tmp/cache \
     --no-interaction \
     --no-progress \
     --prefer-dist \
-    --no-scripts
+    --no-scripts \
+    --ignore-platform-reqs
 
 # Copy source code and run post-install scripts
 COPY . .
-RUN composer run-script post-install-cmd --no-dev
+RUN composer run-script post-install-cmd --no-dev || true
 
 # ========================================
 # Node.js stage for frontend assets
@@ -32,15 +34,16 @@ FROM node:20-alpine AS frontend
 
 WORKDIR /app
 
-# Copy theme package files
-COPY web/themes/custom/arsapps_theme/package*.json ./web/themes/custom/arsapps_theme/ 2>/dev/null || true
+# Copy theme directory structure
+COPY web/themes/custom/ ./web/themes/custom/
 
 # Install and build frontend assets if package.json exists
-RUN if [ -f "web/themes/custom/arsapps_theme/package.json" ]; then \
-        cd web/themes/custom/arsapps_theme && \
-        npm ci --only=production && \
-        npm run build 2>/dev/null || true; \
+RUN if [ -f "./web/themes/custom/arsapps_theme/package.json" ]; then \
+      cd web/themes/custom/arsapps_theme && \
+      npm ci --only=production && \
+      npm run build || true; \
     fi
+
 
 # ========================================
 # Production runtime stage
@@ -105,43 +108,43 @@ COPY <<EOF /etc/nginx/http.d/default.conf
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    
+
     root /var/www/html/web;
     index index.php index.html;
-    
+
     # Security headers
     add_header X-Frame-Options "SAMEORIGIN" always;
     add_header X-Content-Type-Options "nosniff" always;
     add_header X-XSS-Protection "1; mode=block" always;
     add_header Referrer-Policy "strict-origin-when-cross-origin" always;
-    
+
     # Drupal specific configuration
     location = /favicon.ico {
         log_not_found off;
         access_log off;
     }
-    
+
     location = /robots.txt {
         allow all;
         log_not_found off;
         access_log off;
     }
-    
+
     # Block access to hidden files and directories
     location ~ /\. {
         deny all;
     }
-    
+
     # Block access to sensitive files
     location ~ ^/sites/.*/private/ {
         deny all;
     }
-    
+
     # Block access to vendor directory
     location ^~ /vendor/ {
         deny all;
     }
-    
+
     # Handle PHP files
     location ~ \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
@@ -151,17 +154,17 @@ server {
         include fastcgi_params;
         fastcgi_read_timeout 300;
     }
-    
+
     # Clean URLs for Drupal
     location / {
         try_files $uri /index.php?$query_string;
     }
-    
+
     # Handle image styles for Drupal
     location ~ ^/sites/.*/files/styles/ {
         try_files $uri /index.php?$query_string;
     }
-    
+
     # Deny access to any files with a .php extension in the uploads directory
     location ~* /(?:uploads|files)/.*\.php$ {
         deny all;
@@ -203,7 +206,7 @@ WORKDIR /var/www/html
 COPY --from=composer --chown=drupal:drupal /app .
 
 # Copy built frontend assets if they exist
-COPY --from=frontend --chown=drupal:drupal /app/web/themes/custom/arsapps_theme/dist ./web/themes/custom/arsapps_theme/dist 2>/dev/null || true
+COPY --from=frontend --chown=drupal:drupal /app/web/themes/custom/ ./web/themes/custom/
 
 # Set proper permissions
 RUN mkdir -p web/sites/default/files \

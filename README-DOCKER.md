@@ -1,6 +1,6 @@
 # Docker Deployment Guide
 
-This project includes a production-ready Docker setup following 2025 best practices for Drupal 11 applications.
+This project includes a production-ready Docker setup following best practices for Drupal 11 applications.
 
 ## Features
 

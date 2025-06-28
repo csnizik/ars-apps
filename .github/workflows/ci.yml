@@ -14,7 +14,7 @@ jobs:
   static-analysis:
     name: Code Quality (PHPCS & PHPStan)
     runs-on: ubuntu-24.04
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -52,7 +52,9 @@ jobs:
   unit-tests:
     name: PHPUnit Unit Tests
     runs-on: ubuntu-24.04
-    
+    if: github.event_name != 'push'
+    # Excluding here because unit tests are included in full suite
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -80,12 +82,12 @@ jobs:
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Run PHPUnit unit tests
-        run: vendor/bin/phpunit -c web/core/phpunit.xml.dist --testsuite unit web/modules/custom/
+        run: vendor/bin/phpunit -c web/core/phpunit.xml.dist web/modules/custom/ --testuite unit --stop-on-error --stop-on-fail --testdox
 
   filesystem-security-scan:
     name: Filesystem Security Scan
     runs-on: ubuntu-24.04
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -101,7 +103,7 @@ jobs:
   accessibility-tests:
     name: Accessibility Tests
     runs-on: ubuntu-24.04
-    
+
     services:
       mysql:
         image: mysql:8.0
@@ -112,7 +114,7 @@ jobs:
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -178,11 +180,16 @@ jobs:
 
   # Additional jobs that only run on merge (push) to develop/main
   full-tests:
-    name: PHPUnit Full Tests (Database Required)
+    name: PHPUnit - All Test Suites (requires db)
     runs-on: ubuntu-24.04
     if: github.event_name == 'push'
-    needs: [static-analysis, unit-tests, filesystem-security-scan]
-    
+    needs: [static-analysis, filesystem-security-scan]
+
+    permissions:
+      contents: read
+      actions: read
+      checks: write
+
     services:
       mysql:
         image: mysql:8.0
@@ -193,7 +200,7 @@ jobs:
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -242,18 +249,33 @@ jobs:
         run: |
           php -S 127.0.0.1:8080 -t web &
           sleep 5
-          vendor/bin/phpunit -c web/core/phpunit.xml.dist web/modules/custom/
+          mkdir -p build/logs
+          vendor/bin/phpunit -c web/core/phpunit.xml.dist web/modules/custom/ --log-junit=build/logs/phpunit.junit.xml --stop-on-error --stop-on-fail
+
+      - name: Report test results to GitHub
+        uses: dorny/test-reporter@v2
+        if: always()
+        with:
+          name: PHPUnit Test Results
+          path: build/logs/phpunit.junit.xml
+          reporter: java-junit
+          fail-on-error: true
+          fail-on-empty: true
+          list-suites: failed
+          list-tests: failed
+          max-annotations: 10
+          use-actions-summary: true
 
   docker-security-scan:
     name: Docker Image Security Scan
     runs-on: ubuntu-24.04
     if: github.event_name == 'push'
     needs: [static-analysis, unit-tests, filesystem-security-scan]
-    
+
     permissions:
       contents: read
       security-events: write
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

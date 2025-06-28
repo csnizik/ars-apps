@@ -3,14 +3,13 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+  dependencies:
+    - core/drupal
+
+global-scripts:
+  version: 1.x
   js:
     js/arsapps_theme.js: {}
   dependencies:
     - core/drupal
     - core/jquery
-
-print:
-  version: 1.x
-  css:
-    theme:
-      css/print.css: { media: print }

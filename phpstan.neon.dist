@@ -8,6 +8,12 @@ parameters:
   treatPhpDocTypesAsCertain: true
 
   ignoreErrors:
+    # Theme preprocess functions with generic array parameters
+    - '#Function arsapps_theme_preprocess_.* has parameter \$variables with no value type specified in iterable type array#'
+    
+    # Form API parent::submitForm call type issue
+    - '#Parameter &\$form @param-out type of method .*submitForm.* expects array<string, mixed>, array given#'
+    
     # PHPUnit "always true" assertions in test files
     - '#Call to method PHPUnit\\Framework\\Assert::assert.* will always evaluate to true#'
 

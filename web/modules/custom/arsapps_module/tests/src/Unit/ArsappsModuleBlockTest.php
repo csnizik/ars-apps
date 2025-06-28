@@ -62,7 +62,7 @@ final class ArsappsModuleBlockTest extends UnitTestCase {
     $this->assertArrayHasKey('#prefix', $build['content']);
     $this->assertArrayHasKey('#suffix', $build['content']);
 
-    // The #markup will be a TranslatableMarkup object, test its string representation
+    // The #markup will be a TranslatableMarkup object, test its string representation.
     $markup = $build['content']['#markup'];
     $this->assertInstanceOf('Drupal\Core\StringTranslation\TranslatableMarkup', $markup);
     $this->assertStringContainsString('ARSApps Module', (string) $markup);

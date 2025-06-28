@@ -35,7 +35,8 @@
       "Bash(vendor/bin/drush pm:list:*)",
       "Bash(cat:*)",
       "Bash(drush theme:enable:*)",
-      "Bash(drush config:set:*)"
+      "Bash(drush config:set:*)",
+      "WebFetch(domain:uswds-tailwind.com)"
     ],
     "deny": []
   }

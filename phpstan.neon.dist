@@ -1,23 +1,12 @@
 parameters:
   level: 6
 
-  # Directories to scan
   paths:
     - web/modules/custom
     - web/themes/custom
 
-  # Improve type safety only where it matters
-  checkMissingIterableValueType: true
-  checkMissingCallableSignature: true
-
-  # Don't be overly strict on PHPDoc-derived types
   treatPhpDocTypesAsCertain: true
-  checkGenericClassInNonGenericObjectType: false
 
-  # Optional: if you're using Symfony container types
-  # containerClass: Drupal\Core\DependencyInjection\Container
-
-  # Ignore low-value errors
   ignoreErrors:
     # Theme preprocess and *.theme edge cases
     - '#Function .* has parameter \$(variables|suggestions) with no value type specified in iterable type array#'
@@ -30,14 +19,8 @@ parameters:
 
     # PHPUnit "always true" assertions in test files
     - '#Call to method PHPUnit\\Framework\\Assert::assert.* will always evaluate to true#'
-      paths:
-        - web/modules/custom/*/tests/src/Unit/*
-        - web/modules/custom/*/tests/src/Functional/*
-        - web/themes/custom/*/tests/src/*
-
-  # Optional: silence common "unknown class/interface" in legacy code if needed
-  # stubFiles:
-  #   - phpstan-drupal/stubs
 
 includes:
-  - vendor/mglaman/phpstan-drupal/extension.neon
+  # Let extension-installer handle this unless you're not using it
+  # If you're NOT using extension-installer, you can re-enable:
+  # - vendor/mglaman/phpstan-drupal/extension.neon

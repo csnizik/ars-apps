@@ -33,7 +33,9 @@
       "Bash(vendor/bin/phpstan analyse:*)",
       "Bash(vendor/bin/phpcbf:*)",
       "Bash(vendor/bin/drush pm:list:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(drush theme:enable:*)",
+      "Bash(drush config:set:*)"
     ],
     "deny": []
   }

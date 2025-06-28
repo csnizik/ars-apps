@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARS Apps Theme - Development Preview</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <header class="bg-white shadow">
+            <div class="mx-auto max-w-7xl px-6 py-4">
+                <h1 class="text-3xl font-bold text-gray-900">ARS Apps Theme</h1>
+                <p class="text-gray-600">USWDS + Tailwind CSS Development Preview</p>
+            </div>
+        </header>
+
+        <main class="mx-auto max-w-7xl px-6 py-8">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="rounded-lg bg-white p-6 shadow">
+                    <h2 class="mb-4 text-xl font-semibold">Typography</h2>
+                    <p class="mb-4 text-base">Source Sans 3 Variable is the default font family.</p>
+                    <p class="font-mono text-sm">Roboto Mono for code snippets</p>
+                </div>
+
+                <div class="rounded-lg bg-white p-6 shadow">
+                    <h2 class="mb-4 text-xl font-semibold">Colors</h2>
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="h-8 rounded bg-blue-600"></div>
+                        <div class="h-8 rounded bg-green-600"></div>
+                        <div class="h-8 rounded bg-yellow-500"></div>
+                        <div class="h-8 rounded bg-red-600"></div>
+                    </div>
+                </div>
+
+                <div class="rounded-lg bg-white p-6 shadow" x-data="{ open: false }">
+                    <h2 class="mb-4 text-xl font-semibold">Alpine.js</h2>
+                    <button 
+                        @click="open = !open"
+                        class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+                    >
+                        Toggle
+                    </button>
+                    <div x-show="open" class="mt-4 text-green-600">
+                        Alpine.js is working!
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

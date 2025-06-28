@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Import variable fonts */
+@import "@fontsource-variable/open-sans";
+@import "@fontsource-variable/public-sans";
+@import "@fontsource-variable/roboto-mono";
+@import "@fontsource-variable/source-sans-3";
+@import "@fontsource/merriweather";
+
+/* Custom theme styles */
+@layer base {
+  :root {
+    /* USWDS Design System Colors */
+    --color-base-lightest: #f9f9f9;
+    --color-base-lighter: #dfe1e2;
+    --color-base-light: #a9aeb1;
+    --color-base: #71767a;
+    --color-base-dark: #565c65;
+    --color-base-darker: #3d4551;
+    --color-base-darkest: #1b1b1b;
+    
+    --color-primary-lighter: #d9e8f6;
+    --color-primary-light: #73b3e7;
+    --color-primary: #005ea2;
+    --color-primary-vivid: #0050d8;
+    --color-primary-dark: #1a4480;
+    --color-primary-darker: #162e51;
+  }
+
+  html {
+    font-family: "Source Sans 3 Variable", "Public Sans Variable", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+}

@@ -55,7 +55,7 @@ final class ArsappsModuleBlockTest extends UnitTestCase {
    */
   public function testBuild(): void {
     $expected_text = 'This is a placeholder block from ARSApps Module. It demonstrates basic block plugin functionality for testing and development purposes.';
-    
+
     $this->stringTranslation
       ->method('translate')
       ->willReturn($expected_text);
@@ -68,7 +68,7 @@ final class ArsappsModuleBlockTest extends UnitTestCase {
     $this->assertArrayHasKey('#prefix', $build['content']);
     $this->assertArrayHasKey('#suffix', $build['content']);
 
-    // The #markup will be a TranslatableMarkup object with mocked translation
+    // The #markup will be a TranslatableMarkup object with mocked translation.
     $markup = $build['content']['#markup'];
     $this->assertInstanceOf('Drupal\Core\StringTranslation\TranslatableMarkup', $markup);
     $this->assertEquals($expected_text, (string) $markup);

@@ -45,3 +45,39 @@ The project includes a production-ready multi-stage Docker build with:
 - Optimized for container orchestration platforms
 
 See [README-DOCKER.md](README-DOCKER.md) for detailed Docker deployment information.
+
+### Feature branch strategy
+
+**Get latest changes on all branches**:
+
+- `git checkout develop`
+- `git pull origin develop`
+- `git checkout main`
+- `git pull origin main`
+
+**Merge feature branch into `develop`**:
+
+- `git checkout feature/my-feature`
+- Make sure you're up-to-date: `git pull origin feature/my-feature`
+- Switch to develop: `git checkout develop`
+- Merge with no fast forward so it's always explicit: `git merge --no-ff feature/my-feature -m "Merge feature/myfeature into develop"`
+- Push `develop` with the new commit: `git push origin develop`
+
+**Merge `develop` into `main`**:
+
+Once `develop` has passed all tests and is ready to be released:
+
+- `git checkout main`
+- `git pull origin main`
+- Merge `develop` into `main`, again with no fast-forward: `git merge --no-ff develop -m "Release from develop into main"`
+- Push the release: `git push origin main`
+
+**Tag the release**:
+
+- `git tag -a v1.2.3 -m "Release v1.2.3"`
+- `git push origin v1.2.3`
+
+**Delete feature branch (if done)**:
+
+- Delete locally: `git branch -d feature/my-feature`
+- Delete remote: `git push origin --delete feature/my-feature`

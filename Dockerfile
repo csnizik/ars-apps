@@ -6,19 +6,13 @@
 # ========================================
 FROM composer:lts AS composer
 
-# Install system packages needed to compile extensions
-RUN apt-get update && \
-    apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev && \
-    docker-php-ext-configure gd --with-freetype --with-jpeg && \
-    docker-php-ext-install gd && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
 WORKDIR /app
 
 # Copy composer files first for better layer caching
 COPY composer.json composer.lock ./
 
-# Install production dependencies only
+# Install production dependencies only, ignoring platform requirements
+# The production stage will have all required extensions
 RUN --mount=type=cache,target=/tmp/cache \
     composer install \
     --no-dev \
@@ -26,7 +20,8 @@ RUN --mount=type=cache,target=/tmp/cache \
     --no-interaction \
     --no-progress \
     --prefer-dist \
-    --no-scripts
+    --no-scripts \
+    --ignore-platform-reqs
 
 # Copy source code and run post-install scripts
 COPY . .

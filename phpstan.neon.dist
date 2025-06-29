@@ -8,15 +8,12 @@ parameters:
   treatPhpDocTypesAsCertain: true
 
   ignoreErrors:
-    # Theme preprocess and *.theme edge cases
-    - '#Function .* has parameter \$(variables|suggestions) with no value type specified in iterable type array#'
-    - '#PHPDoc tag @var above a function has no effect#'
-    - '#PHPDoc tag @var for variable \$variables has no value type specified in iterable type array#'
-
-    # Drupal Form API inconsistencies
-    - '#Parameter .*\$form (by-ref|@param-out) type of method .*submitForm.* expects array<string, mixed>, array given#'
-    - '#Function .* has parameter \$form with no value type specified in iterable type array#'
-
+    # Theme preprocess functions with generic array parameters
+    - '#Function arsapps_theme_preprocess_.* has parameter \$variables with no value type specified in iterable type array#'
+    
+    # Form API parent::submitForm call type issue
+    - '#Parameter &\$form @param-out type of method .*submitForm.* expects array<string, mixed>, array given#'
+    
     # PHPUnit "always true" assertions in test files
     - '#Call to method PHPUnit\\Framework\\Assert::assert.* will always evaluate to true#'
 

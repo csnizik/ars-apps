@@ -50,7 +50,6 @@ vendor/
 # Node.js & JS build artifacts
 # ---------------------------
 **/node_modules/
-**/.parcel-cache/
 **/.postcss-cache/
 **/build/
 **/dist/

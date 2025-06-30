@@ -1,45 +1,82 @@
-# Ignore system files
+# ---------------------------
+# System & OS files
+# ---------------------------
 .DS_Store
 Thumbs.db
-core
 
-# Ignore sensitive files
+# ---------------------------
+# Sensitive & private config
+# ---------------------------
 web/sites/default/settings.*.php
 web/sites/*.services.yml
 web/sites/*.*.services.yml
 
-# Ignore private files
+# ---------------------------
+# File system paths to exclude
+# ---------------------------
 web/sites/*/files/private/
 web/sites/*/files/temporary/
 web/sites/*/files/sync/
 web/sites/*/files/config_*
+web/sites/default/files/
 
-# Ignore contributed modules and themes
+# ---------------------------
+# Drupal contrib code
+# ---------------------------
 web/sites/*/modules/contrib/
 web/sites/*/themes/contrib/
 web/modules/contrib/
 web/themes/contrib/
 
-# Ignore default files folder
-web/sites/default/files/
-
-# Ignore cache and temporary files
+# ---------------------------
+# Drupal cache directories
+# ---------------------------
 web/sites/*/files/css/
 web/sites/*/files/js/
 web/sites/*/files/php/
 
-# Ignore generated and compiled files
+# ---------------------------
+# Drupal core (if managed separately)
+# ---------------------------
+core
+
+# ---------------------------
+# Composer artifacts
+# ---------------------------
+vendor/
+**/vendor/
+
+# ---------------------------
+# Node.js & JS build artifacts
+# ---------------------------
+**/node_modules/
+**/.parcel-cache/
+**/.postcss-cache/
+**/build/
+**/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp*
+.pnp.js
+
+# ---------------------------
+# Editor & dev environment
+# ---------------------------
+.vscode/
+*.code-workspace
+
+# ---------------------------
+# General compiled / archive artifacts
+# ---------------------------
 *.gz
 *.tar
 *.zip
 *.log
 
-# Ignore Composer vendor folder
-vendor/
-**/vendor/
-
-# Ignore Node.js dependency folder
-**/node_modules/
-
-# Ignore parcel cache files
-**/.parcel-cache
+# ---------------------------
+# Temporary & swap files
+# ---------------------------
+*.tmp
+*.swp
+*.swo

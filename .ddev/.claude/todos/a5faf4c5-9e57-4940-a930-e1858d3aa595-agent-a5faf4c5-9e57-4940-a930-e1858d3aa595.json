@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Review current Tugboat configuration completeness",
+    "status": "in_progress",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Identify missing Tugboat dashboard configuration",
+    "status": "pending",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Check for required external setup steps",
+    "status": "pending",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Verify all files are properly configured",
+    "status": "pending",
+    "priority": "medium",
+    "id": "4"
+  },
+  {
+    "content": "Create implementation checklist",
+    "status": "pending",
+    "priority": "medium",
+    "id": "5"
+  }
+]

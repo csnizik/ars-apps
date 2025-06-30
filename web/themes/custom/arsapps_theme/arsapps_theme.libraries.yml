@@ -2,16 +2,11 @@ theme:
   css:
     layout:
       dist/css/tailwind.css: { media: "screen" }
-
   js:
-    dist/js/theme.js: { }
+    dist/js/theme.js: {}
 
-
-# Vite
 hot-module-replacement:
   header: true
   js:
-    # Vite HMR
-    /@vite/client: { type: external, attributes: { type: "module"} }
-    # Initial Tailwind CSS
-    /src/css/tailwind.css: { attributes: { type: "module" } }
+    https://localhost:3009/@vite/client: { type: external, attributes: { type: "module" } }
+    https://localhost:3009/src/css/tailwind.css: { type: external, attributes: { type: "module" } }

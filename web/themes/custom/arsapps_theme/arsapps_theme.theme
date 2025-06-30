@@ -5,6 +5,7 @@
  * Functions to support theming in the ARSApps Theme.
  */
 
+use Drupal\Core\Asset\AttachedAssetsInterface;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -76,4 +77,19 @@ function arsapps_theme_form_alter(array &$form, FormStateInterface $form_state, 
       $form['keys']['#attributes']['placeholder'] = t('Search...');
       break;
   }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function arsapps_theme_page_attachments_alter(array &$attachments): void {
+  // Only attach hot reload during local development via Vite.
+  if (str_contains(\Drupal::request()->getHost(), 'ddev.site')) {
+    $target = 'arsapps_theme/theme';
+    $key = array_search($target, $attachments['#attached']['library'], TRUE);
+    if ($key !== FALSE) {
+      unset($attachments['#attached']['library'][$key]);
+    }
+  }
+  \Drupal::logger('arsapps_theme')->notice('After unset: <pre>@data</pre>', ['@data' => print_r($attachments['#attached']['library'], TRUE)]);
 }

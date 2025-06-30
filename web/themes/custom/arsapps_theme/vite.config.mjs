@@ -26,6 +26,7 @@ function getHttpsConfig() {
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, path.resolve(__dirname, '../../../..'), '');
+  console.log('env is ', env);
 
   return {
     plugins: [
@@ -63,8 +64,8 @@ export default defineConfig(({ mode }) => {
       outDir: 'dist',
       rollupOptions: {
         input: {
-          arsapps_theme_css: path.resolve(__dirname, 'src/css/arsapps_theme.css'),
-          arsapps_theme_js: path.resolve(__dirname, 'src/js/arsapps_theme.js'),
+          tailwind: path.resolve(__dirname, 'src/css/tailwind.css'),
+          theme: path.resolve(__dirname, 'src/js/theme.js'),
         },
         output: {
           assetFileNames: ({ name }) => {
@@ -82,17 +83,18 @@ export default defineConfig(({ mode }) => {
     },
 
     server: {
-      host: true,
+      host: '0.0.0.0',
       https: getHttpsConfig(),
-      origin: env.VITE_SERVER_ORIGIN,
+      origin: 'https://arsapps.ddev.site',
       cors: {
-        origin: ['https://localhost:3009', env.VITE_SERVER_ORIGIN],
+        origin: ['https://arsapps.ddev.site'],
       },
       strictPort: false,
-      port: env.VITE_SERVER_PORT,
+      port: 3009,
       hmr: {
-        host: env.VITE_SERVER_HOST,
+        host: 'arsapps.ddev.site',
         protocol: 'wss',
+        port: 3009,
       },
     },
   };

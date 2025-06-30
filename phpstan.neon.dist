@@ -9,7 +9,7 @@ parameters:
 
   ignoreErrors:
     # Theme preprocess and *.theme edge cases
-    - '#Function .* has parameter \$(variables|suggestions) with no value type specified in iterable type array#'
+    - '#Function .* has parameter \$(variables|suggestions|attachments) with no value type specified in iterable type array#'
     - '#PHPDoc tag @var above a function has no effect#'
     - '#PHPDoc tag @var for variable \$variables has no value type specified in iterable type array#'
 

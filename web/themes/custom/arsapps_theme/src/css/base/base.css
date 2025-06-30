@@ -4,6 +4,7 @@
 
    @layer base {
     body {
-      @apply bg-primary font-base;
+      /* @apply bg-primary font-base; */
+      background-color: red;
     }
   }

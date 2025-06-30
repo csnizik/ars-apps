@@ -17,7 +17,7 @@
       page: $('#page'),
     }
 
-    console.info('🚀 Theme Libraries loaded')
+    console.info('Theme Libraries loaded')
     return this
   }
 

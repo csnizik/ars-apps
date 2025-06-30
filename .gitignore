@@ -40,3 +40,6 @@ vendor/
 
 # Ignore Node.js dependency folder
 **/node_modules/
+
+# Ignore parcel cache files
+**/.parcel-cache

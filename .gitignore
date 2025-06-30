@@ -79,3 +79,14 @@ yarn-error.log*
 *.tmp
 *.swp
 *.swo
+
+# ---------------------------
+# SSL certs for local dev
+# ---------------------------
+web/themes/custom/arsapps_theme/plugins/https_key/
+
+# ---------------------------
+# Environment variables
+# ---------------------------
+.env
+*.env

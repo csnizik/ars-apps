@@ -82,7 +82,7 @@ jobs:
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Run PHPUnit unit tests
-        run: vendor/bin/phpunit -c web/core/phpunit.xml.dist web/modules/custom/ --testuite unit --stop-on-error --stop-on-fail --testdox
+        run: vendor/bin/phpunit -c ./phpunit.xml.dist ./web/modules/custom/**/tests/src/Unit --stop-on-error --stop-on-fail --testdox
 
   filesystem-security-scan:
     name: Filesystem Security Scan

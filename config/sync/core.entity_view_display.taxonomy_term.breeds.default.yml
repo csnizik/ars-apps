@@ -1,0 +1,39 @@
+uuid: 4fbe64fd-b52f-4376-81dd-028b1aa154c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.breeds.field_breed_code
+    - field.field.taxonomy_term.breeds.field_term_description
+    - taxonomy.vocabulary.breeds
+  module:
+    - text
+id: taxonomy_term.breeds.default
+targetEntityType: taxonomy_term
+bundle: breeds
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_breed_code:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_term_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

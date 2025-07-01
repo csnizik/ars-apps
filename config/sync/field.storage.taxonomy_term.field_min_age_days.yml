@@ -1,0 +1,20 @@
+uuid: 70ca22cc-9b95-4662-aba1-a7f927f6f8c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_min_age_days
+field_name: field_min_age_days
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: 6557f58a-99dc-4714-853b-9ad61a91bd3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dam
+    - node.type.lambing_event
+    - node.type.sheep
+id: node.lambing_event.field_dam
+field_name: field_dam
+entity_type: node
+bundle: lambing_event
+label: Dam
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sheep: sheep
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

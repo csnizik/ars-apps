@@ -1,0 +1,23 @@
+uuid: f084ee5a-cca8-40a2-bc58-719a99e7449f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_max_age_days
+    - taxonomy.vocabulary.measurement_types
+id: taxonomy_term.measurement_types.field_max_age_days
+field_name: field_max_age_days
+entity_type: taxonomy_term
+bundle: measurement_types
+label: 'Maximum age (days)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

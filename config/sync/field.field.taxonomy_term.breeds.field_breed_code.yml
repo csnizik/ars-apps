@@ -1,0 +1,19 @@
+uuid: fcb97c39-86bb-45b8-9af2-545679a0309d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_breed_code
+    - taxonomy.vocabulary.breeds
+id: taxonomy_term.breeds.field_breed_code
+field_name: field_breed_code
+entity_type: taxonomy_term
+bundle: breeds
+label: 'Breed code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

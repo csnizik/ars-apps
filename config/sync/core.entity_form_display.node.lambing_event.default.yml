@@ -1,0 +1,165 @@
+uuid: 082fdbdf-9a56-45ae-b42e-aeef447a10f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lambing_event.field_dam
+    - field.field.node.lambing_event.field_dystocia
+    - field.field.node.lambing_event.field_entropion
+    - field.field.node.lambing_event.field_ewe_remarks
+    - field.field.node.lambing_event.field_lambed
+    - field.field.node.lambing_event.field_lambing_date
+    - field.field.node.lambing_event.field_maternal_score
+    - field.field.node.lambing_event.field_milk_score
+    - field.field.node.lambing_event.field_present_for_lambing
+    - field.field.node.lambing_event.field_sire
+    - field.field.node.lambing_event.field_teat_score
+    - node.type.lambing_event
+  module:
+    - datetime
+    - path
+id: node.lambing_event.default
+targetEntityType: node
+bundle: lambing_event
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_dam:
+    type: entity_reference_autocomplete
+    weight: 129
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_dystocia:
+    type: string_textfield
+    weight: 130
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_entropion:
+    type: string_textfield
+    weight: 131
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ewe_remarks:
+    type: string_textarea
+    weight: 137
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_lambed:
+    type: boolean_checkbox
+    weight: 136
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_lambing_date:
+    type: datetime_default
+    weight: 121
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_maternal_score:
+    type: string_textfield
+    weight: 132
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_milk_score:
+    type: string_textfield
+    weight: 133
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_present_for_lambing:
+    type: boolean_checkbox
+    weight: 135
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_sire:
+    type: entity_reference_autocomplete
+    weight: 128
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_teat_score:
+    type: string_textfield
+    weight: 134
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,20 @@
+uuid: ecf13ac0-8851-4eae-b4b0-86bd63b12cea
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_abnormality
+field_name: field_abnormality
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

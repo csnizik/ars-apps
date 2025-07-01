@@ -1,0 +1,30 @@
+uuid: 734bd1a5-bf60-4da3-8edc-96b975c7ebb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.lines.field_line_code
+    - taxonomy.vocabulary.lines
+  module:
+    - text
+id: taxonomy_term.lines.default
+targetEntityType: taxonomy_term
+bundle: lines
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_line_code:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

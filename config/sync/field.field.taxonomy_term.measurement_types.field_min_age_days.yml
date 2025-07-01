@@ -1,0 +1,23 @@
+uuid: 13c73d36-4ba1-4404-a9f6-b7c803080025
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_min_age_days
+    - taxonomy.vocabulary.measurement_types
+id: taxonomy_term.measurement_types.field_min_age_days
+field_name: field_min_age_days
+entity_type: taxonomy_term
+bundle: measurement_types
+label: 'Minimum age (days)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

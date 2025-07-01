@@ -1,0 +1,19 @@
+uuid: 70e76581-6d42-4a97-afeb-c416fd177f52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_disposal_code
+    - taxonomy.vocabulary.disposal_codes
+id: taxonomy_term.disposal_codes.field_disposal_code
+field_name: field_disposal_code
+entity_type: taxonomy_term
+bundle: disposal_codes
+label: 'Disposal code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

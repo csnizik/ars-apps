@@ -1,0 +1,22 @@
+uuid: e38790cf-6f61-4fa9-afd8-aeca47444b61
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lamb_card
+id: node.lamb_card.promote
+field_name: promote
+entity_type: node
+bundle: lamb_card
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,19 @@
+uuid: e2e4728c-f729-4af9-a157-f0893b52fa58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jaw
+    - node.type.lamb_card
+id: node.lamb_card.field_jaw
+field_name: field_jaw
+entity_type: node
+bundle: lamb_card
+label: Jaw
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

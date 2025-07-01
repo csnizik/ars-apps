@@ -1,0 +1,21 @@
+uuid: 8cd47d01-889a-4861-85bf-879c838d7a4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lambing_date
+    - node.type.lambing_event
+  module:
+    - datetime
+id: node.lambing_event.field_lambing_date
+field_name: field_lambing_date
+entity_type: node
+bundle: lambing_event
+label: 'Lambing date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

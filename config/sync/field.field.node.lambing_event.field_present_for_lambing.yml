@@ -1,0 +1,21 @@
+uuid: 24e61999-e178-4576-985f-79f09c3a51ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_present_for_lambing
+    - node.type.lambing_event
+id: node.lambing_event.field_present_for_lambing
+field_name: field_present_for_lambing
+entity_type: node
+bundle: lambing_event
+label: 'Present for lambing'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

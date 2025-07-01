@@ -7,8 +7,8 @@ import plugin from 'tailwindcss/plugin';
 
 const config = {
   content: [
-    './src/**/*.{html,twig,php}',
-    './templates/**/*.{twig}',
+    './templates/**/*.{twig,html}',
+    './src/**/*.{js,ts,jsx,tsx}',
     './*.theme',
   ],
   corePlugins: {

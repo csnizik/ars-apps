@@ -83,7 +83,7 @@ export default defineConfig(({ mode }) => {
     },
 
     server: {
-      host: '0.0.0.0',
+      host: 'localhost',
       https: getHttpsConfig(),
       origin: 'https://arsapps.ddev.site',
       cors: {

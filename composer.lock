@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6316c17fa3533ac003e690632f845fb",
+    "content-hash": "26352d0c845b49dc47b347c6fd509190",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2395,6 +2395,50 @@
                 "source": "https://cgit.drupalcode.org/pathauto",
                 "issues": "https://www.drupal.org/project/issues/pathauto",
                 "documentation": "https://www.drupal.org/docs/8/modules/pathauto"
+            }
+        },
+        {
+            "name": "drupal/tailwindcss",
+            "version": "5.0.0-alpha4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tailwindcss.git",
+                "reference": "5.0.0-alpha4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tailwindcss-5.0.0-alpha4.zip",
+                "reference": "5.0.0-alpha4",
+                "shasum": "4f0374d13a613aea82382b2394ebe78cdd70c886"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10 ||^11"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "5.0.0-alpha4",
+                    "datestamp": "1738375101",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "opdavies",
+                    "homepage": "https://www.drupal.org/user/381388"
+                }
+            ],
+            "description": "This is a starter kit/demo theme for using Tailwind CSS within Drupal.",
+            "homepage": "https://www.drupal.org/project/tailwindcss",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tailwindcss"
             }
         },
         {
@@ -12963,7 +13007,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "drupal/tailwindcss": 15
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},

@@ -1,0 +1,39 @@
+uuid: bd0c3ece-135e-4f88-8752-5e0e37b55438
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.disposal_codes.field_disposal_code
+    - field.field.taxonomy_term.disposal_codes.field_term_description
+    - taxonomy.vocabulary.disposal_codes
+  module:
+    - text
+id: taxonomy_term.disposal_codes.default
+targetEntityType: taxonomy_term
+bundle: disposal_codes
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_disposal_code:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_term_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

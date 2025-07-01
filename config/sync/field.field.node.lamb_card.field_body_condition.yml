@@ -1,0 +1,23 @@
+uuid: 93644c21-e663-4cbb-8614-8f060f6c33f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_condition
+    - node.type.lamb_card
+id: node.lamb_card.field_body_condition
+field_name: field_body_condition
+entity_type: node
+bundle: lamb_card
+label: 'Body condition'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

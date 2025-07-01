@@ -1,0 +1,23 @@
+uuid: 786e59e6-7e6f-4279-88b2-f3d97c0b1a84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birth_weight
+    - node.type.lamb_card
+id: node.lamb_card.field_birth_weight
+field_name: field_birth_weight
+entity_type: node
+bundle: lamb_card
+label: 'Birth weight'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

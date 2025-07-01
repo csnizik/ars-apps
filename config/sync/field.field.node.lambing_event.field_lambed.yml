@@ -1,0 +1,21 @@
+uuid: 7c90c2b4-4349-4d0d-a784-fc621881b1b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lambed
+    - node.type.lambing_event
+id: node.lambing_event.field_lambed
+field_name: field_lambed
+entity_type: node
+bundle: lambing_event
+label: 'Lambed?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

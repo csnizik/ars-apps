@@ -1,0 +1,18 @@
+uuid: fd72d204-63a9-4f74-9e9c-3c9503c17ef2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sheep
+id: node.sheep.title
+field_name: title
+entity_type: node
+bundle: sheep
+label: ID10
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

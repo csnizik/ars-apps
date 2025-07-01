@@ -1,0 +1,19 @@
+uuid: 64baa813-8840-4bc7-b099-fd2dcbaa279a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ewe_remarks
+    - node.type.lambing_event
+id: node.lambing_event.field_ewe_remarks
+field_name: field_ewe_remarks
+entity_type: node
+bundle: lambing_event
+label: 'Ewe remarks'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

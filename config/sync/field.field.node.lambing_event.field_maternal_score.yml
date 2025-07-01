@@ -1,0 +1,19 @@
+uuid: eea6505f-5b3b-4585-8740-1afb77f53984
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_maternal_score
+    - node.type.lambing_event
+id: node.lambing_event.field_maternal_score
+field_name: field_maternal_score
+entity_type: node
+bundle: lambing_event
+label: 'Maternal score'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

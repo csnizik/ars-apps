@@ -1,0 +1,19 @@
+uuid: 484f5094-6162-49b9-8891-b3acf4dfe234
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_altid
+    - node.type.sheep
+id: node.sheep.field_altid
+field_name: field_altid
+entity_type: node
+bundle: sheep
+label: 'Aternative ID (for purchased animals)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

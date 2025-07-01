@@ -1,0 +1,23 @@
+uuid: a64173db-1881-4357-bfb3-6539ca9f4117
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inbreeding
+    - node.type.sheep
+id: node.sheep.field_inbreeding
+field_name: field_inbreeding
+entity_type: node
+bundle: sheep
+label: 'Inbreeding coefficient'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

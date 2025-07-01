@@ -1,0 +1,19 @@
+uuid: 10f53545-9e3b-41c2-84c2-1545dca70775
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scrapie_tag
+    - node.type.sheep
+id: node.sheep.field_scrapie_tag
+field_name: field_scrapie_tag
+entity_type: node
+bundle: sheep
+label: IDZ65
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

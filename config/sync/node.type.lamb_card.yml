@@ -1,0 +1,17 @@
+uuid: 38ee8b28-68bd-4121-b566-98f1869b81e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Lamb Card'
+type: lamb_card
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

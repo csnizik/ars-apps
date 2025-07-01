@@ -1,0 +1,19 @@
+uuid: a26c232c-f3e6-40f8-80ed-776b3d880160
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dystocia
+    - node.type.lambing_event
+id: node.lambing_event.field_dystocia
+field_name: field_dystocia
+entity_type: node
+bundle: lambing_event
+label: Dystocia
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

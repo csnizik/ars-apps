@@ -1,0 +1,29 @@
+uuid: 5f7a9c80-1b3b-49e8-a139-97ad5da20e23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_abnormality
+    - node.type.lamb_card
+    - taxonomy.vocabulary.abnormalities
+id: node.lamb_card.field_abnormality
+field_name: field_abnormality
+entity_type: node
+bundle: lamb_card
+label: Abnormality
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      abnormalities: abnormalities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

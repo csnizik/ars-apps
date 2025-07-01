@@ -1,0 +1,19 @@
+uuid: c2130812-de16-4e05-bcf1-0d0c6601cf4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_line_code
+    - taxonomy.vocabulary.lines
+id: taxonomy_term.lines.field_line_code
+field_name: field_line_code
+entity_type: taxonomy_term
+bundle: lines
+label: 'Line code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

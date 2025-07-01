@@ -1,0 +1,19 @@
+uuid: ecba822d-7b00-488b-8c20-92d62198b595
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_milk_score
+    - node.type.lambing_event
+id: node.lambing_event.field_milk_score
+field_name: field_milk_score
+entity_type: node
+bundle: lambing_event
+label: 'Milk score'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

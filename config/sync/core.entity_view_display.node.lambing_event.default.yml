@@ -1,0 +1,123 @@
+uuid: 7453a8b7-9081-4af0-94d4-d5657e58d255
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lambing_event.field_dam
+    - field.field.node.lambing_event.field_dystocia
+    - field.field.node.lambing_event.field_entropion
+    - field.field.node.lambing_event.field_ewe_remarks
+    - field.field.node.lambing_event.field_lambed
+    - field.field.node.lambing_event.field_lambing_date
+    - field.field.node.lambing_event.field_maternal_score
+    - field.field.node.lambing_event.field_milk_score
+    - field.field.node.lambing_event.field_present_for_lambing
+    - field.field.node.lambing_event.field_sire
+    - field.field.node.lambing_event.field_teat_score
+    - node.type.lambing_event
+  module:
+    - datetime
+    - user
+id: node.lambing_event.default
+targetEntityType: node
+bundle: lambing_event
+mode: default
+content:
+  field_dam:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_dystocia:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_entropion:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_ewe_remarks:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_lambed:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_lambing_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_maternal_score:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_milk_score:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_present_for_lambing:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_sire:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_teat_score:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

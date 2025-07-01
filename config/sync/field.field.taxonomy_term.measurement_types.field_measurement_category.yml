@@ -1,0 +1,21 @@
+uuid: 73ab7d1d-c134-4449-9d8c-233a2ed1e028
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_measurement_category
+    - taxonomy.vocabulary.measurement_types
+  module:
+    - options
+id: taxonomy_term.measurement_types.field_measurement_category
+field_name: field_measurement_category
+entity_type: taxonomy_term
+bundle: measurement_types
+label: Category
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

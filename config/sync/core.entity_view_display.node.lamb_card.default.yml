@@ -1,0 +1,106 @@
+uuid: ac8026e0-ad21-4922-b61f-b6b23fcc1706
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lamb_card.field_abnormality
+    - field.field.node.lamb_card.field_birth_weight
+    - field.field.node.lamb_card.field_body_condition
+    - field.field.node.lamb_card.field_cause
+    - field.field.node.lamb_card.field_jaw
+    - field.field.node.lamb_card.field_lamb_id
+    - field.field.node.lamb_card.field_lamb_remarks
+    - field.field.node.lamb_card.field_lambing_event
+    - field.field.node.lamb_card.field_sheep
+    - node.type.lamb_card
+  module:
+    - user
+id: node.lamb_card.default
+targetEntityType: node
+bundle: lamb_card
+mode: default
+content:
+  field_abnormality:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_birth_weight:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_body_condition:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_cause:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_jaw:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_lamb_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_lamb_remarks:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_lambing_event:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_sheep:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

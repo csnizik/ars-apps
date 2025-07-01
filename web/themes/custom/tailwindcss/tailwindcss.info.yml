@@ -6,8 +6,3 @@ base theme: stable9
 libraries:
   - tailwindcss/global-styling
 starterkit: true
-
-# Information added by Drupal.org packaging script on 2025-02-01
-version: '5.0.0-alpha4'
-project: 'tailwindcss'
-datestamp: 1738375103

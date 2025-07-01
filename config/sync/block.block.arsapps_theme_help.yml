@@ -1,0 +1,22 @@
+uuid: c78fb8cc-bf8f-421c-b84d-3e25e69117a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - arsapps_theme
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: arsapps_theme_help
+theme: arsapps_theme
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

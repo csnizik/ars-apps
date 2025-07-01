@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: GV6Ok-O6QoGJD4Vz6i8gKf0BSONA_XO0XwcPX2r0QvE
+example_text: 'Default placeholder text'
+example_number: 42
+example_boolean: true
+example_array:
+  - 'Item 1'
+  - 'Item 2'
+  - 'Item 3'

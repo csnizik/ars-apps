@@ -1,16 +1,12 @@
-global-styling:
-  version: 1.x
+theme:
   css:
-    theme:
-      css/style.css: {}
+    layout:
+      dist/css/tailwind.css: { media: "screen" }
   js:
-    js/arsapps_theme.js: {}
-  dependencies:
-    - core/drupal
-    - core/jquery
+    dist/js/theme.js: {}
 
-print:
-  version: 1.x
-  css:
-    theme:
-      css/print.css: { media: print }
+hot-module-replacement:
+  header: true
+  js:
+    https://localhost:3009/@vite/client: { type: external, attributes: { type: "module" } }
+    https://localhost:3009/src/css/tailwind.css: { type: external, attributes: { type: "module" } }

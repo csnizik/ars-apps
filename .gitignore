@@ -50,7 +50,6 @@ vendor/
 # Node.js & JS build artifacts
 # ---------------------------
 **/node_modules/
-**/.parcel-cache/
 **/.postcss-cache/
 **/build/
 **/dist/
@@ -80,3 +79,14 @@ yarn-error.log*
 *.tmp
 *.swp
 *.swo
+
+# ---------------------------
+# SSL certs for local dev
+# ---------------------------
+web/themes/custom/arsapps_theme/plugins/https_key/
+
+# ---------------------------
+# Environment variables
+# ---------------------------
+.env
+*.env

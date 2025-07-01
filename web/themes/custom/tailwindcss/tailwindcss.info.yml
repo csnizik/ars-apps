@@ -1,0 +1,8 @@
+name: Tailwind CSS Starter Kit
+description: A starter kit theme for Drupal 8/9 and Tailwind CSS.
+core_version_requirement: ^8 || ^9 || ^10 ||^11
+type: theme
+base theme: stable9
+libraries:
+  - tailwindcss/global-styling
+starterkit: true

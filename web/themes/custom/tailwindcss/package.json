@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npx tailwindcss --input src/tailwind.pcss --output dist/tailwind.css --watch",
+    "build": "npx tailwindcss --input src/tailwind.pcss --output dist/tailwind.css --minify"
+  },
+  "dependencies": {
+    "@alpinejs/anchor": "^3.14.9",
+    "@alpinejs/csp": "^3.14.9",
+    "@alpinejs/focus": "^3.14.9",
+    "@alpinejs/mask": "^3.14.9",
+    "@fontsource-variable/open-sans": "^5.2.6",
+    "@fontsource-variable/public-sans": "^5.2.6",
+    "@fontsource-variable/roboto-mono": "^5.2.6",
+    "@fontsource-variable/source-sans-3": "^5.2.8",
+    "@fontsource/merriweather": "^5.2.9",
+    "@iconify-json/fa6-brands": "^1.2.5",
+    "@iconify-json/material-symbols": "^1.2.28",
+    "@iconify/tailwind": "^1.2.0",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}

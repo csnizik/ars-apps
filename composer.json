@@ -26,6 +26,7 @@
         "drupal/field_group": "^4.0",
         "drupal/paragraphs": "^1.19",
         "drupal/pathauto": "^1.13",
+        "drupal/tailwindcss": "^5.0@alpha",
         "drupal/token": "^1.15",
         "drush/drush": "^13.6"
     },

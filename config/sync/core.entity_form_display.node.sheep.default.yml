@@ -10,7 +10,9 @@ dependencies:
     - field.field.node.sheep.field_date_birth
     - field.field.node.sheep.field_dna
     - field.field.node.sheep.field_etag
+    - field.field.node.sheep.field_id10
     - field.field.node.sheep.field_inbreeding
+    - field.field.node.sheep.field_remarks
     - field.field.node.sheep.field_scrapie_tag
     - field.field.node.sheep.field_sex
     - field.field.node.sheep.field_sire
@@ -25,13 +27,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_altid:
     type: string_textfield
-    weight: 122
+    weight: 8
     region: content
     settings:
       size: 60
@@ -39,7 +41,7 @@ content:
     third_party_settings: {  }
   field_breed:
     type: entity_reference_autocomplete
-    weight: 127
+    weight: 13
     region: content
     settings:
       match_operator: CONTAINS
@@ -49,7 +51,7 @@ content:
     third_party_settings: {  }
   field_color:
     type: entity_reference_autocomplete
-    weight: 130
+    weight: 16
     region: content
     settings:
       match_operator: CONTAINS
@@ -59,7 +61,7 @@ content:
     third_party_settings: {  }
   field_dam:
     type: entity_reference_autocomplete
-    weight: 129
+    weight: 15
     region: content
     settings:
       match_operator: CONTAINS
@@ -69,13 +71,13 @@ content:
     third_party_settings: {  }
   field_date_birth:
     type: datetime_default
-    weight: 125
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_dna:
     type: string_textarea
-    weight: 124
+    weight: 10
     region: content
     settings:
       rows: 5
@@ -83,7 +85,15 @@ content:
     third_party_settings: {  }
   field_etag:
     type: string_textfield
-    weight: 121
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_id10:
+    type: string_textfield
+    weight: 0
     region: content
     settings:
       size: 60
@@ -91,14 +101,22 @@ content:
     third_party_settings: {  }
   field_inbreeding:
     type: number
-    weight: 131
+    weight: 17
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_remarks:
+    type: string_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_scrapie_tag:
     type: string_textfield
-    weight: 123
+    weight: 9
     region: content
     settings:
       size: 60
@@ -106,13 +124,13 @@ content:
     third_party_settings: {  }
   field_sex:
     type: options_select
-    weight: 126
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_sire:
     type: entity_reference_autocomplete
-    weight: 128
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -122,42 +140,34 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 3
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
-  title:
-    type: string_textfield
-    weight: -5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     region: content
     settings:
       match_operator: CONTAINS
@@ -165,4 +175,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  title: true

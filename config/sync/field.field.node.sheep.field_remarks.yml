@@ -1,0 +1,19 @@
+uuid: eabe0a8f-aa01-423c-aa0e-8d84c5969287
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_remarks
+    - node.type.sheep
+id: node.sheep.field_remarks
+field_name: field_remarks
+entity_type: node
+bundle: sheep
+label: Remarks
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

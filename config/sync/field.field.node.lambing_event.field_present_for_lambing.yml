@@ -10,12 +10,12 @@ field_name: field_present_for_lambing
 entity_type: node
 bundle: lambing_event
 label: 'Present for lambing'
-description: ''
+description: 'Values imported from field "Y1" from LAMB (numeric). Imported values: 1 = present, 0 = absent. Values being converted to boolean value by tamper process during feed import.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  on_label: 'On'
-  off_label: 'Off'
+  on_label: Present
+  off_label: Absent
 field_type: boolean

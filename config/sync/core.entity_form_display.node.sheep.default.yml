@@ -3,14 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sheep.feeds_item
     - field.field.node.sheep.field_altid
     - field.field.node.sheep.field_breed
     - field.field.node.sheep.field_color
     - field.field.node.sheep.field_dam
-    - field.field.node.sheep.field_date_birth
     - field.field.node.sheep.field_dna
     - field.field.node.sheep.field_etag
-    - field.field.node.sheep.field_id10
     - field.field.node.sheep.field_inbreeding
     - field.field.node.sheep.field_remarks
     - field.field.node.sheep.field_scrapie_tag
@@ -18,7 +17,6 @@ dependencies:
     - field.field.node.sheep.field_sire
     - node.type.sheep
   module:
-    - datetime
     - path
 id: node.sheep.default
 targetEntityType: node
@@ -69,12 +67,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_date_birth:
-    type: datetime_default
-    weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_dna:
     type: string_textarea
     weight: 10
@@ -86,14 +78,6 @@ content:
   field_etag:
     type: string_textfield
     weight: 7
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_id10:
-    type: string_textfield
-    weight: 0
     region: content
     settings:
       size: 60
@@ -123,10 +107,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_sex:
-    type: options_select
-    weight: 12
+    type: number
+    weight: 27
     region: content
-    settings: {  }
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_sire:
     type: entity_reference_autocomplete
@@ -176,4 +161,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  feeds_item: true
   title: true

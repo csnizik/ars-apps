@@ -23,6 +23,8 @@ module:
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
+  feeds: 0
+  feeds_tamper: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -36,20 +38,18 @@ module:
   link: 0
   menu_link_content: 0
   menu_ui: 0
-  migrate: 0
-  migrate_plus: 0
-  migrate_source_csv: 0
-  migrate_tools: 0
   mysql: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
+  rest: 0
   search: 0
-  sheep_migration: 0
+  serialization: 0
   shortcut: 0
   system: 0
+  tamper: 0
   taxonomy: 0
   text: 0
   token: 0

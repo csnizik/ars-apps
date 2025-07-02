@@ -1,17 +1,16 @@
-uuid: a4304de7-6c06-4cf7-9ffd-2da6beebd531
+uuid: e27f0da3-373c-4414-998d-484808250aed
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_lamb_remarks
-field_name: field_lamb_remarks
+id: node.field_teat
+field_name: field_teat
 entity_type: node
-type: string
+type: integer
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

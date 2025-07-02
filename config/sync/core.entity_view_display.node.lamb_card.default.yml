@@ -9,8 +9,8 @@ dependencies:
     - field.field.node.lamb_card.field_cause
     - field.field.node.lamb_card.field_jaw
     - field.field.node.lamb_card.field_lamb_id
-    - field.field.node.lamb_card.field_lamb_remarks
     - field.field.node.lamb_card.field_lambing_event
+    - field.field.node.lamb_card.field_remarks
     - field.field.node.lamb_card.field_sheep
     - node.type.lamb_card
   module:
@@ -74,14 +74,6 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_lamb_remarks:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 108
-    region: content
   field_lambing_event:
     type: entity_reference_label
     label: above
@@ -89,6 +81,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_remarks:
+    type: basic_string
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 113
     region: content
   field_sheep:
     type: entity_reference_label

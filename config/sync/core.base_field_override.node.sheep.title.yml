@@ -8,7 +8,7 @@ id: node.sheep.title
 field_name: title
 entity_type: node
 bundle: sheep
-label: ID10
+label: ID
 description: ''
 required: true
 translatable: true

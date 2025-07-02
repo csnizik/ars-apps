@@ -1,15 +1,17 @@
-uuid: 7240ad71-0305-4ac8-a605-f5a71ab49dbc
+uuid: 0d5210aa-745f-49ab-b93c-e5f878386bf8
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_ewe_remarks
-field_name: field_ewe_remarks
+id: node.field_stm
+field_name: field_stm
 entity_type: node
-type: string_long
+type: string
 settings:
+  max_length: 255
   case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: 1

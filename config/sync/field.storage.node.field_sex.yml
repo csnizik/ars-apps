@@ -1,24 +1,17 @@
-uuid: 347bba0b-28e8-4665-99e7-8a7b1d076728
+uuid: 8956283f-1e0c-4038-8387-ed76f2d5bed6
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - options
 id: node.field_sex
 field_name: field_sex
 entity_type: node
-type: list_string
+type: integer
 settings:
-  allowed_values:
-    -
-      value: ewe
-      label: Ewe
-    -
-      value: ram
-      label: Ram
-  allowed_values_function: ''
-module: options
+  unsigned: false
+  size: normal
+module: core
 locked: false
 cardinality: 1
 translatable: true

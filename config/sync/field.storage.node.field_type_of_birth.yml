@@ -1,17 +1,16 @@
-uuid: 3fff25de-8339-4317-9f4e-c4feb13b85d3
+uuid: 43738a1e-3bc4-40c4-8099-5e2885266a47
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_entropion
-field_name: field_entropion
+id: node.field_type_of_birth
+field_name: field_type_of_birth
 entity_type: node
-type: string
+type: integer
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

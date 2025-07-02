@@ -1,0 +1,23 @@
+uuid: ba9cd102-bbc9-443d-acb1-61893215d377
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_birth
+    - node.type.lambing_event
+id: node.lambing_event.field_type_of_birth
+field_name: field_type_of_birth
+entity_type: node
+bundle: lambing_event
+label: 'Type of birth'
+description: '10-point type of birth scoring system, used to account for variability of live/dead status among litters'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

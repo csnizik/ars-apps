@@ -1,16 +1,16 @@
-uuid: 1c33e921-db4a-4c36-8ec7-0e69fe98195f
+uuid: 532ad47c-6980-4127-a34b-57b640e3410a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_dystocia
+    - field.storage.node.field_teat
     - node.type.lambing_event
-id: node.lambing_event.field_dystocia
-field_name: field_dystocia
+id: node.lambing_event.field_teat
+field_name: field_teat
 entity_type: node
 bundle: lambing_event
-label: Dystocia
-description: '8-point dystocia scoring system'
+label: Teat
+description: '7-point scoring system for supernumary teats'
 required: false
 translatable: false
 default_value: {  }

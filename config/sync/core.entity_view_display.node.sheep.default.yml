@@ -3,14 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sheep.feeds_item
     - field.field.node.sheep.field_altid
     - field.field.node.sheep.field_breed
     - field.field.node.sheep.field_color
     - field.field.node.sheep.field_dam
-    - field.field.node.sheep.field_date_birth
     - field.field.node.sheep.field_dna
     - field.field.node.sheep.field_etag
-    - field.field.node.sheep.field_id10
     - field.field.node.sheep.field_inbreeding
     - field.field.node.sheep.field_remarks
     - field.field.node.sheep.field_scrapie_tag
@@ -18,9 +17,211 @@ dependencies:
     - field.field.node.sheep.field_sire
     - node.type.sheep
   module:
-    - datetime
-    - options
+    - layout_builder
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          6b98f615-23d3-4895-b949-0c9284162423:
+            uuid: 6b98f615-23d3-4895-b949-0c9284162423
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_altid'
+              label: 'Aternative ID (for purchased animals)'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          cb346d9c-ac07-4ac9-83b6-501e72ebc9f0:
+            uuid: cb346d9c-ac07-4ac9-83b6-501e72ebc9f0
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_breed'
+              label: Breed
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          84032354-ca2b-4d3c-b27f-81792e4f0f96:
+            uuid: 84032354-ca2b-4d3c-b27f-81792e4f0f96
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_color'
+              label: Color
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          486d2b8c-2a1f-4ff2-b6f4-4b747ad96211:
+            uuid: 486d2b8c-2a1f-4ff2-b6f4-4b747ad96211
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_dam'
+              label: Dam
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          71cbaac6-bd28-4c88-b10b-e498e4abd02f:
+            uuid: 71cbaac6-bd28-4c88-b10b-e498e4abd02f
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_dna'
+              label: 'DNA Identifier'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          03749319-2c0f-49e4-ab0c-ae7b39babbd2:
+            uuid: 03749319-2c0f-49e4-ab0c-ae7b39babbd2
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_etag'
+              label: 'Ear tag'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          e9297bd7-0f92-4920-a619-42ffe332fbeb:
+            uuid: e9297bd7-0f92-4920-a619-42ffe332fbeb
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_scrapie_tag'
+              label: IDZ65
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          7675c2b1-0e0d-4b97-9ab8-127ee2935a21:
+            uuid: 7675c2b1-0e0d-4b97-9ab8-127ee2935a21
+            region: second
+            configuration:
+              id: 'field_block:node:sheep:field_inbreeding'
+              label: 'Inbreeding coefficient'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: number_decimal
+                label: above
+                settings:
+                  thousand_separator: ''
+                  decimal_separator: .
+                  scale: 0
+                  prefix_suffix: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          57eeb135-0b89-4ca2-841a-75562119b5b3:
+            uuid: 57eeb135-0b89-4ca2-841a-75562119b5b3
+            region: second
+            configuration:
+              id: 'field_block:node:sheep:field_sire'
+              label: Sire
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          44b79d0a-1149-4c8b-a0b8-56bde67172b5:
+            uuid: 44b79d0a-1149-4c8b-a0b8-56bde67172b5
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_sex'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: number_integer
+                label: above
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+        third_party_settings: {  }
 id: node.sheep.default
 targetEntityType: node
 bundle: sheep
@@ -28,7 +229,7 @@ mode: default
 content:
   field_altid:
     type: string
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -36,7 +237,7 @@ content:
     region: content
   field_breed:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -44,39 +245,30 @@ content:
     region: content
   field_color:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 110
     region: content
   field_dam:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     weight: 109
     region: content
-  field_date_birth:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 105
-    region: content
   field_dna:
     type: basic_string
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     weight: 104
     region: content
   field_etag:
     type: string
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -84,7 +276,7 @@ content:
     region: content
   field_id10:
     type: string
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -92,42 +284,44 @@ content:
     region: content
   field_inbreeding:
     type: number_decimal
-    label: above
+    label: inline
     settings:
       thousand_separator: ''
       decimal_separator: .
       scale: 2
-      prefix_suffix: true
+      prefix_suffix: false
     third_party_settings: {  }
     weight: 111
     region: content
   field_remarks:
     type: basic_string
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     weight: 113
     region: content
   field_scrapie_tag:
     type: string
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
     region: content
   field_sex:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 106
-    region: content
-  field_sire:
-    type: entity_reference_label
+    type: number_integer
     label: above
     settings:
-      link: true
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 114
+    region: first
+  field_sire:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
     third_party_settings: {  }
     weight: 108
     region: content
@@ -136,4 +330,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  feeds_item: true

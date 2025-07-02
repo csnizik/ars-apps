@@ -1,19 +1,19 @@
-uuid: 64baa813-8840-4bc7-b099-fd2dcbaa279a
+uuid: 2bee1cc5-db7a-4534-99e2-b802c9bc44f2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_ewe_remarks
+    - field.storage.node.field_stm
     - node.type.lambing_event
-id: node.lambing_event.field_ewe_remarks
-field_name: field_ewe_remarks
+id: node.lambing_event.field_stm
+field_name: field_stm
 entity_type: node
 bundle: lambing_event
-label: 'Ewe remarks'
+label: 'Subtype mating'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: string

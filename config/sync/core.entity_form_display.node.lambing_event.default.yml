@@ -4,16 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.lambing_event.field_dam
+    - field.field.node.lambing_event.field_depth
     - field.field.node.lambing_event.field_dystocia
-    - field.field.node.lambing_event.field_entropion
-    - field.field.node.lambing_event.field_ewe_remarks
     - field.field.node.lambing_event.field_lambed
     - field.field.node.lambing_event.field_lambing_date
     - field.field.node.lambing_event.field_maternal_score
     - field.field.node.lambing_event.field_milk_score
     - field.field.node.lambing_event.field_present_for_lambing
     - field.field.node.lambing_event.field_sire
+    - field.field.node.lambing_event.field_stm
+    - field.field.node.lambing_event.field_teat
     - field.field.node.lambing_event.field_teat_score
+    - field.field.node.lambing_event.field_type_of_birth
     - node.type.lambing_event
   module:
     - datetime
@@ -39,28 +41,18 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_depth:
+    type: number
+    weight: 139
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_dystocia:
-    type: string_textfield
-    weight: 130
+    type: number
+    weight: 140
     region: content
     settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_entropion:
-    type: string_textfield
-    weight: 131
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_ewe_remarks:
-    type: string_textarea
-    weight: 137
-    region: content
-    settings:
-      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_lambed:
@@ -109,12 +101,34 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_stm:
+    type: string_textfield
+    weight: 141
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_teat:
+    type: number
+    weight: 143
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_teat_score:
     type: string_textfield
     weight: 134
     region: content
     settings:
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_type_of_birth:
+    type: number
+    weight: 142
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   path:

@@ -9,8 +9,8 @@ dependencies:
     - field.field.node.lamb_card.field_cause
     - field.field.node.lamb_card.field_jaw
     - field.field.node.lamb_card.field_lamb_id
-    - field.field.node.lamb_card.field_lamb_remarks
     - field.field.node.lamb_card.field_lambing_event
+    - field.field.node.lamb_card.field_remarks
     - field.field.node.lamb_card.field_sheep
     - node.type.lamb_card
   module:
@@ -74,14 +74,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_lamb_remarks:
-    type: string_textfield
-    weight: 128
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_lambing_event:
     type: entity_reference_autocomplete
     weight: 123
@@ -90,6 +82,14 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_remarks:
+    type: string_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_sheep:

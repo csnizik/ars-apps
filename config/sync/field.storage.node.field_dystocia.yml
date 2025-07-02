@@ -1,4 +1,4 @@
-uuid: 3dbbd55e-b267-41c3-80aa-dedae4d213e7
+uuid: dfdead84-69e0-47e4-8d75-b945849f0e7f
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,10 @@ dependencies:
 id: node.field_dystocia
 field_name: field_dystocia
 entity_type: node
-type: string
+type: integer
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

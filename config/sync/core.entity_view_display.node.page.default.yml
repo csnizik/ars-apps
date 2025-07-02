@@ -7,7 +7,6 @@ dependencies:
     - node.type.page
   module:
     - layout_builder
-    - layout_discovery
     - text
     - user
 third_party_settings:

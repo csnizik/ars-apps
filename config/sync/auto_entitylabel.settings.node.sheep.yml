@@ -1,5 +1,5 @@
-status: 1
-pattern: '[node:field_id10]'
+status: 3
+pattern: '[node:field_etag]'
 escape: false
 preserve_titles: false
 save: false
@@ -7,4 +7,4 @@ chunk: 50
 dependencies:
   config:
     - node.type.sheep
-new_content_behavior: 0
+new_content_behavior: 1

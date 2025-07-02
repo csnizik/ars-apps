@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Sheep
 type: sheep
-description: null
+description: "The ID (machine name `title`) field of a Sheep entity is automatically derived from the value in that sheep's ETAG (ear tag) field when the sheep entity is created."
 help: null
 new_revision: true
 preview_mode: 1

@@ -1,0 +1,127 @@
+uuid: 2ed78215-c41c-41ed-ae66-4d1dc987bf80
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.sheep.title
+    - field.field.node.sheep.field_breed
+    - field.field.node.sheep.field_color
+    - field.field.node.sheep.field_dam
+    - field.field.node.sheep.field_sire
+    - node.type.sheep
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers: {  }
+label: Sheep
+id: sheep
+description: ''
+help: ''
+import_period: -1
+fetcher: directory
+fetcher_configuration:
+  allowed_extensions: csv
+  allowed_schemes:
+    public: public
+  recursive_scan: false
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: sheep
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: true
+  owner_id: 0
+custom_sources:
+  etag:
+    value: ETAG
+    label: ETAG
+    machine_name: etag
+    type: csv
+  dam:
+    value: DAM
+    label: DAM
+    machine_name: dam
+    type: csv
+  blank:
+    value: '-blank-'
+    label: '-blank-'
+    machine_name: blank
+    type: blank
+  sire:
+    value: SIRE
+    label: SIRE
+    machine_name: sire
+    type: csv
+  clr:
+    value: CLR
+    label: CLR
+    machine_name: clr
+    type: csv
+  brd:
+    value: BRD
+    label: BRD
+    machine_name: brd
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: etag
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_dam
+    map:
+      target_id: dam
+    settings:
+      language: ''
+      reference_by: title
+      feeds_item: guid
+      autocreate: 1
+      autocreate_bundle: sheep
+  -
+    target: field_sire
+    map:
+      target_id: sire
+    settings:
+      language: ''
+      reference_by: title
+      feeds_item: guid
+      autocreate: 1
+      autocreate_bundle: sheep
+  -
+    target: field_color
+    map:
+      target_id: clr
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: 1
+      autocreate_bundle: colors
+  -
+    target: field_breed
+    map:
+      target_id: brd
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: 1
+      autocreate_bundle: breeds

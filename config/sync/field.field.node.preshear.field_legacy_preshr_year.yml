@@ -1,0 +1,19 @@
+uuid: 123c271c-b310-4131-b104-d4776d65ab8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_preshr_year
+    - node.type.preshear
+id: node.preshear.field_legacy_preshr_year
+field_name: field_legacy_preshr_year
+entity_type: node
+bundle: preshear
+label: 'Year (legacy)'
+description: 'This is for imported data only. New preshearing records will automatically display the calculated value for this field.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

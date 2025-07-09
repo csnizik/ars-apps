@@ -1,0 +1,23 @@
+uuid: 38dc7b0b-41ee-4967-aa1b-b783759c7958
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_diameter_grade
+    - node.type.preshear
+id: node.preshear.field_diameter_grade
+field_name: field_diameter_grade
+entity_type: node
+bundle: preshear
+label: 'Diameter grade'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,16 +1,16 @@
-uuid: ae364071-023d-421e-a6cb-226a53bffcde
+uuid: 4d57c1ae-b804-4ac0-942a-1f96c3a0e886
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_weight_birth
-    - node.type.lamb_card
-    - node.type.measurement
-id: node.lamb_card.field_weight_birth
-field_name: field_weight_birth
+    - field.storage.node.field_dam
+    - node.type.pedigree
+    - node.type.sheep
+id: node.pedigree.field_dam
+field_name: field_dam
 entity_type: node
-bundle: lamb_card
-label: 'Birth weight'
+bundle: pedigree
+label: Dam
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      measurement: measurement
+      sheep: sheep
     sort:
       field: _none
       direction: ASC

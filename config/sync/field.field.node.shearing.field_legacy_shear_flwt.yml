@@ -1,0 +1,23 @@
+uuid: cfc1a8d4-53e9-4611-997c-91057a3066c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_shear_flwt
+    - node.type.shearing
+id: node.shearing.field_legacy_shear_flwt
+field_name: field_legacy_shear_flwt
+entity_type: node
+bundle: shearing
+label: 'Fleece weight (legacy)'
+description: 'This is for imported data only. New shearing records will automatically display both FLWT and GRFL based on the entered value of GRFL.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

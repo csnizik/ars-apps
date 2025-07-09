@@ -1,0 +1,23 @@
+uuid: f13a286c-7db1-4999-a317-0a1c0cc1b95d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_staple_length
+    - node.type.measurement
+id: node.measurement.field_staple_length
+field_name: field_staple_length
+entity_type: node
+bundle: measurement
+label: 'Staple length (cm)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: cm
+field_type: integer

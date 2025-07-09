@@ -1,0 +1,19 @@
+uuid: 2c36f79d-b567-486e-b3b2-30838ae7d46a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_pedi_lamb
+    - node.type.pedigree
+id: node.pedigree.field_legacy_pedi_lamb
+field_name: field_legacy_pedi_lamb
+entity_type: node
+bundle: pedigree
+label: 'Lamb ID (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

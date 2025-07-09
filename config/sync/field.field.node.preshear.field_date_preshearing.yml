@@ -1,0 +1,21 @@
+uuid: f32a8f2b-5f11-49b3-8a8c-266d1f4ad314
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_preshearing
+    - node.type.preshear
+  module:
+    - datetime
+id: node.preshear.field_date_preshearing
+field_name: field_date_preshearing
+entity_type: node
+bundle: preshear
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

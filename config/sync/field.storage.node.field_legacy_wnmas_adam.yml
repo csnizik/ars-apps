@@ -1,15 +1,17 @@
-uuid: 607acdd1-08bf-41ca-a20c-1b50dea15dcd
+uuid: 887a50c6-9bb5-4c45-be27-ca687028ddd3
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_lamb
-field_name: field_lamb
+id: node.field_legacy_wnmas_adam
+field_name: field_legacy_wnmas_adam
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: node
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: 1

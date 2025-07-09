@@ -1,0 +1,19 @@
+uuid: ce2c21ef-323b-4dbd-a9a9-11de58f088cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_wnmas_sex
+    - node.type.weaning
+id: node.weaning.field_legacy_wnmas_sex
+field_name: field_legacy_wnmas_sex
+entity_type: node
+bundle: weaning
+label: 'Sex (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

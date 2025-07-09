@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.lamb_card.field_jaw_score
     - field.field.node.lamb_card.field_lambing_event
     - field.field.node.lamb_card.field_notes
-    - field.field.node.lamb_card.field_weight_birth
+    - field.field.node.lamb_card.field_weight
     - node.type.lamb_card
   module:
     - path
@@ -83,14 +83,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_weight_birth:
-    type: entity_reference_autocomplete
-    weight: 149
+  field_weight:
+    type: number
+    weight: 140
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
       placeholder: ''
     third_party_settings: {  }
   path:

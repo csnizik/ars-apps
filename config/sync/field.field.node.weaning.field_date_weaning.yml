@@ -11,7 +11,7 @@ id: node.weaning.field_date_weaning
 field_name: field_date_weaning
 entity_type: node
 bundle: weaning
-label: 'Weaning date'
+label: 'Date of weaning'
 description: ''
 required: false
 translatable: false

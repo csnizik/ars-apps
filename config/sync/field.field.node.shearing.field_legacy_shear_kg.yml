@@ -1,0 +1,23 @@
+uuid: 757917f1-797f-413e-b4dc-2517cd45c6bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_shear_kg
+    - node.type.shearing
+id: node.shearing.field_legacy_shear_kg
+field_name: field_legacy_shear_kg
+entity_type: node
+bundle: shearing
+label: 'Weight (kg, legacy)'
+description: 'This is for imported data only. New shearing records will automatically display both KG and LBS based on the entered value of KG.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

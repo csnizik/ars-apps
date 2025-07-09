@@ -1,0 +1,29 @@
+uuid: c13f5ba7-f537-4ac3-a007-4f13d2c265e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sheep
+    - node.type.preshear
+    - node.type.sheep
+id: node.preshear.field_sheep
+field_name: field_sheep
+entity_type: node
+bundle: preshear
+label: 'Ear tag'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sheep: sheep
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

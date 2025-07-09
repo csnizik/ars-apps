@@ -1,0 +1,96 @@
+uuid: 658fb71e-b406-4407-bfb8-aee8e1358cf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.shearing.field_body_condition
+    - field.field.node.shearing.field_date
+    - field.field.node.shearing.field_grfleece_weight
+    - field.field.node.shearing.field_legacy_shear_flwt
+    - field.field.node.shearing.field_legacy_shear_kg
+    - field.field.node.shearing.field_legacy_shear_lbs
+    - field.field.node.shearing.field_weight
+    - node.type.shearing
+  module:
+    - datetime
+    - user
+id: node.shearing.default
+targetEntityType: node
+bundle: shearing
+mode: default
+content:
+  field_body_condition:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_grfleece_weight:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 126
+    region: content
+  field_legacy_shear_flwt:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 129
+    region: content
+  field_legacy_shear_kg:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 130
+    region: content
+  field_legacy_shear_lbs:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 128
+    region: content
+  field_weight:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 125
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

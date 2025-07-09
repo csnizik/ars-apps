@@ -1,0 +1,202 @@
+uuid: 0d57aa91-538e-4208-9d17-63ab92f746b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.preshear.field_clean_fleece
+    - field.field.node.preshear.field_coefficient_variation
+    - field.field.node.preshear.field_date_preshearing
+    - field.field.node.preshear.field_diameter_grade
+    - field.field.node.preshear.field_face_score
+    - field.field.node.preshear.field_fiber_diameter
+    - field.field.node.preshear.field_horn_score
+    - field.field.node.preshear.field_legacy_preshr_line
+    - field.field.node.preshear.field_legacy_preshr_sex
+    - field.field.node.preshear.field_legacy_preshr_staple_cm
+    - field.field.node.preshear.field_legacy_preshr_staple_in
+    - field.field.node.preshear.field_legacy_preshr_stm
+    - field.field.node.preshear.field_legacy_preshr_year
+    - field.field.node.preshear.field_sheep
+    - field.field.node.preshear.field_standard_deviation
+    - field.field.node.preshear.field_staple_length
+    - node.type.preshear
+  module:
+    - datetime
+    - path
+id: node.preshear.default
+targetEntityType: node
+bundle: preshear
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_clean_fleece:
+    type: number
+    weight: 138
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_coefficient_variation:
+    type: number
+    weight: 137
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_date_preshearing:
+    type: datetime_default
+    weight: 130
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_diameter_grade:
+    type: number
+    weight: 139
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_face_score:
+    type: number
+    weight: 138
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_fiber_diameter:
+    type: number
+    weight: 136
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_horn_score:
+    type: number
+    weight: 139
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_preshr_line:
+    type: string_textfield
+    weight: 128
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_preshr_sex:
+    type: string_textfield
+    weight: 126
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_preshr_staple_cm:
+    type: string_textfield
+    weight: 132
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_preshr_staple_in:
+    type: string_textfield
+    weight: 131
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_preshr_stm:
+    type: string_textfield
+    weight: 127
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_preshr_year:
+    type: string_textfield
+    weight: 129
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sheep:
+    type: entity_reference_autocomplete
+    weight: 125
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_standard_deviation:
+    type: number
+    weight: 127
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_staple_length:
+    type: number
+    weight: 126
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

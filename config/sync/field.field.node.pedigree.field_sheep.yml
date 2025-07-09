@@ -1,0 +1,29 @@
+uuid: 61a5d0ee-984e-467c-a276-2284b4a7838f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sheep
+    - node.type.pedigree
+    - node.type.sheep
+id: node.pedigree.field_sheep
+field_name: field_sheep
+entity_type: node
+bundle: pedigree
+label: '10-digit ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sheep: sheep
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

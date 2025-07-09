@@ -1,0 +1,23 @@
+uuid: 655cc1d2-6c59-4587-99e1-f4651af07728
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coefficient_variation
+    - node.type.preshear
+id: node.preshear.field_coefficient_variation
+field_name: field_coefficient_variation
+entity_type: node
+bundle: preshear
+label: 'Coefficient of variation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

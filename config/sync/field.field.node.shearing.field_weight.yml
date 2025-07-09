@@ -1,0 +1,23 @@
+uuid: 9d77863c-f8f4-49c1-ac72-4877a4014a48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.shearing
+id: node.shearing.field_weight
+field_name: field_weight
+entity_type: node
+bundle: shearing
+label: 'Weight (kg)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: kg
+field_type: decimal

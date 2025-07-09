@@ -1,0 +1,23 @@
+uuid: c83bb0e4-1690-4373-a130-aa24f3fa87af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.lamb_card
+id: node.lamb_card.field_weight
+field_name: field_weight
+entity_type: node
+bundle: lamb_card
+label: 'Weight (kg)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: kg
+field_type: decimal

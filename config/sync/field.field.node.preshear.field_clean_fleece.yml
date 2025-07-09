@@ -1,0 +1,23 @@
+uuid: 49a42b9f-e90c-4492-b174-64570a247dea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clean_fleece
+    - node.type.preshear
+id: node.preshear.field_clean_fleece
+field_name: field_clean_fleece
+entity_type: node
+bundle: preshear
+label: 'Clean fleece (%)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: '%'
+field_type: decimal

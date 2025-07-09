@@ -1,0 +1,20 @@
+uuid: d38f45a1-de8e-4cfc-b27c-4faba66de80d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_legacy_shear_flwt
+field_name: field_legacy_shear_flwt
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

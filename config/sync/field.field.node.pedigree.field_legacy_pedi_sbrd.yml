@@ -1,0 +1,19 @@
+uuid: f2aa33be-c783-4802-a003-fe1a0da312ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_pedi_sbrd
+    - node.type.pedigree
+id: node.pedigree.field_legacy_pedi_sbrd
+field_name: field_legacy_pedi_sbrd
+entity_type: node
+bundle: pedigree
+label: 'Sire breed (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

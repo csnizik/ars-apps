@@ -1,0 +1,181 @@
+uuid: 72c7de60-9e98-472d-a61e-0ec338223057
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.preshear.field_clean_fleece
+    - field.field.node.preshear.field_coefficient_variation
+    - field.field.node.preshear.field_date_preshearing
+    - field.field.node.preshear.field_diameter_grade
+    - field.field.node.preshear.field_face_score
+    - field.field.node.preshear.field_fiber_diameter
+    - field.field.node.preshear.field_horn_score
+    - field.field.node.preshear.field_legacy_preshr_line
+    - field.field.node.preshear.field_legacy_preshr_sex
+    - field.field.node.preshear.field_legacy_preshr_staple_cm
+    - field.field.node.preshear.field_legacy_preshr_staple_in
+    - field.field.node.preshear.field_legacy_preshr_stm
+    - field.field.node.preshear.field_legacy_preshr_year
+    - field.field.node.preshear.field_sheep
+    - field.field.node.preshear.field_standard_deviation
+    - field.field.node.preshear.field_staple_length
+    - node.type.preshear
+  module:
+    - datetime
+    - user
+id: node.preshear.default
+targetEntityType: node
+bundle: preshear
+mode: default
+content:
+  field_clean_fleece:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_coefficient_variation:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_date_preshearing:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_diameter_grade:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  field_face_score:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_fiber_diameter:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_horn_score:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  field_legacy_preshr_line:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_legacy_preshr_sex:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_legacy_preshr_staple_cm:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_legacy_preshr_staple_in:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_legacy_preshr_stm:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_legacy_preshr_year:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_sheep:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_standard_deviation:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_staple_length:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

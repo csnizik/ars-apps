@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.sheep.field_line
     - field.field.node.sheep.field_lot
     - field.field.node.sheep.field_notes
+    - field.field.node.sheep.field_rearing_type
     - field.field.node.sheep.field_research_group
     - field.field.node.sheep.field_scrapie_tag
     - field.field.node.sheep.field_sex
@@ -368,6 +369,22 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 16
             additional: {  }
+          640fd1c4-9d42-4e1f-bc7d-5846baa781d4:
+            uuid: 640fd1c4-9d42-4e1f-bc7d-5846baa781d4
+            region: content
+            configuration:
+              id: 'field_block:node:sheep:field_rearing_type'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 17
+            additional: {  }
         third_party_settings: {  }
 id: node.sheep.default
 targetEntityType: node
@@ -481,6 +498,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 120
+    region: content
+  field_rearing_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
     region: content
   field_research_group:
     type: entity_reference_label

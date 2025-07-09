@@ -1,0 +1,23 @@
+uuid: a8398a5b-1990-45a4-a6e6-8d250fe1e949
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_staple_length
+    - node.type.preshear
+id: node.preshear.field_staple_length
+field_name: field_staple_length
+entity_type: node
+bundle: preshear
+label: 'Staple length (cm)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: cm
+field_type: integer

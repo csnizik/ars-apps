@@ -3,9 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.measurement.field_clean_fleece
+    - field.field.node.measurement.field_coefficient_variation
     - field.field.node.measurement.field_date
-    - field.field.node.measurement.field_lamb
+    - field.field.node.measurement.field_diameter_grade
+    - field.field.node.measurement.field_face_score
+    - field.field.node.measurement.field_fiber_diameter
+    - field.field.node.measurement.field_horn_score
     - field.field.node.measurement.field_measurement_type
+    - field.field.node.measurement.field_notes
+    - field.field.node.measurement.field_sheep
+    - field.field.node.measurement.field_standard_deviation
+    - field.field.node.measurement.field_staple_length
     - field.field.node.measurement.field_unit
     - field.field.node.measurement.field_value
     - node.type.measurement
@@ -17,6 +26,28 @@ targetEntityType: node
 bundle: measurement
 mode: default
 content:
+  field_clean_fleece:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_coefficient_variation:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 122
+    region: content
   field_date:
     type: datetime_default
     label: above
@@ -26,13 +57,43 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_lamb:
-    type: entity_reference_label
+  field_diameter_grade:
+    type: number_integer
     label: above
     settings:
-      link: true
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    weight: 101
+    weight: 124
+    region: content
+  field_face_score:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_fiber_diameter:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_horn_score:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 124
     region: content
   field_measurement_type:
     type: entity_reference_label
@@ -41,6 +102,42 @@ content:
       link: true
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_notes:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_sheep:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_standard_deviation:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_staple_length:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_unit:
     type: entity_reference_label

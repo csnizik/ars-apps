@@ -1,0 +1,19 @@
+uuid: 00b4be77-63b5-4fb6-bb6e-795b2850b68c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_preshr_staple_cm
+    - node.type.preshear
+id: node.preshear.field_legacy_preshr_staple_cm
+field_name: field_legacy_preshr_staple_cm
+entity_type: node
+bundle: preshear
+label: 'Staple length (cm, legacy)'
+description: 'This is for imported data only.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

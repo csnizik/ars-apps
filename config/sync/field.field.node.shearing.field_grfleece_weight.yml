@@ -1,0 +1,23 @@
+uuid: 2a8cafb8-017e-457a-b8e7-8ec80dfc0418
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grfleece_weight
+    - node.type.shearing
+id: node.shearing.field_grfleece_weight
+field_name: field_grfleece_weight
+entity_type: node
+bundle: shearing
+label: 'Grease fleece weight'
+description: "Grease fleece weight: this value, displayed as entered, i.e. \"5.3\"\r\nFleece weight: this value in multiples of 10, i.e. 5.3 lbs would display as \"50\""
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

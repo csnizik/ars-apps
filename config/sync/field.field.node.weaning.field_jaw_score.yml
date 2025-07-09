@@ -1,0 +1,23 @@
+uuid: 4dae577f-1ed1-4d0d-b18c-e26be780d271
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jaw_score
+    - node.type.weaning
+id: node.weaning.field_jaw_score
+field_name: field_jaw_score
+entity_type: node
+bundle: weaning
+label: Jaw
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: 7
+  prefix: ''
+  suffix: ''
+field_type: integer

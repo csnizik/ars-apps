@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.sheep.field_line
     - field.field.node.sheep.field_lot
     - field.field.node.sheep.field_notes
+    - field.field.node.sheep.field_rearing_type
     - field.field.node.sheep.field_research_group
     - field.field.node.sheep.field_scrapie_tag
     - field.field.node.sheep.field_sex
@@ -144,6 +145,16 @@ content:
   field_notes:
     type: entity_reference_autocomplete
     weight: 135
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rearing_type:
+    type: entity_reference_autocomplete
+    weight: 123
     region: content
     settings:
       match_operator: CONTAINS

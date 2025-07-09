@@ -1,0 +1,19 @@
+uuid: bfe77421-ec2f-4c80-a05b-cb645f1cc673
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_pedi_stm
+    - node.type.pedigree
+id: node.pedigree.field_legacy_pedi_stm
+field_name: field_legacy_pedi_stm
+entity_type: node
+bundle: pedigree
+label: 'Subtype mating (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

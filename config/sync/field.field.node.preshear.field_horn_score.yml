@@ -1,0 +1,23 @@
+uuid: 86fdaa6e-eb87-478c-bc5f-3939482e00b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_horn_score
+    - node.type.preshear
+id: node.preshear.field_horn_score
+field_name: field_horn_score
+entity_type: node
+bundle: preshear
+label: Horn
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: 7
+  prefix: ''
+  suffix: ''
+field_type: integer

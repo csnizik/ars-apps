@@ -1,0 +1,19 @@
+uuid: 39ccbe29-55b0-4d52-8186-800ca5343a74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_preshr_stm
+    - node.type.preshear
+id: node.preshear.field_legacy_preshr_stm
+field_name: field_legacy_preshr_stm
+entity_type: node
+bundle: preshear
+label: 'Subtype mating (legacy)'
+description: 'This is for imported data only. New preshearing records will automatically display the STM of the animal referenced in field_sheep.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

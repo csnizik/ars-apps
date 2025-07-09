@@ -1,0 +1,23 @@
+uuid: 94f989a9-5aa4-4eb0-a4a5-d3f88bbdd87d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_face_score
+    - node.type.measurement
+id: node.measurement.field_face_score
+field_name: field_face_score
+entity_type: node
+bundle: measurement
+label: Face
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: 15
+  prefix: ''
+  suffix: ''
+field_type: integer

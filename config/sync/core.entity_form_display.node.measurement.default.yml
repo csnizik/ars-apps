@@ -3,9 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.measurement.field_clean_fleece
+    - field.field.node.measurement.field_coefficient_variation
     - field.field.node.measurement.field_date
-    - field.field.node.measurement.field_lamb
+    - field.field.node.measurement.field_diameter_grade
+    - field.field.node.measurement.field_face_score
+    - field.field.node.measurement.field_fiber_diameter
+    - field.field.node.measurement.field_horn_score
     - field.field.node.measurement.field_measurement_type
+    - field.field.node.measurement.field_notes
+    - field.field.node.measurement.field_sheep
+    - field.field.node.measurement.field_standard_deviation
+    - field.field.node.measurement.field_staple_length
     - field.field.node.measurement.field_unit
     - field.field.node.measurement.field_value
     - node.type.measurement
@@ -23,20 +32,52 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_clean_fleece:
+    type: number
+    weight: 138
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_coefficient_variation:
+    type: number
+    weight: 137
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_date:
     type: datetime_default
     weight: 121
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_lamb:
-    type: entity_reference_autocomplete
-    weight: 121
+  field_diameter_grade:
+    type: number
+    weight: 139
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_face_score:
+    type: number
+    weight: 138
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_fiber_diameter:
+    type: number
+    weight: 136
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_horn_score:
+    type: number
+    weight: 139
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   field_measurement_type:
@@ -47,6 +88,40 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_notes:
+    type: entity_reference_autocomplete
+    weight: 135
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sheep:
+    type: entity_reference_autocomplete
+    weight: 125
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_standard_deviation:
+    type: number
+    weight: 127
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_staple_length:
+    type: number
+    weight: 126
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   field_unit:

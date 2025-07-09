@@ -1,0 +1,19 @@
+uuid: 4d63bad4-cbb4-4210-a773-da5888d54ba4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_daybn
+    - node.type.weaning
+id: node.weaning.field_legacy_daybn
+field_name: field_legacy_daybn
+entity_type: node
+bundle: weaning
+label: 'Day born (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

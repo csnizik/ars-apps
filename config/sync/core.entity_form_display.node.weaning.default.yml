@@ -4,8 +4,34 @@ status: true
 dependencies:
   config:
     - field.field.node.weaning.field_date_weaning
+    - field.field.node.weaning.field_face_score
+    - field.field.node.weaning.field_horn_score
+    - field.field.node.weaning.field_jaw_score
+    - field.field.node.weaning.field_legacy_daybn
+    - field.field.node.weaning.field_legacy_etag
+    - field.field.node.weaning.field_legacy_wnmas_adam
+    - field.field.node.weaning.field_legacy_wnmas_adg
+    - field.field.node.weaning.field_legacy_wnmas_age
+    - field.field.node.weaning.field_legacy_wnmas_band
+    - field.field.node.weaning.field_legacy_wnmas_brwt
+    - field.field.node.weaning.field_legacy_wnmas_cadam
+    - field.field.node.weaning.field_legacy_wnmas_color
+    - field.field.node.weaning.field_legacy_wnmas_daywn
+    - field.field.node.weaning.field_legacy_wnmas_juwt
+    - field.field.node.weaning.field_legacy_wnmas_lbrd
+    - field.field.node.weaning.field_legacy_wnmas_line
+    - field.field.node.weaning.field_legacy_wnmas_pen
+    - field.field.node.weaning.field_legacy_wnmas_rgrp
+    - field.field.node.weaning.field_legacy_wnmas_sex
+    - field.field.node.weaning.field_legacy_wnmas_stm
+    - field.field.node.weaning.field_legacy_wnmas_tb
+    - field.field.node.weaning.field_legacy_wnmas_tim
+    - field.field.node.weaning.field_legacy_wnmas_tr
+    - field.field.node.weaning.field_legacy_wnmas_wt120
+    - field.field.node.weaning.field_legacy_wnmas_yr
     - field.field.node.weaning.field_notes
-    - field.field.node.weaning.field_rearing_type
+    - field.field.node.weaning.field_sheep
+    - field.field.node.weaning.field_weight
     - node.type.weaning
   module:
     - datetime
@@ -27,6 +53,203 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_face_score:
+    type: number
+    weight: 138
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_horn_score:
+    type: number
+    weight: 139
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_jaw_score:
+    type: number
+    weight: 136
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_daybn:
+    type: string_textfield
+    weight: 150
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_etag:
+    type: string_textfield
+    weight: 138
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_adam:
+    type: string_textfield
+    weight: 147
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_adg:
+    type: string_textfield
+    weight: 155
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_age:
+    type: string_textfield
+    weight: 146
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_band:
+    type: string_textfield
+    weight: 149
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_brwt:
+    type: string_textfield
+    weight: 153
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_cadam:
+    type: string_textfield
+    weight: 148
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_color:
+    type: string_textfield
+    weight: 157
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_daywn:
+    type: string_textfield
+    weight: 151
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_juwt:
+    type: string_textfield
+    weight: 154
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_lbrd:
+    type: string_textfield
+    weight: 139
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_line:
+    type: string_textfield
+    weight: 141
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_pen:
+    type: string_textfield
+    weight: 143
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_rgrp:
+    type: string_textfield
+    weight: 158
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_sex:
+    type: string_textfield
+    weight: 140
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_stm:
+    type: string_textfield
+    weight: 142
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_tb:
+    type: string_textfield
+    weight: 144
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_tim:
+    type: string_textfield
+    weight: 152
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_tr:
+    type: string_textfield
+    weight: 145
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_wt120:
+    type: string_textfield
+    weight: 156
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_yr:
+    type: string_textfield
+    weight: 137
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_notes:
     type: entity_reference_autocomplete
     weight: 135
@@ -37,14 +260,21 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_rearing_type:
+  field_sheep:
     type: entity_reference_autocomplete
-    weight: 123
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 140
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   path:

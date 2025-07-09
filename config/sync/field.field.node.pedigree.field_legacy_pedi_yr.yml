@@ -1,0 +1,19 @@
+uuid: 1053ba4b-2c4c-468a-9b36-d6c53c65e25a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_pedi_yr
+    - node.type.pedigree
+id: node.pedigree.field_legacy_pedi_yr
+field_name: field_legacy_pedi_yr
+entity_type: node
+bundle: pedigree
+label: 'Year (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

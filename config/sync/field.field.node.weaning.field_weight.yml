@@ -1,0 +1,23 @@
+uuid: c8f6b8dd-260d-4c00-af29-b185ad4db8f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.weaning
+id: node.weaning.field_weight
+field_name: field_weight
+entity_type: node
+bundle: weaning
+label: 'Weaning weight (lbs)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: decimal

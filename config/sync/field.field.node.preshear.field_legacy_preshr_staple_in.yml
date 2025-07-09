@@ -1,0 +1,19 @@
+uuid: a07caeca-9364-4b99-ab5c-02fd48a78dbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_preshr_staple_in
+    - node.type.preshear
+id: node.preshear.field_legacy_preshr_staple_in
+field_name: field_legacy_preshr_staple_in
+entity_type: node
+bundle: preshear
+label: 'Staple length (in, legacy)'
+description: 'This is for imported data only. New preshearing records will automatically display the calculated value for this field based on STAPLE_CM'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

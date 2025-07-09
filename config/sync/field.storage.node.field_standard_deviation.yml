@@ -1,0 +1,20 @@
+uuid: 5417ca67-0117-43d9-bc0b-f693ee5fd748
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_standard_deviation
+field_name: field_standard_deviation
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

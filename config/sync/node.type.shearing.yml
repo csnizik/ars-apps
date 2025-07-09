@@ -1,0 +1,17 @@
+uuid: a6e73d03-6ca5-44dc-8b09-cd45b185bf69
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Shearing Record'
+type: shearing
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

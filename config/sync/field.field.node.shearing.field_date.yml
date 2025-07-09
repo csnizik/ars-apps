@@ -1,0 +1,21 @@
+uuid: 2ca2b5f2-01fd-4899-a60a-46ca134b876b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.shearing
+  module:
+    - datetime
+id: node.shearing.field_date
+field_name: field_date
+entity_type: node
+bundle: shearing
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,23 @@
+uuid: 21037072-f502-4dc7-a990-c8ac9adf21cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_diameter_grade
+    - node.type.measurement
+id: node.measurement.field_diameter_grade
+field_name: field_diameter_grade
+entity_type: node
+bundle: measurement
+label: 'Diameter grade'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

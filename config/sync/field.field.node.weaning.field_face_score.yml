@@ -1,0 +1,23 @@
+uuid: 265362a3-6dce-477a-beb7-4240c8f9a408
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_face_score
+    - node.type.weaning
+id: node.weaning.field_face_score
+field_name: field_face_score
+entity_type: node
+bundle: weaning
+label: Face
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: 15
+  prefix: ''
+  suffix: ''
+field_type: integer

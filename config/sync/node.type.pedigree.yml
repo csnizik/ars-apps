@@ -1,0 +1,17 @@
+uuid: e7370790-2adc-4b5f-a7cc-098c3eaa7eb2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Pedigree
+type: pedigree
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

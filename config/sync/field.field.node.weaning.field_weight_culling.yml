@@ -1,0 +1,23 @@
+uuid: 2a983097-f68f-4b3c-a8ec-d87153a87393
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight_culling
+    - node.type.weaning
+id: node.weaning.field_weight_culling
+field_name: field_weight_culling
+entity_type: node
+bundle: weaning
+label: 'Culling weight'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: decimal

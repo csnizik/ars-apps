@@ -1,0 +1,19 @@
+uuid: 7756d3a4-4047-4715-adec-6e2f206b4f12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_wnmas_pd
+    - node.type.weaning
+id: node.weaning.field_legacy_wnmas_pd
+field_name: field_legacy_wnmas_pd
+entity_type: node
+bundle: weaning
+label: 'Preliminary disposal (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

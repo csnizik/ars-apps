@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.sheep.field_cause
     - field.field.node.sheep.field_color
     - field.field.node.sheep.field_date_birth
+    - field.field.node.sheep.field_date_disposal
     - field.field.node.sheep.field_dna
     - field.field.node.sheep.field_etag
     - field.field.node.sheep.field_id10
@@ -17,6 +18,7 @@ dependencies:
     - field.field.node.sheep.field_line
     - field.field.node.sheep.field_lot
     - field.field.node.sheep.field_notes
+    - field.field.node.sheep.field_preliminary_disposal
     - field.field.node.sheep.field_rearing_type
     - field.field.node.sheep.field_research_group
     - field.field.node.sheep.field_scrapie_tag
@@ -91,6 +93,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_date_disposal:
+    type: datetime_default
+    weight: 151
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_dna:
     type: string_textarea
     weight: 10
@@ -145,6 +153,16 @@ content:
   field_notes:
     type: entity_reference_autocomplete
     weight: 135
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_preliminary_disposal:
+    type: entity_reference_autocomplete
+    weight: 152
     region: content
     settings:
       match_operator: CONTAINS

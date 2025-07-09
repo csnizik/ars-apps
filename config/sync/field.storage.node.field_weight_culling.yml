@@ -1,0 +1,20 @@
+uuid: f7b04b65-b5ad-4058-9d5b-b56c7ea191e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_weight_culling
+field_name: field_weight_culling
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: f7032301-e612-4dce-8a8f-092b37b3423b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_breeding_pen
+    - node.type.weaning
+    - taxonomy.vocabulary.breeding_pens
+id: node.weaning.field_breeding_pen
+field_name: field_breeding_pen
+entity_type: node
+bundle: weaning
+label: 'Breeding pen'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      breeding_pens: breeding_pens
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

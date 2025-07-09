@@ -1,0 +1,19 @@
+uuid: 2e029c83-97a3-4385-b2e6-56a01bdd0a25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_eligibility
+    - node.type.weaning
+id: node.weaning.field_eligibility
+field_name: field_eligibility
+entity_type: node
+bundle: weaning
+label: Eligibility
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

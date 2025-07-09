@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.sheep.field_cause
     - field.field.node.sheep.field_color
     - field.field.node.sheep.field_date_birth
+    - field.field.node.sheep.field_date_disposal
     - field.field.node.sheep.field_dna
     - field.field.node.sheep.field_etag
     - field.field.node.sheep.field_id10
@@ -17,6 +18,7 @@ dependencies:
     - field.field.node.sheep.field_line
     - field.field.node.sheep.field_lot
     - field.field.node.sheep.field_notes
+    - field.field.node.sheep.field_preliminary_disposal
     - field.field.node.sheep.field_rearing_type
     - field.field.node.sheep.field_research_group
     - field.field.node.sheep.field_scrapie_tag
@@ -385,6 +387,39 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 17
             additional: {  }
+          3e1140d1-eecb-4e82-a034-e80e2feb993c:
+            uuid: 3e1140d1-eecb-4e82-a034-e80e2feb993c
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_date_disposal'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: above
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          ca94a80b-f09b-44c5-b31a-cea3e747ed5f:
+            uuid: ca94a80b-f09b-44c5-b31a-cea3e747ed5f
+            region: first
+            configuration:
+              id: 'field_block:node:sheep:field_preliminary_disposal'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
         third_party_settings: {  }
 id: node.sheep.default
 targetEntityType: node
@@ -441,6 +476,15 @@ content:
     third_party_settings: {  }
     weight: 136
     region: content
+  field_date_disposal:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 139
+    region: first
   field_dna:
     type: basic_string
     label: above
@@ -499,6 +543,14 @@ content:
     third_party_settings: {  }
     weight: 120
     region: content
+  field_preliminary_disposal:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 140
+    region: first
   field_rearing_type:
     type: entity_reference_label
     label: above

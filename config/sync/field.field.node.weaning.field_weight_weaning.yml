@@ -1,12 +1,12 @@
-uuid: c8f6b8dd-260d-4c00-af29-b185ad4db8f0
+uuid: a50a6b97-a995-4a37-9c08-980e28385b74
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_weight
+    - field.storage.node.field_weight_weaning
     - node.type.weaning
-id: node.weaning.field_weight
-field_name: field_weight
+id: node.weaning.field_weight_weaning
+field_name: field_weight_weaning
 entity_type: node
 bundle: weaning
 label: 'Weaning weight (lbs)'

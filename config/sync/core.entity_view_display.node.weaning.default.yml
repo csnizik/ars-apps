@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.weaning.field_breeding_pen
+    - field.field.node.weaning.field_date_culling
     - field.field.node.weaning.field_date_weaning
+    - field.field.node.weaning.field_eligibility
     - field.field.node.weaning.field_face_score
     - field.field.node.weaning.field_horn_score
     - field.field.node.weaning.field_jaw_score
@@ -15,23 +18,39 @@ dependencies:
     - field.field.node.weaning.field_legacy_wnmas_band
     - field.field.node.weaning.field_legacy_wnmas_brwt
     - field.field.node.weaning.field_legacy_wnmas_cadam
+    - field.field.node.weaning.field_legacy_wnmas_cause
     - field.field.node.weaning.field_legacy_wnmas_color
+    - field.field.node.weaning.field_legacy_wnmas_dam
+    - field.field.node.weaning.field_legacy_wnmas_daydis
     - field.field.node.weaning.field_legacy_wnmas_daywn
+    - field.field.node.weaning.field_legacy_wnmas_disp
+    - field.field.node.weaning.field_legacy_wnmas_dna
+    - field.field.node.weaning.field_legacy_wnmas_fallwt
     - field.field.node.weaning.field_legacy_wnmas_juwt
     - field.field.node.weaning.field_legacy_wnmas_lbrd
     - field.field.node.weaning.field_legacy_wnmas_line
+    - field.field.node.weaning.field_legacy_wnmas_lndam
+    - field.field.node.weaning.field_legacy_wnmas_pd
     - field.field.node.weaning.field_legacy_wnmas_pen
     - field.field.node.weaning.field_legacy_wnmas_rgrp
+    - field.field.node.weaning.field_legacy_wnmas_sbrd
     - field.field.node.weaning.field_legacy_wnmas_sex
+    - field.field.node.weaning.field_legacy_wnmas_sire
     - field.field.node.weaning.field_legacy_wnmas_stm
     - field.field.node.weaning.field_legacy_wnmas_tb
     - field.field.node.weaning.field_legacy_wnmas_tim
     - field.field.node.weaning.field_legacy_wnmas_tr
     - field.field.node.weaning.field_legacy_wnmas_wt120
     - field.field.node.weaning.field_legacy_wnmas_yr
+    - field.field.node.weaning.field_lot
     - field.field.node.weaning.field_notes
+    - field.field.node.weaning.field_research_group
     - field.field.node.weaning.field_sheep
-    - field.field.node.weaning.field_weight
+    - field.field.node.weaning.field_tbr17
+    - field.field.node.weaning.field_tbre
+    - field.field.node.weaning.field_treatment
+    - field.field.node.weaning.field_weight_culling
+    - field.field.node.weaning.field_weight_weaning
     - node.type.weaning
   module:
     - datetime
@@ -41,6 +60,23 @@ targetEntityType: node
 bundle: weaning
 mode: default
 content:
+  field_breeding_pen:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 147
+    region: content
+  field_date_culling:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 164
+    region: content
   field_date_weaning:
     type: datetime_default
     label: above
@@ -49,6 +85,14 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 121
+    region: content
+  field_eligibility:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 156
     region: content
   field_face_score:
     type: number_integer
@@ -141,6 +185,14 @@ content:
     third_party_settings: {  }
     weight: 133
     region: content
+  field_legacy_wnmas_cause:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 152
+    region: content
   field_legacy_wnmas_color:
     type: string
     label: above
@@ -149,6 +201,22 @@ content:
     third_party_settings: {  }
     weight: 142
     region: content
+  field_legacy_wnmas_dam:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 150
+    region: content
+  field_legacy_wnmas_daydis:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 153
+    region: content
   field_legacy_wnmas_daywn:
     type: string
     label: above
@@ -156,6 +224,30 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 136
+    region: content
+  field_legacy_wnmas_disp:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 154
+    region: content
+  field_legacy_wnmas_dna:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 155
+    region: content
+  field_legacy_wnmas_fallwt:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 157
     region: content
   field_legacy_wnmas_juwt:
     type: string
@@ -181,6 +273,22 @@ content:
     third_party_settings: {  }
     weight: 126
     region: content
+  field_legacy_wnmas_lndam:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 151
+    region: content
+  field_legacy_wnmas_pd:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 158
+    region: content
   field_legacy_wnmas_pen:
     type: string
     label: above
@@ -197,6 +305,14 @@ content:
     third_party_settings: {  }
     weight: 143
     region: content
+  field_legacy_wnmas_sbrd:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 149
+    region: content
   field_legacy_wnmas_sex:
     type: string
     label: above
@@ -204,6 +320,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 125
+    region: content
+  field_legacy_wnmas_sire:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 148
     region: content
   field_legacy_wnmas_stm:
     type: string
@@ -253,6 +377,14 @@ content:
     third_party_settings: {  }
     weight: 122
     region: content
+  field_lot:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 146
+    region: content
   field_notes:
     type: entity_reference_label
     label: above
@@ -260,6 +392,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 120
+    region: content
+  field_research_group:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 144
     region: content
   field_sheep:
     type: entity_reference_label
@@ -269,7 +409,31 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
-  field_weight:
+  field_tbr17:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 160
+    region: content
+  field_tbre:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 159
+    region: content
+  field_treatment:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 145
+    region: content
+  field_weight_culling:
     type: number_decimal
     label: above
     settings:
@@ -278,7 +442,18 @@ content:
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 125
+    weight: 163
+    region: content
+  field_weight_weaning:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 162
     region: content
   links:
     settings: {  }

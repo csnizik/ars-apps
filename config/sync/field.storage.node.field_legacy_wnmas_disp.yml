@@ -1,0 +1,21 @@
+uuid: cadb74b7-9b7c-4463-af55-0cf6ced25600
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_legacy_wnmas_disp
+field_name: field_legacy_wnmas_disp
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

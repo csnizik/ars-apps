@@ -1,0 +1,20 @@
+uuid: c9e7b647-a347-44d4-a553-0c5985086906
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_weight_weaning
+field_name: field_weight_weaning
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

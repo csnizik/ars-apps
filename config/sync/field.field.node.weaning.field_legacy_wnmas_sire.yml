@@ -1,0 +1,19 @@
+uuid: e977cd1b-9d73-48a6-9e01-564e9471143f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_wnmas_sire
+    - node.type.weaning
+id: node.weaning.field_legacy_wnmas_sire
+field_name: field_legacy_wnmas_sire
+entity_type: node
+bundle: weaning
+label: 'Sire (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

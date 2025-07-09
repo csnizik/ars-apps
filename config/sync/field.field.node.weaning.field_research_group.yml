@@ -1,0 +1,29 @@
+uuid: d2464001-801f-4650-bfc4-1b7199564915
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_group
+    - node.type.weaning
+    - taxonomy.vocabulary.research_groups
+id: node.weaning.field_research_group
+field_name: field_research_group
+entity_type: node
+bundle: weaning
+label: 'Research group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      research_groups: research_groups
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

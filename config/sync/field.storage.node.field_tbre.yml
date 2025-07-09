@@ -1,0 +1,21 @@
+uuid: a8f9e1b6-9b16-4fcb-bac0-5d268e53ff3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_tbre
+field_name: field_tbre
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

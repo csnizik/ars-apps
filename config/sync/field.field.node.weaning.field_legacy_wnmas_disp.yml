@@ -1,0 +1,19 @@
+uuid: fcdc0640-38e5-48ba-9a09-74be9051224c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_wnmas_disp
+    - node.type.weaning
+id: node.weaning.field_legacy_wnmas_disp
+field_name: field_legacy_wnmas_disp
+entity_type: node
+bundle: weaning
+label: 'Disposal code (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

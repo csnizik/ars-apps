@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.weaning.field_breeding_pen
+    - field.field.node.weaning.field_date_culling
     - field.field.node.weaning.field_date_weaning
+    - field.field.node.weaning.field_eligibility
     - field.field.node.weaning.field_face_score
     - field.field.node.weaning.field_horn_score
     - field.field.node.weaning.field_jaw_score
@@ -15,23 +18,39 @@ dependencies:
     - field.field.node.weaning.field_legacy_wnmas_band
     - field.field.node.weaning.field_legacy_wnmas_brwt
     - field.field.node.weaning.field_legacy_wnmas_cadam
+    - field.field.node.weaning.field_legacy_wnmas_cause
     - field.field.node.weaning.field_legacy_wnmas_color
+    - field.field.node.weaning.field_legacy_wnmas_dam
+    - field.field.node.weaning.field_legacy_wnmas_daydis
     - field.field.node.weaning.field_legacy_wnmas_daywn
+    - field.field.node.weaning.field_legacy_wnmas_disp
+    - field.field.node.weaning.field_legacy_wnmas_dna
+    - field.field.node.weaning.field_legacy_wnmas_fallwt
     - field.field.node.weaning.field_legacy_wnmas_juwt
     - field.field.node.weaning.field_legacy_wnmas_lbrd
     - field.field.node.weaning.field_legacy_wnmas_line
+    - field.field.node.weaning.field_legacy_wnmas_lndam
+    - field.field.node.weaning.field_legacy_wnmas_pd
     - field.field.node.weaning.field_legacy_wnmas_pen
     - field.field.node.weaning.field_legacy_wnmas_rgrp
+    - field.field.node.weaning.field_legacy_wnmas_sbrd
     - field.field.node.weaning.field_legacy_wnmas_sex
+    - field.field.node.weaning.field_legacy_wnmas_sire
     - field.field.node.weaning.field_legacy_wnmas_stm
     - field.field.node.weaning.field_legacy_wnmas_tb
     - field.field.node.weaning.field_legacy_wnmas_tim
     - field.field.node.weaning.field_legacy_wnmas_tr
     - field.field.node.weaning.field_legacy_wnmas_wt120
     - field.field.node.weaning.field_legacy_wnmas_yr
+    - field.field.node.weaning.field_lot
     - field.field.node.weaning.field_notes
+    - field.field.node.weaning.field_research_group
     - field.field.node.weaning.field_sheep
-    - field.field.node.weaning.field_weight
+    - field.field.node.weaning.field_tbr17
+    - field.field.node.weaning.field_tbre
+    - field.field.node.weaning.field_treatment
+    - field.field.node.weaning.field_weight_culling
+    - field.field.node.weaning.field_weight_weaning
     - node.type.weaning
   module:
     - datetime
@@ -47,11 +66,35 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_breeding_pen:
+    type: entity_reference_autocomplete
+    weight: 159
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_date_culling:
+    type: datetime_default
+    weight: 176
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_date_weaning:
     type: datetime_default
     weight: 136
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_eligibility:
+    type: string_textfield
+    weight: 168
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_face_score:
     type: number
@@ -138,6 +181,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_legacy_wnmas_cause:
+    type: string_textfield
+    weight: 164
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_legacy_wnmas_color:
     type: string_textfield
     weight: 157
@@ -146,9 +197,49 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_legacy_wnmas_dam:
+    type: string_textfield
+    weight: 162
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_daydis:
+    type: string_textfield
+    weight: 165
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_legacy_wnmas_daywn:
     type: string_textfield
     weight: 151
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_disp:
+    type: string_textfield
+    weight: 166
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_dna:
+    type: string_textfield
+    weight: 167
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_fallwt:
+    type: string_textfield
+    weight: 169
     region: content
     settings:
       size: 60
@@ -178,6 +269,22 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_legacy_wnmas_lndam:
+    type: string_textfield
+    weight: 163
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_pd:
+    type: string_textfield
+    weight: 170
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_legacy_wnmas_pen:
     type: string_textfield
     weight: 143
@@ -194,9 +301,25 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_legacy_wnmas_sbrd:
+    type: string_textfield
+    weight: 161
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_legacy_wnmas_sex:
     type: string_textfield
     weight: 140
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_wnmas_sire:
+    type: string_textfield
+    weight: 160
     region: content
     settings:
       size: 60
@@ -250,9 +373,29 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_lot:
+    type: entity_reference_autocomplete
+    weight: 143
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_notes:
     type: entity_reference_autocomplete
     weight: 135
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_research_group:
+    type: entity_reference_autocomplete
+    weight: 141
     region: content
     settings:
       match_operator: CONTAINS
@@ -270,9 +413,42 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_weight:
+  field_tbr17:
+    type: string_textfield
+    weight: 172
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tbre:
+    type: string_textfield
+    weight: 171
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_treatment:
+    type: entity_reference_autocomplete
+    weight: 142
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_culling:
     type: number
-    weight: 140
+    weight: 175
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_weaning:
+    type: number
+    weight: 174
     region: content
     settings:
       placeholder: ''

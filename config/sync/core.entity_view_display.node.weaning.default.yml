@@ -1,0 +1,48 @@
+uuid: 7f361337-341b-4677-a3d9-b4c5b77b7ee2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.weaning.field_date_weaning
+    - field.field.node.weaning.field_notes
+    - field.field.node.weaning.field_rearing_type
+    - node.type.weaning
+  module:
+    - datetime
+    - user
+id: node.weaning.default
+targetEntityType: node
+bundle: weaning
+mode: default
+content:
+  field_date_weaning:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_notes:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_rearing_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

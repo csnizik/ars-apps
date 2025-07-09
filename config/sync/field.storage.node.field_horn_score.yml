@@ -1,0 +1,20 @@
+uuid: 85d9094d-ab07-4653-8ded-73ba4347047c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_horn_score
+field_name: field_horn_score
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

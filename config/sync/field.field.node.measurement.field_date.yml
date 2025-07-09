@@ -1,0 +1,21 @@
+uuid: 5d42a0e8-2b7d-4982-ad7b-593e99f36d23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.measurement
+  module:
+    - datetime
+id: node.measurement.field_date
+field_name: field_date
+entity_type: node
+bundle: measurement
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

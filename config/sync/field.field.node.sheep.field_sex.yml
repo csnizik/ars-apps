@@ -1,23 +1,29 @@
-uuid: 427a9d25-9777-4ae4-be36-529bc20c8c75
+uuid: 4c115373-0d82-4d26-a24f-8bc4dedb4ff9
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_sex
     - node.type.sheep
+    - taxonomy.vocabulary.sex
 id: node.sheep.field_sex
 field_name: field_sex
 entity_type: node
 bundle: sheep
 label: Sex
-description: "Values: 1, 2 (any other values?)\r\nTODO: do we want to display these as raw numbers or as Ram, Ewe, Wether?"
+description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: null
-  max: null
-  prefix: ''
-  suffix: ''
-field_type: integer
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sex: sex
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

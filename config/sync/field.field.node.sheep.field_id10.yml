@@ -1,0 +1,19 @@
+uuid: 8211eb16-2fef-4c17-97fc-068cd1680065
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_id10
+    - node.type.sheep
+id: node.sheep.field_id10
+field_name: field_id10
+entity_type: node
+bundle: sheep
+label: '10-digit ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

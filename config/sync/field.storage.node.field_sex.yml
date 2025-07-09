@@ -1,16 +1,16 @@
-uuid: 8956283f-1e0c-4038-8387-ed76f2d5bed6
+uuid: 021196dc-2f51-43ff-9849-9dc5771054e8
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - taxonomy
 id: node.field_sex
 field_name: field_sex
 entity_type: node
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

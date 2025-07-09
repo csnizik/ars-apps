@@ -1,0 +1,41 @@
+uuid: cbaa4455-203e-4fdb-bb86-bef08b39219b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.life_stage_events.field_occurs_once
+    - field.field.taxonomy_term.life_stage_events.field_term_description
+    - taxonomy.vocabulary.life_stage_events
+  module:
+    - text
+id: taxonomy_term.life_stage_events.default
+targetEntityType: taxonomy_term
+bundle: life_stage_events
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_occurs_once:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_term_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

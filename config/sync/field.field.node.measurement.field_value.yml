@@ -1,0 +1,23 @@
+uuid: 9c028f5f-02f0-4b86-b28d-1f614980680a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_value
+    - node.type.measurement
+id: node.measurement.field_value
+field_name: field_value
+entity_type: node
+bundle: measurement
+label: Value
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,29 @@
+uuid: dd74a726-d2b0-4d1e-8e8b-0fb78f4efe43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unit
+    - node.type.measurement
+    - taxonomy.vocabulary.units
+id: node.measurement.field_unit
+field_name: field_unit
+entity_type: node
+bundle: measurement
+label: Unit
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      units: units
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

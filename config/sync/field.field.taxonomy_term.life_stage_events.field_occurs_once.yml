@@ -1,0 +1,21 @@
+uuid: 3fa68383-a2d9-45c8-80fd-3b6744119f07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_occurs_once
+    - taxonomy.vocabulary.life_stage_events
+id: taxonomy_term.life_stage_events.field_occurs_once
+field_name: field_occurs_once
+entity_type: taxonomy_term
+bundle: life_stage_events
+label: 'Occurs once?'
+description: "i.e. birth, weaning, etc.\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Once
+  off_label: Repeatable
+field_type: boolean

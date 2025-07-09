@@ -1,0 +1,23 @@
+uuid: 1d83374f-7daf-4268-92e7-6ec95d0b951a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_entropion
+    - node.type.lambing_event
+id: node.lambing_event.field_entropion
+field_name: field_entropion
+entity_type: node
+bundle: lambing_event
+label: Entropion
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: 5
+  prefix: ''
+  suffix: ''
+field_type: integer

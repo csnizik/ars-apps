@@ -1,9 +1,0 @@
-uuid: e8cdf4f6-8c81-45fc-b573-14197285546d
-langcode: en
-status: true
-dependencies: {  }
-name: Colors
-vid: colors
-description: null
-weight: 0
-new_revision: false

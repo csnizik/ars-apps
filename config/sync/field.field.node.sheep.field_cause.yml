@@ -1,0 +1,29 @@
+uuid: 082d673f-ee77-4ea5-80d3-d6a3e19bb49b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cause
+    - node.type.sheep
+    - taxonomy.vocabulary.causes
+id: node.sheep.field_cause
+field_name: field_cause
+entity_type: node
+bundle: sheep
+label: Cause
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      causes: causes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

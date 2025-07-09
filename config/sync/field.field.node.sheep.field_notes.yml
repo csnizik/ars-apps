@@ -1,0 +1,29 @@
+uuid: dd088e1e-7777-4b71-a953-9a6085e167c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes
+    - node.type.note
+    - node.type.sheep
+id: node.sheep.field_notes
+field_name: field_notes
+entity_type: node
+bundle: sheep
+label: 'Sheep notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      note: note
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -8,7 +8,7 @@ id: node.lamb_card.title
 field_name: title
 entity_type: node
 bundle: lamb_card
-label: 'Card number'
+label: Title
 description: ''
 required: true
 translatable: true

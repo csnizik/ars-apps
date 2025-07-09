@@ -1,0 +1,29 @@
+uuid: 806d9f95-483f-4fbc-b56b-489f3679bd45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_treatment_pen
+    - node.type.sheep
+    - taxonomy.vocabulary.treatment_pens
+id: node.sheep.field_treatment_pen
+field_name: field_treatment_pen
+entity_type: node
+bundle: sheep
+label: Pen
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      treatment_pens: treatment_pens
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

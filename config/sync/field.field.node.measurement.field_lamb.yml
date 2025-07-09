@@ -1,0 +1,31 @@
+uuid: b18f0bdf-8302-44af-8b2e-59d1e6692a60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lamb
+    - node.type.lamb_card
+    - node.type.measurement
+    - node.type.sheep
+id: node.measurement.field_lamb
+field_name: field_lamb
+entity_type: node
+bundle: measurement
+label: 'Ear tag'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      lamb_card: lamb_card
+      sheep: sheep
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: lamb_card
+field_type: entity_reference

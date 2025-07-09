@@ -1,0 +1,23 @@
+uuid: 67c5e13f-01d2-420c-b0c9-f0cbdb3bbe1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jaw_score
+    - node.type.lamb_card
+id: node.lamb_card.field_jaw_score
+field_name: field_jaw_score
+entity_type: node
+bundle: lamb_card
+label: Jaw
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: 7
+  prefix: ''
+  suffix: ''
+field_type: integer

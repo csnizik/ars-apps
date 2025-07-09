@@ -1,0 +1,20 @@
+uuid: 66965fc5-1395-4b0d-9e44-36d5d299c1a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_entropion
+field_name: field_entropion
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

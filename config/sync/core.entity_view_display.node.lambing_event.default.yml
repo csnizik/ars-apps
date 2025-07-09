@@ -4,16 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.lambing_event.field_dam
+    - field.field.node.lambing_event.field_date_lambing
     - field.field.node.lambing_event.field_depth
     - field.field.node.lambing_event.field_dystocia
+    - field.field.node.lambing_event.field_entropion
     - field.field.node.lambing_event.field_lambed
-    - field.field.node.lambing_event.field_lambing_date
     - field.field.node.lambing_event.field_maternal_score
     - field.field.node.lambing_event.field_milk_score
     - field.field.node.lambing_event.field_present_for_lambing
     - field.field.node.lambing_event.field_sire
     - field.field.node.lambing_event.field_stm
-    - field.field.node.lambing_event.field_teat
     - field.field.node.lambing_event.field_teat_score
     - field.field.node.lambing_event.field_type_of_birth
     - node.type.lambing_event
@@ -33,6 +33,15 @@ content:
     third_party_settings: {  }
     weight: 109
     region: content
+  field_date_lambing:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 123
+    region: content
   field_depth:
     type: number_integer
     label: above
@@ -51,6 +60,15 @@ content:
     third_party_settings: {  }
     weight: 120
     region: content
+  field_entropion:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 122
+    region: content
   field_lambed:
     type: boolean
     label: above
@@ -60,15 +78,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 116
-    region: content
-  field_lambing_date:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 101
     region: content
   field_maternal_score:
     type: string
@@ -111,15 +120,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 121
-    region: content
-  field_teat:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 123
     region: content
   field_teat_score:
     type: string

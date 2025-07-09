@@ -1,0 +1,29 @@
+uuid: ef4436b0-a989-4369-8c0d-80f68615b918
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtype_mating
+    - node.type.sheep
+    - taxonomy.vocabulary.subtype_matings
+id: node.sheep.field_subtype_mating
+field_name: field_subtype_mating
+entity_type: node
+bundle: sheep
+label: 'Subtype mating'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subtype_matings: subtype_matings
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

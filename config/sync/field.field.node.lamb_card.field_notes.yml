@@ -1,0 +1,29 @@
+uuid: d4ecdfaa-eab6-42f7-b1f7-4ed08d780eeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes
+    - node.type.lamb_card
+    - node.type.note
+id: node.lamb_card.field_notes
+field_name: field_notes
+entity_type: node
+bundle: lamb_card
+label: 'Lamb card notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      note: note
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

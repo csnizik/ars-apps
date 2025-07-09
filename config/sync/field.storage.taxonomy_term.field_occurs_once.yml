@@ -1,0 +1,18 @@
+uuid: 4a43f2b1-2528-4135-a396-4c7f616991d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_occurs_once
+field_name: field_occurs_once
+entity_type: taxonomy_term
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

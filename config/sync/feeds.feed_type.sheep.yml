@@ -4,10 +4,7 @@ status: true
 dependencies:
   config:
     - core.base_field_override.node.sheep.title
-    - field.field.node.sheep.field_breed
-    - field.field.node.sheep.field_color
-    - field.field.node.sheep.field_dam
-    - field.field.node.sheep.field_sire
+    - field.field.node.sheep.field_altid
     - node.type.sheep
   module:
     - feeds_tamper
@@ -58,11 +55,6 @@ custom_sources:
     label: DAM
     machine_name: dam
     type: csv
-  blank:
-    value: '-blank-'
-    label: '-blank-'
-    machine_name: blank
-    type: blank
   sire:
     value: SIRE
     label: SIRE
@@ -78,6 +70,31 @@ custom_sources:
     label: BRD
     machine_name: brd
     type: csv
+  altid:
+    value: ALTID
+    label: ALTID
+    machine_name: altid
+    type: csv
+  dna:
+    value: DNA
+    label: DNA
+    machine_name: dna
+    type: csv
+  idz65:
+    value: IDZ65
+    label: IDZ65
+    machine_name: idz65
+    type: csv
+  inbrl:
+    value: INBRL
+    label: INBRL
+    machine_name: inbrl
+    type: csv
+  sex:
+    value: SEX
+    label: SEX
+    machine_name: sex
+    type: csv
 mappings:
   -
     target: title
@@ -88,40 +105,9 @@ mappings:
     unique:
       value: 1
   -
-    target: field_dam
+    target: field_altid
     map:
-      target_id: dam
+      value: altid
     settings:
-      language: ''
-      reference_by: title
-      feeds_item: guid
-      autocreate: 1
-      autocreate_bundle: sheep
-  -
-    target: field_sire
-    map:
-      target_id: sire
-    settings:
-      language: ''
-      reference_by: title
-      feeds_item: guid
-      autocreate: 1
-      autocreate_bundle: sheep
-  -
-    target: field_color
-    map:
-      target_id: clr
-    settings:
-      language: ''
-      reference_by: name
-      autocreate: 1
-      autocreate_bundle: colors
-  -
-    target: field_breed
-    map:
-      target_id: brd
-    settings:
-      language: ''
-      reference_by: name
-      autocreate: 1
-      autocreate_bundle: breeds
+      language: null
+    unique: {  }

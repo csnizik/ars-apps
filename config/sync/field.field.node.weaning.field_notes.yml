@@ -1,0 +1,29 @@
+uuid: 77c4f431-5c49-44bf-8ee4-2783f6905fa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes
+    - node.type.note
+    - node.type.weaning
+id: node.weaning.field_notes
+field_name: field_notes
+entity_type: node
+bundle: weaning
+label: Notes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      note: note
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

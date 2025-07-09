@@ -1,0 +1,29 @@
+uuid: aec6cd67-ed55-4b44-b13b-f4713045488a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_line
+    - node.type.sheep
+    - taxonomy.vocabulary.lines
+id: node.sheep.field_line
+field_name: field_line
+entity_type: node
+bundle: sheep
+label: Line
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lines: lines
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

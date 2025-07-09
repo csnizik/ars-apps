@@ -1,0 +1,21 @@
+uuid: e30f3bc8-0fbc-4498-851a-9a45323f1c70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_weaning
+    - node.type.weaning
+  module:
+    - datetime
+id: node.weaning.field_date_weaning
+field_name: field_date_weaning
+entity_type: node
+bundle: weaning
+label: 'Weaning date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

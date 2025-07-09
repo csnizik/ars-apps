@@ -1,29 +1,23 @@
-uuid: 0f0a9fe6-3069-446f-9c4c-36413aea7b05
+uuid: c5d4a901-2cf7-4bb9-ad91-f49193fb84b0
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_color
     - node.type.sheep
-    - taxonomy.vocabulary.colors
 id: node.sheep.field_color
 field_name: field_color
 entity_type: node
 bundle: sheep
 label: Color
-description: ''
+description: '9-point scale'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
-  handler_settings:
-    target_bundles:
-      colors: colors
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+  min: null
+  max: 9
+  prefix: ''
+  suffix: ''
+field_type: integer

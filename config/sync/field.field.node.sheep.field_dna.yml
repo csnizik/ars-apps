@@ -1,4 +1,4 @@
-uuid: 99839503-965a-4abb-993b-4d99ccf2f197
+uuid: 64242548-18b0-4484-b669-f1da977ebd00
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ id: node.sheep.field_dna
 field_name: field_dna
 entity_type: node
 bundle: sheep
-label: 'DNA Identifier'
+label: 'DNA Code'
 description: ''
 required: false
 translatable: false

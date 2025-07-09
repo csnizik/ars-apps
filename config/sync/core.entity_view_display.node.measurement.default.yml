@@ -1,0 +1,69 @@
+uuid: 557bf913-b738-4b9d-9b04-2bed86ac9abb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.measurement.field_date
+    - field.field.node.measurement.field_lamb
+    - field.field.node.measurement.field_measurement_type
+    - field.field.node.measurement.field_unit
+    - field.field.node.measurement.field_value
+    - node.type.measurement
+  module:
+    - datetime
+    - user
+id: node.measurement.default
+targetEntityType: node
+bundle: measurement
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_lamb:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_measurement_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_unit:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_value:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

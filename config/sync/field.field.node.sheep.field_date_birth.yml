@@ -1,0 +1,21 @@
+uuid: a41550c2-eae3-41f0-91e9-07ba5e78e7aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_birth
+    - node.type.sheep
+  module:
+    - datetime
+id: node.sheep.field_date_birth
+field_name: field_date_birth
+entity_type: node
+bundle: sheep
+label: 'Date of birth'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

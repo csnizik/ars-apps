@@ -1,16 +1,16 @@
-uuid: 3f848e18-fe1f-4a0c-aacc-b5fa5cb9442f
+uuid: e624cf66-7959-4c0d-9e1c-d0ea5a875e04
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
 id: node.field_color
 field_name: field_color
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: taxonomy_term
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

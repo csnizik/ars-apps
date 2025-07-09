@@ -9,7 +9,7 @@ id: node.sheep.field_altid
 field_name: field_altid
 entity_type: node
 bundle: sheep
-label: 'Aternative ID (for purchased animals)'
+label: 'Alternative ID (for purchased animals)'
 description: ''
 required: false
 translatable: false

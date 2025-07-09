@@ -1,0 +1,29 @@
+uuid: 07ee7d31-4ad5-48e6-8d79-6a76f32f5a57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_group
+    - node.type.sheep
+    - taxonomy.vocabulary.research_groups
+id: node.sheep.field_research_group
+field_name: field_research_group
+entity_type: node
+bundle: sheep
+label: 'Research group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      research_groups: research_groups
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

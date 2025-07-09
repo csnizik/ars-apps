@@ -1,0 +1,34 @@
+uuid: 73f30278-cbbc-4c18-a5eb-3145b412352a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.note.body
+    - field.field.node.note.field_attachments
+    - field.field.node.note.field_date
+    - node.type.note
+  module:
+    - text
+    - user
+id: node.note.teaser
+targetEntityType: node
+bundle: note
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_attachments: true
+  field_date: true

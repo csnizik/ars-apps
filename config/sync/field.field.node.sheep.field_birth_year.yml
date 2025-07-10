@@ -1,0 +1,23 @@
+uuid: 4c44cb14-8e52-4762-aed8-13779f295409
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birth_year
+    - node.type.sheep
+id: node.sheep.field_birth_year
+field_name: field_birth_year
+entity_type: node
+bundle: sheep
+label: 'Birth year'
+description: 'Derived from ID10'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

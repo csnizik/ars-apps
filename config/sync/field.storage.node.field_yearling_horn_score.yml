@@ -1,0 +1,20 @@
+uuid: 8c3270f6-f036-4a98-805d-eb5388a8e544
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_yearling_horn_score
+field_name: field_yearling_horn_score
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

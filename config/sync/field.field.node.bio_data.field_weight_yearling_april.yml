@@ -1,0 +1,23 @@
+uuid: 66e0bfc6-0ead-4590-b76e-e36ddbb55545
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight_yearling_april
+    - node.type.bio_data
+id: node.bio_data.field_weight_yearling_april
+field_name: field_weight_yearling_april
+entity_type: node
+bundle: bio_data
+label: 'April weight (lbs)'
+description: 'April weight (turnout). Recorded at ~30 days of age, late April through late May.  Lambs in earlier years will not have this measurement.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: decimal

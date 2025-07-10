@@ -1,0 +1,20 @@
+uuid: a62fcbf7-20e2-484b-881c-49fb197d0143
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_weight_yearling_postwean
+field_name: field_weight_yearling_postwean
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

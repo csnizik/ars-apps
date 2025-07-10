@@ -1,0 +1,31 @@
+uuid: 782b5505-6cfa-4e58-9e48-84c6ccb64ca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_july_measurements
+    - node.type.bio_data_annual
+    - paragraphs.paragraphs_type.biometrics
+  module:
+    - entity_reference_revisions
+id: node.bio_data_annual.field_july_measurements
+field_name: field_july_measurements
+entity_type: node
+bundle: bio_data_annual
+label: 'July measurements'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      biometrics: biometrics
+    negate: 0
+    target_bundles_drag_drop:
+      biometrics:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

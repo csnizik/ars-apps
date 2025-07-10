@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.sheep.feeds_item
     - field.field.node.sheep.field_altid
     - field.field.node.sheep.field_band
+    - field.field.node.sheep.field_birth_season
+    - field.field.node.sheep.field_birth_year
     - field.field.node.sheep.field_breed
     - field.field.node.sheep.field_cause
     - field.field.node.sheep.field_color
@@ -15,6 +17,7 @@ dependencies:
     - field.field.node.sheep.field_etag
     - field.field.node.sheep.field_id10
     - field.field.node.sheep.field_inbreeding
+    - field.field.node.sheep.field_legacy_inv_age
     - field.field.node.sheep.field_line
     - field.field.node.sheep.field_lot
     - field.field.node.sheep.field_notes
@@ -31,6 +34,7 @@ dependencies:
   module:
     - datetime
     - layout_builder
+    - layout_discovery
     - user
 third_party_settings:
   layout_builder:
@@ -38,19 +42,57 @@ third_party_settings:
     allow_custom: false
     sections:
       -
-        layout_id: layout_twocol_section
+        layout_id: layout_onecol
         layout_settings:
           label: ''
           context_mapping: {  }
-          column_widths: 50-50
         components:
-          6b98f615-23d3-4895-b949-0c9284162423:
-            uuid: 6b98f615-23d3-4895-b949-0c9284162423
+          f99ec518-a87c-438e-b334-b2d0de89ee84:
+            uuid: f99ec518-a87c-438e-b334-b2d0de89ee84
+            region: content
+            configuration:
+              id: 'field_block:node:sheep:revision_timestamp'
+              label: 'Revision create time'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: timestamp
+                label: hidden
+                settings:
+                  date_format: short
+                  custom_date_format: ''
+                  timezone: ''
+                  tooltip:
+                    date_format: long
+                    custom_date_format: ''
+                  time_diff:
+                    enabled: false
+                    future_format: '@interval hence'
+                    past_format: '@interval ago'
+                    granularity: 2
+                    refresh: 60
+                    description: ''
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_threecol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 33-34-33
+        components:
+          cd3065ce-6ad9-4c9f-8962-5605bb372391:
+            uuid: cd3065ce-6ad9-4c9f-8962-5605bb372391
             region: first
             configuration:
-              id: 'field_block:node:sheep:field_altid'
-              label: 'Aternative ID (for purchased animals)'
-              label_display: '0'
+              id: 'field_block:node:sheep:field_etag'
+              label: 'Ear tag'
+              label_display: visible
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
@@ -61,16 +103,19 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 1
+            weight: 0
             additional: {  }
-          36d90569-048e-49c1-9dee-8137d84e6ace:
-            uuid: 36d90569-048e-49c1-9dee-8137d84e6ace
-            region: content
+          4fd6ceee-e380-4c10-8a77-edf7bb558032:
+            uuid: 4fd6ceee-e380-4c10-8a77-edf7bb558032
+            region: second
             configuration:
               id: 'field_block:node:sheep:field_id10'
-              label_display: '0'
+              label: '10-digit ID'
+              label_display: visible
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: string
                 label: above
@@ -79,346 +124,65 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          88760f13-5c22-4322-ad2a-126aad537036:
-            uuid: 88760f13-5c22-4322-ad2a-126aad537036
-            region: content
+          1b8dd8a3-a848-4f67-9eb1-e4c5ed27cc84:
+            uuid: 1b8dd8a3-a848-4f67-9eb1-e4c5ed27cc84
+            region: third
             configuration:
-              id: 'field_block:node:sheep:field_band'
-              label_display: '0'
+              id: 'field_block:node:sheep:field_treatment_pen'
+              label: Pen
+              label_display: visible
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_label
                 label: above
                 settings:
                   link: true
                 third_party_settings: {  }
-            weight: 1
+            weight: 0
             additional: {  }
-          ef665f92-7feb-4779-a288-559f892dd3b8:
-            uuid: ef665f92-7feb-4779-a288-559f892dd3b8
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_cause'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          960b3f63-8ef9-4aa7-8318-ba074afd84fc:
-            uuid: 960b3f63-8ef9-4aa7-8318-ba074afd84fc
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_date_birth'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: datetime_default
-                label: above
-                settings:
-                  timezone_override: ''
-                  format_type: medium
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          788440de-34cb-46f6-98d8-66e82f4f80b6:
-            uuid: 788440de-34cb-46f6-98d8-66e82f4f80b6
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_dna'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: basic_string
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
-          6414e100-c4d5-4d28-8be9-6785307ac1c4:
-            uuid: 6414e100-c4d5-4d28-8be9-6785307ac1c4
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_scrapie_tag'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: string
-                label: above
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          e2c378b9-d412-4418-ba13-0952d47ee9ca:
-            uuid: e2c378b9-d412-4418-ba13-0952d47ee9ca
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_inbreeding'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: number_decimal
-                label: above
-                settings:
-                  thousand_separator: ''
-                  decimal_separator: .
-                  scale: 0
-                  prefix_suffix: false
-                third_party_settings: {  }
-            weight: 6
-            additional: {  }
-          ee72cac0-62ff-4219-a13d-d1bee757e487:
-            uuid: ee72cac0-62ff-4219-a13d-d1bee757e487
+          4cf177f3-4090-4af5-b3d7-8b6d003b8335:
+            uuid: 4cf177f3-4090-4af5-b3d7-8b6d003b8335
             region: first
             configuration:
-              id: 'field_block:node:sheep:field_etag'
-              label_display: '0'
+              id: 'field_block:node:sheep:field_sex'
+              label: Sex
+              label_display: visible
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-              formatter:
-                type: string
-                label: above
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          6edd451e-1388-47d2-8593-3db923fe9dc5:
-            uuid: 6edd451e-1388-47d2-8593-3db923fe9dc5
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_breed'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_label
-                label: above
+                label: hidden
                 settings:
                   link: false
                 third_party_settings: {  }
-            weight: 7
+            weight: 1
             additional: {  }
-          5d9bfa33-a24d-465f-bcec-ac0fd0fac812:
-            uuid: 5d9bfa33-a24d-465f-bcec-ac0fd0fac812
-            region: content
+          299df8dc-69c3-425c-9b87-93d124ce9c3d:
+            uuid: 299df8dc-69c3-425c-9b87-93d124ce9c3d
+            region: first
             configuration:
-              id: 'field_block:node:sheep:field_color'
-              label_display: '0'
+              id: 'field_block:node:sheep:field_inbreeding'
+              label: 'Inbreeding coefficient'
+              label_display: visible
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                type: number_integer
-                label: above
+                type: number_decimal
+                label: hidden
                 settings:
                   thousand_separator: ''
-                  prefix_suffix: true
+                  decimal_separator: .
+                  scale: 2
+                  prefix_suffix: false
                 third_party_settings: {  }
-            weight: 8
-            additional: {  }
-          26b90a41-4ca9-407f-9287-62af8f86080b:
-            uuid: 26b90a41-4ca9-407f-9287-62af8f86080b
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_line'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 9
-            additional: {  }
-          078842c3-cb9a-42a5-ab46-12ab967a16a0:
-            uuid: 078842c3-cb9a-42a5-ab46-12ab967a16a0
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_lot'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 10
-            additional: {  }
-          b5072294-fdd8-4165-aa7b-27028926b13f:
-            uuid: b5072294-fdd8-4165-aa7b-27028926b13f
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_treatment_pen'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 11
-            additional: {  }
-          6016af44-2ccc-483d-91f7-eb063a18e503:
-            uuid: 6016af44-2ccc-483d-91f7-eb063a18e503
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_research_group'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 12
-            additional: {  }
-          d0500770-2097-4d0a-bb59-ca65b68a5ebd:
-            uuid: d0500770-2097-4d0a-bb59-ca65b68a5ebd
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_sex'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 13
-            additional: {  }
-          641af3d4-802d-46db-b60c-8da2b5852040:
-            uuid: 641af3d4-802d-46db-b60c-8da2b5852040
-            region: first
-            configuration:
-              id: 'field_block:node:sheep:field_study'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          43cbdd5c-d15e-487f-8f94-e67c7e9385ed:
-            uuid: 43cbdd5c-d15e-487f-8f94-e67c7e9385ed
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_subtype_mating'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 14
-            additional: {  }
-          62ea769d-dcf0-45e6-b2bd-58226eb30ba6:
-            uuid: 62ea769d-dcf0-45e6-b2bd-58226eb30ba6
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_notes'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 15
-            additional: {  }
-          ec8b5e35-b512-4881-a179-cdaf7f489e03:
-            uuid: ec8b5e35-b512-4881-a179-cdaf7f489e03
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_treatment'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 16
-            additional: {  }
-          640fd1c4-9d42-4e1f-bc7d-5846baa781d4:
-            uuid: 640fd1c4-9d42-4e1f-bc7d-5846baa781d4
-            region: content
-            configuration:
-              id: 'field_block:node:sheep:field_rearing_type'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 17
-            additional: {  }
-          3e1140d1-eecb-4e82-a034-e80e2feb993c:
-            uuid: 3e1140d1-eecb-4e82-a034-e80e2feb993c
-            region: first
-            configuration:
-              id: 'field_block:node:sheep:field_date_disposal'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: datetime_default
-                label: above
-                settings:
-                  timezone_override: ''
-                  format_type: medium
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
-          ca94a80b-f09b-44c5-b31a-cea3e747ed5f:
-            uuid: ca94a80b-f09b-44c5-b31a-cea3e747ed5f
-            region: first
-            configuration:
-              id: 'field_block:node:sheep:field_preliminary_disposal'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 5
+            weight: 2
             additional: {  }
         third_party_settings: {  }
 id: node.sheep.default
@@ -442,6 +206,23 @@ content:
     third_party_settings: {  }
     weight: 134
     region: content
+  field_birth_season:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 143
+    region: first
+  field_birth_year:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 142
+    region: first
   field_breed:
     type: entity_reference_label
     label: above
@@ -519,6 +300,14 @@ content:
     third_party_settings: {  }
     weight: 133
     region: content
+  field_legacy_inv_age:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 141
+    region: first
   field_line:
     type: entity_reference_label
     label: above

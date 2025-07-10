@@ -1,0 +1,22 @@
+uuid: d9da4622-c689-4764-a118-c58e2f13af3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bio_data_annual
+id: node.bio_data_annual.promote
+field_name: promote
+entity_type: node
+bundle: bio_data_annual
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

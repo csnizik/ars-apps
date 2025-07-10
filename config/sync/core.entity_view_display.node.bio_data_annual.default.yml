@@ -1,0 +1,99 @@
+uuid: 5a59aa47-f122-48e5-bbdc-1a3258949a93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.bio_data_annual.field_fall_measurements
+    - field.field.node.bio_data_annual.field_july_measurements
+    - field.field.node.bio_data_annual.field_november_measurements
+    - field.field.node.bio_data_annual.field_october_measurements
+    - field.field.node.bio_data_annual.field_shearing_measurements
+    - field.field.node.bio_data_annual.field_sheep
+    - field.field.node.bio_data_annual.field_spring_measurements
+    - field.field.node.bio_data_annual.field_winter_measurements
+    - node.type.bio_data_annual
+  module:
+    - entity_reference_revisions
+    - user
+id: node.bio_data_annual.default
+targetEntityType: node
+bundle: bio_data_annual
+mode: default
+content:
+  field_fall_measurements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_july_measurements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_november_measurements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_october_measurements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_shearing_measurements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  field_sheep:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_spring_measurements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 125
+    region: content
+  field_winter_measurements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 126
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: 477be67e-76e5-45ea-becc-d0c6cb0d19b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight_yearling_february
+    - node.type.bio_data
+id: node.bio_data.field_weight_yearling_february
+field_name: field_weight_yearling_february
+entity_type: node
+bundle: bio_data
+label: 'Shearing weight (lbs)'
+description: 'Early to mid-February, immediately after shearing'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: decimal

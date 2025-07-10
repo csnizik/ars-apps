@@ -1,0 +1,23 @@
+uuid: 41a250fb-ff5b-4c35-a2d3-5c233e1c810d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearling_wool_staple
+    - node.type.bio_data
+id: node.bio_data.field_yearling_wool_staple
+field_name: field_yearling_wool_staple
+entity_type: node
+bundle: bio_data
+label: 'Wool sample: staple length (in)'
+description: 'Staple length of yearling wool sample, in inches'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: in
+field_type: decimal

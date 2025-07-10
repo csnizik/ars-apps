@@ -1,0 +1,58 @@
+id: sheep_inventory
+label: Sheep Inventory Import
+migration_tags:
+  - csv
+  - inventory
+  - test
+source:
+  track_changes: true
+  plugin: csv
+  path: modules/custom/sheep_migration/data/INV2024_test.csv
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  ids:
+    - ETAG
+process:
+  title: ETAG
+  field_id10:
+    - plugin: default_value
+      source: ID10
+      default_value: 'No ID10 found'
+  field_etag: ETAG
+  field_sex:
+    - plugin: static_map
+      source: SEX
+      map:
+        '1': 33
+        '2': 34
+      default_value: 35
+  field_inbreeding: SEX
+  # See https://www.drupal.org/node/2129651 on how to define
+  # process map for the migration.
+  # nid: nid
+  # uuid: uuid
+  # vid: vid
+  # langcode: langcode
+  # type: type
+  # revision_timestamp: revision_timestamp
+  # revision_uid: revision_uid
+  # revision_log: revision_log
+  # status: status
+  # uid: uid
+  # title: title
+  # created: created
+  # changed: changed
+  # promote: promote
+  # sticky: sticky
+  # default_langcode: default_langcode
+  # revision_default: revision_default
+  # revision_translation_affected: revision_translation_affected
+destination:
+  plugin: entity:node
+  default_bundle: sheep
+# The general rule of thumb is that any migrations referenced by migration
+# process plugins should be required here.
+#migration_dependencies:
+#  required:
+#    - example

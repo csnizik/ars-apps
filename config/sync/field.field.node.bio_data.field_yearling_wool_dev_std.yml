@@ -1,0 +1,23 @@
+uuid: 94b7c5ea-15d9-4576-b98f-4ed4ad1599fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearling_wool_dev_std
+    - node.type.bio_data
+id: node.bio_data.field_yearling_wool_dev_std
+field_name: field_yearling_wool_dev_std
+entity_type: node
+bundle: bio_data
+label: 'Wool sample: standard deviation'
+description: 'Standard deviation of fiber diameter measurement'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

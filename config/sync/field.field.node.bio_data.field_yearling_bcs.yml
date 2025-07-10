@@ -1,0 +1,23 @@
+uuid: 03a17ad9-54f0-40d7-80f7-da6547c05477
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearling_bcs
+    - node.type.bio_data
+id: node.bio_data.field_yearling_bcs
+field_name: field_yearling_bcs
+entity_type: node
+bundle: bio_data
+label: 'Body condition'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

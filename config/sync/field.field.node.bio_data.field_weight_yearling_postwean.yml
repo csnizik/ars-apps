@@ -1,0 +1,23 @@
+uuid: dc9c15e4-b82a-403c-842f-dab88bcf793b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight_yearling_postwean
+    - node.type.bio_data
+id: node.bio_data.field_weight_yearling_postwean
+field_name: field_weight_yearling_postwean
+entity_type: node
+bundle: bio_data
+label: 'Post-weaning weight (lbs)'
+description: 'Late November to early December, for ewe lambs coming out of breeding and for ram lambs'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: decimal

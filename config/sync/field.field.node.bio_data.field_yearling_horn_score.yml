@@ -1,0 +1,23 @@
+uuid: 01a83e30-0659-4214-95b2-4b1a88cfa640
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearling_horn_score
+    - node.type.bio_data
+id: node.bio_data.field_yearling_horn_score
+field_name: field_yearling_horn_score
+entity_type: node
+bundle: bio_data
+label: Horn
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

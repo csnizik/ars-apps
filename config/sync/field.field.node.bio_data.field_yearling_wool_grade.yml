@@ -1,0 +1,23 @@
+uuid: e3617bc8-1786-4bcc-bfdb-d2b5db226727
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearling_wool_grade
+    - node.type.bio_data
+id: node.bio_data.field_yearling_wool_grade
+field_name: field_yearling_wool_grade
+entity_type: node
+bundle: bio_data
+label: 'Wool sample: diameter grade'
+description: 'USDA grade for fiber diameter'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

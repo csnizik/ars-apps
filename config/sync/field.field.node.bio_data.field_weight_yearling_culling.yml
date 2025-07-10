@@ -1,0 +1,23 @@
+uuid: 8dc4c248-ecd7-4e59-aa5e-6e0c587d14fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight_yearling_culling
+    - node.type.bio_data
+id: node.bio_data.field_weight_yearling_culling
+field_name: field_weight_yearling_culling
+entity_type: node
+bundle: bio_data
+label: 'Culling weight (lbs)'
+description: 'Anywhere from ~90 to ~120 days of age, early July through mid-August, depending on the year'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: decimal

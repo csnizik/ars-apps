@@ -1,0 +1,239 @@
+uuid: 7dd97bb0-c1e9-4e86-869e-15015a465fdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.bio_data.field_date
+    - field.field.node.bio_data.field_sheep
+    - field.field.node.bio_data.field_weight_birth
+    - field.field.node.bio_data.field_weight_yearling_april
+    - field.field.node.bio_data.field_weight_yearling_culling
+    - field.field.node.bio_data.field_weight_yearling_february
+    - field.field.node.bio_data.field_weight_yearling_january
+    - field.field.node.bio_data.field_weight_yearling_junejuly
+    - field.field.node.bio_data.field_weight_yearling_october
+    - field.field.node.bio_data.field_weight_yearling_postwean
+    - field.field.node.bio_data.field_yearling_abnormality
+    - field.field.node.bio_data.field_yearling_bcs
+    - field.field.node.bio_data.field_yearling_face_score
+    - field.field.node.bio_data.field_yearling_horn_score
+    - field.field.node.bio_data.field_yearling_jaw_score
+    - field.field.node.bio_data.field_yearling_wool_cleanfleece
+    - field.field.node.bio_data.field_yearling_wool_dev_coeff
+    - field.field.node.bio_data.field_yearling_wool_dev_std
+    - field.field.node.bio_data.field_yearling_wool_fiber
+    - field.field.node.bio_data.field_yearling_wool_grade
+    - field.field.node.bio_data.field_yearling_wool_staple
+    - node.type.bio_data
+  module:
+    - datetime
+    - path
+id: node.bio_data.default
+targetEntityType: node
+bundle: bio_data
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date:
+    type: datetime_default
+    weight: 121
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_sheep:
+    type: entity_reference_autocomplete
+    weight: 125
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_birth:
+    type: number
+    weight: 126
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_yearling_april:
+    type: number
+    weight: 127
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_yearling_culling:
+    type: number
+    weight: 129
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_yearling_february:
+    type: number
+    weight: 133
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_yearling_january:
+    type: number
+    weight: 132
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_yearling_junejuly:
+    type: number
+    weight: 128
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_yearling_october:
+    type: number
+    weight: 130
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_yearling_postwean:
+    type: number
+    weight: 131
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_abnormality:
+    type: entity_reference_autocomplete
+    weight: 141
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_bcs:
+    type: number
+    weight: 142
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_face_score:
+    type: number
+    weight: 143
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_horn_score:
+    type: number
+    weight: 144
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_jaw_score:
+    type: number
+    weight: 145
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_wool_cleanfleece:
+    type: number
+    weight: 137
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_wool_dev_coeff:
+    type: number
+    weight: 140
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_wool_dev_std:
+    type: number
+    weight: 139
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_wool_fiber:
+    type: number
+    weight: 135
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_wool_grade:
+    type: number
+    weight: 136
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_yearling_wool_staple:
+    type: number
+    weight: 134
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

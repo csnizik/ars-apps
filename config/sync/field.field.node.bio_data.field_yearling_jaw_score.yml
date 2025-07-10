@@ -1,0 +1,23 @@
+uuid: 032e43ae-8901-462a-9274-1f5f9713544d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearling_jaw_score
+    - node.type.bio_data
+id: node.bio_data.field_yearling_jaw_score
+field_name: field_yearling_jaw_score
+entity_type: node
+bundle: bio_data
+label: Jaw
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

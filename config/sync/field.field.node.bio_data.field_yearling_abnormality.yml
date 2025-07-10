@@ -1,0 +1,29 @@
+uuid: 5fe0fc2c-b715-440d-a11c-097dfc19ac81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearling_abnormality
+    - node.type.bio_data
+    - taxonomy.vocabulary.abnormalities
+id: node.bio_data.field_yearling_abnormality
+field_name: field_yearling_abnormality
+entity_type: node
+bundle: bio_data
+label: Abnormality
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      abnormalities: abnormalities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

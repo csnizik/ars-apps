@@ -1,0 +1,30 @@
+_core:
+  default_config_hash: GK0eMgHEtJD2ZwSZtJOFq9ZVT3Nb3fwsp17pUaxJ1_E
+id: sheep_test
+label: 'Sheep Inventory Table Import'
+migration_tags:
+  - inventory
+  - test
+migration_group: sheep_data
+dependencies:
+  enforced:
+    module:
+      - sheep_migration
+source:
+  plugin: csv
+  path: modules/custom/sheep_migration/data/INV2024_test.csv
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  fields:
+    -
+      name: ETAG
+      label: ETAG
+  process:
+    title: ETAG
+  destination:
+    plugin: 'entity:node'
+    default_bundle: sheep
+  migration_dependencies:
+    required: {  }
+    optional: {  }

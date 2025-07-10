@@ -1,0 +1,23 @@
+uuid: e89a09dd-d78b-4fdd-b70c-31c90fd6e368
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearling_wool_cleanfleece
+    - node.type.bio_data
+id: node.bio_data.field_yearling_wool_cleanfleece
+field_name: field_yearling_wool_cleanfleece
+entity_type: node
+bundle: bio_data
+label: 'Wool sample: clean fleece %'
+description: 'Clean fleece percentage of yearling wool sample'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

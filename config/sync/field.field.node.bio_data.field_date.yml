@@ -1,0 +1,21 @@
+uuid: 6682109a-ec39-43ef-b169-5792938923f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.bio_data
+  module:
+    - datetime
+id: node.bio_data.field_date
+field_name: field_date
+entity_type: node
+bundle: bio_data
+label: 'Date '
+description: 'Each time a field value is added or edited, use this field to record the date to associate with the new values.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

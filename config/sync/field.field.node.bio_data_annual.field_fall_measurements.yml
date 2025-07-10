@@ -1,0 +1,31 @@
+uuid: 7dd21c32-d133-4d3e-a4ab-72fbebb36abe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fall_measurements
+    - node.type.bio_data_annual
+    - paragraphs.paragraphs_type.biometrics
+  module:
+    - entity_reference_revisions
+id: node.bio_data_annual.field_fall_measurements
+field_name: field_fall_measurements
+entity_type: node
+bundle: bio_data_annual
+label: 'Fall measurements'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      biometrics: biometrics
+    negate: 0
+    target_bundles_drag_drop:
+      biometrics:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

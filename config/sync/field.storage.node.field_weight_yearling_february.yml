@@ -1,0 +1,20 @@
+uuid: 0d6854b9-9168-409d-b934-02fc8c929f29
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_weight_yearling_february
+field_name: field_weight_yearling_february
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

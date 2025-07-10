@@ -1,0 +1,20 @@
+uuid: 989a6581-7c87-4cc0-988b-48b9280d69aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_yearling_wool_grade
+field_name: field_yearling_wool_grade
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

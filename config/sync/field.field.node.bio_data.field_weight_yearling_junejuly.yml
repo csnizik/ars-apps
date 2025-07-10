@@ -1,0 +1,23 @@
+uuid: 6f2d5b84-c468-46c0-aed9-6fdbbaa8cc40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight_yearling_junejuly
+    - node.type.bio_data
+id: node.bio_data.field_weight_yearling_junejuly
+field_name: field_weight_yearling_junejuly
+entity_type: node
+bundle: bio_data
+label: 'June/July weight (lbs)'
+description: 'Around ~60 days of age, late June through early July.  Lambs in later years will not have this measurement'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: decimal

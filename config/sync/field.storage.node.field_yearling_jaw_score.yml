@@ -1,0 +1,20 @@
+uuid: f64e8895-8e1a-4f6e-963e-d4945c82eb40
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_yearling_jaw_score
+field_name: field_yearling_jaw_score
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

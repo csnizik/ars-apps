@@ -1,0 +1,20 @@
+uuid: 0ccfcab5-b077-4050-b3b6-94b486034849
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_yearling_face_score
+field_name: field_yearling_face_score
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

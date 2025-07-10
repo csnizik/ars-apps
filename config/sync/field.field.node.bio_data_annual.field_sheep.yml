@@ -1,0 +1,29 @@
+uuid: bb3f5c07-5172-4925-8988-30f6697aa21a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sheep
+    - node.type.bio_data_annual
+    - node.type.sheep
+id: node.bio_data_annual.field_sheep
+field_name: field_sheep
+entity_type: node
+bundle: bio_data_annual
+label: 'Ear tag'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sheep: sheep
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

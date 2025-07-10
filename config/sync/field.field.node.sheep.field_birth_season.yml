@@ -1,0 +1,29 @@
+uuid: e2581da6-7a4b-41db-ae69-8b7783281c58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birth_season
+    - node.type.sheep
+    - taxonomy.vocabulary.seasons
+id: node.sheep.field_birth_season
+field_name: field_birth_season
+entity_type: node
+bundle: sheep
+label: 'Season of birth'
+description: 'Legacy values: 1: spring, 2: fall'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      seasons: seasons
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

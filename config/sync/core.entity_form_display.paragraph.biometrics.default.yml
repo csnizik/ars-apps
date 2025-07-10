@@ -1,0 +1,55 @@
+uuid: 0cbd5bf6-44c5-4da4-b632-05bb47848aca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.biometrics.field_bcs
+    - field.field.paragraph.biometrics.field_date
+    - field.field.paragraph.biometrics.field_udder_score
+    - field.field.paragraph.biometrics.field_weight
+    - field.field.paragraph.biometrics.field_weight_fleece
+    - paragraphs.paragraphs_type.biometrics
+  module:
+    - datetime
+id: paragraph.biometrics.default
+targetEntityType: paragraph
+bundle: biometrics
+mode: default
+content:
+  field_bcs:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_udder_score:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight_fleece:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

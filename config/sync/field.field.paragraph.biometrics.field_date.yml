@@ -1,0 +1,24 @@
+uuid: 1424fbe6-01ed-426f-a478-0b742d725bb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date
+    - paragraphs.paragraphs_type.biometrics
+  module:
+    - datetime
+id: paragraph.biometrics.field_date
+field_name: field_date
+entity_type: paragraph
+bundle: biometrics
+label: Date
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

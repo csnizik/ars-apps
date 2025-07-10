@@ -1,0 +1,23 @@
+uuid: 0c4291ed-b3af-4b4b-8895-65d0c5557072
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yearling_wool_dev_coeff
+    - node.type.bio_data
+id: node.bio_data.field_yearling_wool_dev_coeff
+field_name: field_yearling_wool_dev_coeff
+entity_type: node
+bundle: bio_data
+label: 'Wool sample: coefficient of variation'
+description: 'Coefficient of variation of fiber diameter measurement'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

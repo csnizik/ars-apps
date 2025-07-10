@@ -1,0 +1,23 @@
+uuid: 8292529c-c08a-4645-8bd3-653a48c7ee11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight_birth
+    - node.type.bio_data
+id: node.bio_data.field_weight_birth
+field_name: field_weight_birth
+entity_type: node
+bundle: bio_data
+label: 'Birth weight (lbs)'
+description: 'At birth, typically early March through early May'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: integer

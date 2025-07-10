@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.sheep.feeds_item
     - field.field.node.sheep.field_altid
     - field.field.node.sheep.field_band
+    - field.field.node.sheep.field_birth_season
+    - field.field.node.sheep.field_birth_year
     - field.field.node.sheep.field_breed
     - field.field.node.sheep.field_cause
     - field.field.node.sheep.field_color
@@ -15,6 +17,7 @@ dependencies:
     - field.field.node.sheep.field_etag
     - field.field.node.sheep.field_id10
     - field.field.node.sheep.field_inbreeding
+    - field.field.node.sheep.field_legacy_inv_age
     - field.field.node.sheep.field_line
     - field.field.node.sheep.field_lot
     - field.field.node.sheep.field_notes
@@ -58,6 +61,23 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_birth_season:
+    type: entity_reference_autocomplete
+    weight: 155
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_birth_year:
+    type: number
+    weight: 154
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   field_breed:
@@ -128,6 +148,14 @@ content:
     weight: 17
     region: content
     settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_inv_age:
+    type: string_textfield
+    weight: 153
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_line:

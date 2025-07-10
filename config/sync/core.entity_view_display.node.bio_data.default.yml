@@ -1,0 +1,254 @@
+uuid: ec3f515f-8115-4815-abd8-9fcbe2001359
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.bio_data.field_date
+    - field.field.node.bio_data.field_sheep
+    - field.field.node.bio_data.field_weight_birth
+    - field.field.node.bio_data.field_weight_yearling_april
+    - field.field.node.bio_data.field_weight_yearling_culling
+    - field.field.node.bio_data.field_weight_yearling_february
+    - field.field.node.bio_data.field_weight_yearling_january
+    - field.field.node.bio_data.field_weight_yearling_junejuly
+    - field.field.node.bio_data.field_weight_yearling_october
+    - field.field.node.bio_data.field_weight_yearling_postwean
+    - field.field.node.bio_data.field_yearling_abnormality
+    - field.field.node.bio_data.field_yearling_bcs
+    - field.field.node.bio_data.field_yearling_face_score
+    - field.field.node.bio_data.field_yearling_horn_score
+    - field.field.node.bio_data.field_yearling_jaw_score
+    - field.field.node.bio_data.field_yearling_wool_cleanfleece
+    - field.field.node.bio_data.field_yearling_wool_dev_coeff
+    - field.field.node.bio_data.field_yearling_wool_dev_std
+    - field.field.node.bio_data.field_yearling_wool_fiber
+    - field.field.node.bio_data.field_yearling_wool_grade
+    - field.field.node.bio_data.field_yearling_wool_staple
+    - node.type.bio_data
+  module:
+    - datetime
+    - user
+id: node.bio_data.default
+targetEntityType: node
+bundle: bio_data
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_sheep:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_weight_birth:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_weight_yearling_april:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_weight_yearling_culling:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_weight_yearling_february:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_weight_yearling_january:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_weight_yearling_junejuly:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_weight_yearling_october:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_weight_yearling_postwean:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_yearling_abnormality:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_yearling_bcs:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_yearling_face_score:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_yearling_horn_score:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  field_yearling_jaw_score:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 125
+    region: content
+  field_yearling_wool_cleanfleece:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_yearling_wool_dev_coeff:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_yearling_wool_dev_std:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_yearling_wool_fiber:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_yearling_wool_grade:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_yearling_wool_staple:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

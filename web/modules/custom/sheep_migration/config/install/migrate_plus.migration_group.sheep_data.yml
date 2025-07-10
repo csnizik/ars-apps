@@ -9,7 +9,7 @@ shared_configuration:
     delimiter: ','
     enclosure: '"'
     escape: '\'
-    header_offset: 0
+    header_offset: 1
   migration_tags:
     - 'Sheep Data'
     - 'CSV Import'

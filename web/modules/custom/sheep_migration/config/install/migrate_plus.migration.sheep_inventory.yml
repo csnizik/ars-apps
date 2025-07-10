@@ -22,13 +22,13 @@ source:
   delimiter: ','
   enclosure: '"'
   escape: '\'
-  header_offset: 0
+  header_offset: 1
   # track_changes vs. highwater_mark vs. `drush migrate:import --update``:
   # t_c is slower, uses more memory b/c it hashes/compares every row for changes
   # h_m is faster but to work correctly data must be sorted by the h_m field; remembers highest value migrated so far
   # if using a timestamp as a h_m, each timestamp must be unique or will get unpredictable results
   # when running migration via drush, adding the --update flag forces a "dumb" update: every row is re-imported regardless of t_c or h_m
-  # track_changes: true
+  track_changes: true
   # highwater_mark:
   #   name:
   #   alias:

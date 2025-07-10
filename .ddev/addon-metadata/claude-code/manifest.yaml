@@ -1,7 +1,7 @@
 name: claude-code
 repository: FreelyGive/ddev-claude-code
 version: 1.0.3
-install_date: "2025-06-25T14:12:26-05:00"
+install_date: "2025-07-09T19:36:17-05:00"
 project_files:
     - web-build/Dockerfile.claude-code
     - web-build/claude-code.gitignore

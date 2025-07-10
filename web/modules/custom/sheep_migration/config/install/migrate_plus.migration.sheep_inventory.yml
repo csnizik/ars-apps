@@ -1,0 +1,127 @@
+uuid: 7b5bda37-bae3-49fd-ae2a-d82aec27ae6d
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - sheep_migration
+  module:
+    - migrate_plus
+id: sheep_inventory
+label: 'Sheep Inventory Table Import'
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Sheep Data'
+  - 'CSV Import'
+migration_group: sheep_data
+source:
+  plugin: csv
+  path: 'modules/custom/sheep_migration/data/Inventory.csv'
+  delimiter: ','
+  enclosure: '"'
+  escape: '\'
+  header_offset: 0
+  # track_changes vs. highwater_mark vs. `drush migrate:import --update``:
+  # t_c is slower, uses more memory b/c it hashes/compares every row for changes
+  # h_m is faster but to work correctly data must be sorted by the h_m field; remembers highest value migrated so far
+  # if using a timestamp as a h_m, each timestamp must be unique or will get unpredictable results
+  # when running migration via drush, adding the --update flag forces a "dumb" update: every row is re-imported regardless of t_c or h_m
+  # track_changes: true
+  # highwater_mark:
+  #   name:
+  #   alias:
+  ids:
+    - ID10
+  fields:
+    - name: AGE
+      label: 'Age'
+    - name: ALTID
+      label: 'Alternate ID'
+    - name: BDAY
+      label: 'Birth date'
+    - name: BAG
+      label: 'Udder score'
+    - name: BAND
+      label: 'Band'
+    - name: BGRP
+      label: 'Breeding group'
+    - name: BPEN
+      label: 'Breeding pen'
+    - name: BRD
+      label: 'Breed code'
+    - name: CLR
+      label: 'Color'
+    - name: CULLPILE
+      label: 'Cull pile'
+    - name: DAM
+      label: 'Dam'
+    - name: DAYDIS
+      label: 'Day of disposal'
+    - name: DBRD
+      label: 'Dam breed'
+    - name: DISP
+      label: 'Disposal code'
+    - name: DNA
+      label: 'DNA'
+    - name: ELG
+      label: 'Eligibility'
+    - name: ETAG
+      label: 'Ear tag'
+    - name: FALLWT
+      label: 'Fall weight'
+    - name: GRP
+      label: 'Group'
+    - name: ID
+      label: 'ID'
+    - name: ID10
+      label: '10-digit ID'
+    - name: IDZ65
+      label: 'Scrapie tag'
+    - name: INBRL
+      label: 'Inbreeding coefficient'
+    - name: LINE
+      label: 'Line'
+    - name: LOT
+      label: 'Lot'
+    - name: PD
+      label: 'Preliminary disposal'
+    - name: PEN
+      label: 'Pen'
+    - name: PREG
+      label: 'Pregnancy status'
+    - name: RGRP
+      label: 'Research group'
+    - name: RMK
+      label: 'Remark'
+    - name: SBRD
+      label: 'Sire breed'
+    - name: SEA
+      label: 'Season'
+    - name: SEX
+      label: 'Obvious'
+    - name: SIRE
+      label: 'Sire'
+    - name: SPRGWT
+      label: 'Spring weight'
+    - name: STM
+      label: 'Subtype mating'
+    - name: STUDY
+      label: 'Study'
+    - name: STUDYTRT
+      label: 'Study treatment'
+    - name: TRT
+      label: 'Treatment'
+    - name: YR
+      label: 'Year'
+    - name: YRREC
+      label: 'Year of record'
+process:
+  # Field mappings will be defined here
+  # Placeholder for now - field mappings to be added later
+  title: ID
+destination:
+  plugin: 'entity:node'
+  default_bundle: sheep
+migration_dependencies: {}

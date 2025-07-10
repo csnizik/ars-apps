@@ -1,0 +1,154 @@
+uuid: 74cccd0e-8798-4baf-a3a9-872c85cf7a22
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - sheep_migration
+  module:
+    - migrate_plus
+id: sheep_lambing
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Sheep Data'
+  - 'CSV Import'
+migration_group: sheep_data
+label: 'Sheep Lambing Table Import'
+source:
+  plugin: csv
+  path: 'modules/custom/sheep_migration/data/Lambing.csv'
+  delimiter: ','
+  enclosure: '"'
+  escape: '\'
+  header_offset: 0
+  ids:
+    - LAMB
+  fields:
+    - name: ABN
+      label: 'Abnormality code'
+    - name: ADAM
+      label: 'Age of dam'
+    - name: ADAY
+      label: 'April day'
+    - name: AGE
+      label: 'Age of dam'
+    - name: APRLWT
+      label: 'April weight'
+    - name: BAND
+      label: 'Band'
+    - name: BCS
+      label: 'Body condition score'
+    - name: BDAY
+      label: 'Birthday'
+    - name: BGRP
+      label: 'Breeding group'
+    - name: BPEN
+      label: 'Breeding pen'
+    - name: BRWT
+      label: 'Birth weight'
+    - name: CAUSE
+      label: 'Cause'
+    - name: CDNO
+      label: 'Card number'
+    - name: CLR
+      label: 'Color'
+    - name: CUT
+      label: 'Cut'
+    - name: DAM
+      label: 'Dam'
+    - name: DATEBN
+      label: 'Date born'
+    - name: DAYBRN
+      label: 'Day born'
+    - name: DAYDIS
+      label: 'Day of disposal'
+    - name: DBRD
+      label: 'Dam breed'
+    - name: DEPTH
+      label: 'Depth of entry'
+    - name: DISP
+      label: 'Disposal code'
+    - name: DYST
+      label: 'Dystocia'
+    - name: ENTR
+      label: 'Entropion'
+    - name: ERMK
+      label: 'Ewe remark'
+    - name: FONO
+      label: 'Foster number'
+    - name: FOPU
+      label: 'Foster punch'
+    - name: INBRL
+      label: 'Inbreeding coefficient'
+    - name: JAW
+      label: 'Jaw'
+    - name: JDAY
+      label: 'June/July day'
+    - name: JUWT
+      label: 'June/July weight'
+    - name: LAMB
+      label: 'Lamb ID'
+    - name: LBRD
+      label: 'Lamb breed'
+    - name: LINE
+      label: 'Line'
+    - name: LNDAM
+      label: 'Line of dam'
+    - name: LOT
+      label: 'Lot'
+    - name: LRMK
+      label: 'Lamb remark'
+    - name: MAT
+      label: 'Maternal score'
+    - name: MILK
+      label: 'Milk score'
+    - name: RGRP
+      label: 'Research group'
+    - name: SBRD
+      label: 'Sire breed'
+    - name: SEX
+      label: 'Obvious'
+    - name: SHED
+      label: 'Shed'
+    - name: SIRE
+      label: 'Sire'
+    - name: SPEC
+      label: 'Specification?'
+    - name: STM
+      label: 'Subtype mating'
+    - name: STMD
+      label: 'Subtype mating of dam'
+    - name: STMS
+      label: 'Subtype mating of sire'
+    - name: TB
+      label: 'Type of birth'
+    - name: TEAT
+      label: 'Teat'
+    - name: TRT
+      label: 'Treatment'
+    - name: Y1
+      label: 'Y1'
+    - name: Y2
+      label: 'Y2'
+    - name: Y3
+      label: 'Y3'
+    - name: Y4
+      label: 'Y4'
+    - name: Y5
+      label: 'Y5'
+    - name: Y5A
+      label: 'Y5A'
+    - name: Y6
+      label: 'Y6'
+    - name: YR
+      label: 'Year'
+process:
+  # Field mappings will be defined here
+  # Placeholder for now - field mappings to be added later
+  title: LAMB
+destination:
+  plugin: 'entity:node'
+  default_bundle: lambing_event
+migration_dependencies: {}

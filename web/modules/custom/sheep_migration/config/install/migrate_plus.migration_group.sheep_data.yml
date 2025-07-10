@@ -1,0 +1,19 @@
+uuid: 7b5bda37-bae3-49fd-ae2a-d82aec27ae6d
+id: sheep_data
+label: 'Sheep Data Migration Group'
+description: 'Container for migrations importing sheep-related data from CSV files including inventory, lambing, weaning, shearing, pedigree, and ewe master records.'
+source_type: 'CSV files'
+shared_configuration:
+  source:
+    plugin: csv
+    delimiter: ','
+    enclosure: '"'
+    escape: '\'
+    header_offset: 0
+  migration_tags:
+    - 'Sheep Data'
+    - 'CSV Import'
+  dependencies:
+    enforced:
+      module:
+        - sheep_migration

@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.weaning.field_legacy_wnmas_disp
     - field.field.node.weaning.field_legacy_wnmas_dna
     - field.field.node.weaning.field_legacy_wnmas_fallwt
+    - field.field.node.weaning.field_legacy_wnmas_inbrl
     - field.field.node.weaning.field_legacy_wnmas_juwt
     - field.field.node.weaning.field_legacy_wnmas_lbrd
     - field.field.node.weaning.field_legacy_wnmas_line
@@ -37,6 +38,7 @@ dependencies:
     - field.field.node.weaning.field_legacy_wnmas_sex
     - field.field.node.weaning.field_legacy_wnmas_sire
     - field.field.node.weaning.field_legacy_wnmas_stm
+    - field.field.node.weaning.field_legacy_wnmas_study
     - field.field.node.weaning.field_legacy_wnmas_tb
     - field.field.node.weaning.field_legacy_wnmas_tim
     - field.field.node.weaning.field_legacy_wnmas_tr
@@ -46,9 +48,11 @@ dependencies:
     - field.field.node.weaning.field_notes
     - field.field.node.weaning.field_research_group
     - field.field.node.weaning.field_sheep
+    - field.field.node.weaning.field_study
     - field.field.node.weaning.field_tbr17
     - field.field.node.weaning.field_tbre
     - field.field.node.weaning.field_treatment
+    - field.field.node.weaning.field_treatment_pen
     - field.field.node.weaning.field_weight_culling
     - field.field.node.weaning.field_weight_weaning
     - node.type.weaning
@@ -249,6 +253,14 @@ content:
     third_party_settings: {  }
     weight: 157
     region: content
+  field_legacy_wnmas_inbrl:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 165
+    region: content
   field_legacy_wnmas_juwt:
     type: string
     label: above
@@ -337,6 +349,14 @@ content:
     third_party_settings: {  }
     weight: 127
     region: content
+  field_legacy_wnmas_study:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 166
+    region: content
   field_legacy_wnmas_tb:
     type: string
     label: above
@@ -409,6 +429,14 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
+  field_study:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 168
+    region: content
   field_tbr17:
     type: string
     label: above
@@ -432,6 +460,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 145
+    region: content
+  field_treatment_pen:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 167
     region: content
   field_weight_culling:
     type: number_decimal

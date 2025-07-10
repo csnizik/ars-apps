@@ -1,0 +1,29 @@
+uuid: 324b3fb8-1ae7-4abf-83f9-1782a90f63df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_study
+    - node.type.weaning
+    - taxonomy.vocabulary.studies
+id: node.weaning.field_study
+field_name: field_study
+entity_type: node
+bundle: weaning
+label: Study
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      studies: studies
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

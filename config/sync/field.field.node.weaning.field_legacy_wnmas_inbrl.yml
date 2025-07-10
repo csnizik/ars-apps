@@ -1,0 +1,19 @@
+uuid: d2848314-762d-4e49-8e81-8b47e449b3ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_wnmas_inbrl
+    - node.type.weaning
+id: node.weaning.field_legacy_wnmas_inbrl
+field_name: field_legacy_wnmas_inbrl
+entity_type: node
+bundle: weaning
+label: 'Inbreeding coefficient (legacy)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

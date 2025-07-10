@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.weaning.field_legacy_wnmas_disp
     - field.field.node.weaning.field_legacy_wnmas_dna
     - field.field.node.weaning.field_legacy_wnmas_fallwt
+    - field.field.node.weaning.field_legacy_wnmas_inbrl
     - field.field.node.weaning.field_legacy_wnmas_juwt
     - field.field.node.weaning.field_legacy_wnmas_lbrd
     - field.field.node.weaning.field_legacy_wnmas_line
@@ -37,6 +38,7 @@ dependencies:
     - field.field.node.weaning.field_legacy_wnmas_sex
     - field.field.node.weaning.field_legacy_wnmas_sire
     - field.field.node.weaning.field_legacy_wnmas_stm
+    - field.field.node.weaning.field_legacy_wnmas_study
     - field.field.node.weaning.field_legacy_wnmas_tb
     - field.field.node.weaning.field_legacy_wnmas_tim
     - field.field.node.weaning.field_legacy_wnmas_tr
@@ -46,9 +48,11 @@ dependencies:
     - field.field.node.weaning.field_notes
     - field.field.node.weaning.field_research_group
     - field.field.node.weaning.field_sheep
+    - field.field.node.weaning.field_study
     - field.field.node.weaning.field_tbr17
     - field.field.node.weaning.field_tbre
     - field.field.node.weaning.field_treatment
+    - field.field.node.weaning.field_treatment_pen
     - field.field.node.weaning.field_weight_culling
     - field.field.node.weaning.field_weight_weaning
     - node.type.weaning
@@ -245,6 +249,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_legacy_wnmas_inbrl:
+    type: string_textfield
+    weight: 177
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_legacy_wnmas_juwt:
     type: string_textfield
     weight: 154
@@ -333,6 +345,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_legacy_wnmas_study:
+    type: string_textfield
+    weight: 178
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_legacy_wnmas_tb:
     type: string_textfield
     weight: 144
@@ -413,6 +433,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_study:
+    type: entity_reference_autocomplete
+    weight: 150
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_tbr17:
     type: string_textfield
     weight: 172
@@ -432,6 +462,16 @@ content:
   field_treatment:
     type: entity_reference_autocomplete
     weight: 142
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_treatment_pen:
+    type: entity_reference_autocomplete
+    weight: 144
     region: content
     settings:
       match_operator: CONTAINS

@@ -8,7 +8,7 @@ migration_tags:
 source:
   track_changes: true
   plugin: csv
-  path: modules/custom/sheep_migration/data/INV2024_test.csv
+  path: modules/custom/sheep_migration/data/INV2025.csv
   delimiter: ','
   enclosure: '"'
   header_row_count: 1
@@ -133,9 +133,18 @@ process:
     - plugin: skip_on_empty
       source: STM
       method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: subtype_matings
+      value_key: name
+      ignore_case: true
   field_temp_season:
     - plugin: skip_on_empty
       source: SEA
+      method: process
 
 
 

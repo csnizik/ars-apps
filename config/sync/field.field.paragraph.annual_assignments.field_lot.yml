@@ -1,0 +1,29 @@
+uuid: ff770d21-85f2-4f25-b1c4-7047ec0fcc41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lot
+    - paragraphs.paragraphs_type.annual_assignments
+    - taxonomy.vocabulary.lots
+id: paragraph.annual_assignments.field_lot
+field_name: field_lot
+entity_type: paragraph
+bundle: annual_assignments
+label: Lot
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lots: lots
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

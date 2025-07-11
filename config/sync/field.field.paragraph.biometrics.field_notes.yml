@@ -1,0 +1,26 @@
+uuid: aeacab8d-943c-45c2-8411-00293fa14739
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_notes
+    - filter.format.basic_html
+    - filter.format.plain_text
+    - paragraphs.paragraphs_type.biometrics
+  module:
+    - text
+id: paragraph.biometrics.field_notes
+field_name: field_notes
+entity_type: paragraph
+bundle: biometrics
+label: Notes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - plain_text
+field_type: text_long

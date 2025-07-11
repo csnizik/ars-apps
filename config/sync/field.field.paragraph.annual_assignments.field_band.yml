@@ -1,0 +1,29 @@
+uuid: c0f39def-ba9b-4a69-b0a6-dc805d4e5bbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_band
+    - paragraphs.paragraphs_type.annual_assignments
+    - taxonomy.vocabulary.bands
+id: paragraph.annual_assignments.field_band
+field_name: field_band
+entity_type: paragraph
+bundle: annual_assignments
+label: Band
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      bands: bands
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

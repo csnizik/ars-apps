@@ -1,0 +1,29 @@
+uuid: ffff8589-e3a7-4733-a55a-2452e741dd50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_treatment
+    - paragraphs.paragraphs_type.annual_assignments
+    - taxonomy.vocabulary.treatments
+id: paragraph.annual_assignments.field_treatment
+field_name: field_treatment
+entity_type: paragraph
+bundle: annual_assignments
+label: Treatment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      treatments: treatments
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

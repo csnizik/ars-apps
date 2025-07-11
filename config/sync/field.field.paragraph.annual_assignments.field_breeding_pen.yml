@@ -1,0 +1,29 @@
+uuid: 26c9b3fc-69b8-4656-8e53-fc9ba6a86548
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_breeding_pen
+    - paragraphs.paragraphs_type.annual_assignments
+    - taxonomy.vocabulary.breeding_pens
+id: paragraph.annual_assignments.field_breeding_pen
+field_name: field_breeding_pen
+entity_type: paragraph
+bundle: annual_assignments
+label: 'Breeding pen'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      breeding_pens: breeding_pens
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -8,7 +8,7 @@ migration_tags:
 source:
   track_changes: true
   plugin: csv
-  path: modules/custom/sheep_migration/data/INV2025.csv
+  path: modules/custom/sheep_migration/data/INV2024_test.csv
   delimiter: ','
   enclosure: '"'
   header_row_count: 1
@@ -141,16 +141,148 @@ process:
       bundle: subtype_matings
       value_key: name
       ignore_case: true
-  field_temp_season:
+  _subfield_band:
     - plugin: skip_on_empty
-      source: SEA
+      source: BAND
       method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: bands
+      value_key: name
+      ignore_case: true
+  _subfield_breeding_pen:
+    - plugin: skip_on_empty
+      source: PEN
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: breeding_pens
+      value_key: name
+      ignore_case: true
+  _subfield_breeding_group:
+    - plugin: skip_on_empty
+      source: BGRP
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: breeding_groups
+      value_key: name
+      ignore_case: true
+  _subfield_group:
+    - plugin: skip_on_empty
+      source: GRP
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: groups
+      value_key: name
+      ignore_case: true
+  _subfield_lot:
+    - plugin: skip_on_empty
+      source: LOT
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: lots
+      value_key: name
+      ignore_case: true
+  _subfield_research_group:
+    - plugin: skip_on_empty
+      source: RGRP
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: research_groups
+      value_key: name
+      ignore_case: true
+  _subfield_study:
+    - plugin: skip_on_empty
+      source: STUDY
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: studies
+      value_key: name
+      ignore_case: true
+  _subfield_study_treatment:
+    - plugin: skip_on_empty
+      source: STUDYTRT
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: study_treatments
+      value_key: name
+      ignore_case: true
+  _subfield_treatment:
+    - plugin: skip_on_empty
+      source: TRT
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: treatments
+      value_key: name
+      ignore_case: true
+  field_annual_assignments:
+    plugin: child_entity_generate
+    entity_type: paragraph
+    bundle: annual_assignments
+    values:
+      field_band: '@_subfield_band'
+      field_breeding_group: '@_subfield_breeding_group'
+      field_breeding_pen: '@_subfield_breeding_pen'
+      field_group: '@_subfield_group'
+      field_lot: '@_subfield_lot'
+      field_research_group: '@_subfield_research_group'
+      field_year: YRREC
+      field_study: '@_subfield_study'
+      field_study_treatment: '@_subfield_study_treatment'
+      field_treatment: '@_subfield_treatment'
 
 
-
-
-
-
+    # - plugin: skip_on_empty
+    #   source: PEN
+    #   method: process
+    # - plugin: sub_process
+    #   source:
+    #     - PEN
+    #   process:
+    #     - plugin:
+    #     - callback
+    #     - callable: trim
+    #     - plugin:
+    #     - entity_generate
+    #     - entity_type: taxonomy_term
+    #     - bundle_key: vid
+    #     - bundle: breeding_pens
+    #     - value_key: name
+    #     - ignore_case: true
 
   # See https://www.drupal.org/node/2129651 on how to define
   # process map for the migration.

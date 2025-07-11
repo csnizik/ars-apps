@@ -1,0 +1,29 @@
+uuid: f42e7fa1-2d0e-4440-94a5-fa20d6028675
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_study
+    - paragraphs.paragraphs_type.annual_assignments
+    - taxonomy.vocabulary.studies
+id: paragraph.annual_assignments.field_study
+field_name: field_study
+entity_type: paragraph
+bundle: annual_assignments
+label: Study
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      studies: studies
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

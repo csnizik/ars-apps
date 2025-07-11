@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.sheep.feeds_item
     - field.field.node.sheep.field_altid
-    - field.field.node.sheep.field_band
+    - field.field.node.sheep.field_annual_assignments
     - field.field.node.sheep.field_birth_season
     - field.field.node.sheep.field_birth_year
     - field.field.node.sheep.field_breed
@@ -20,20 +20,16 @@ dependencies:
     - field.field.node.sheep.field_inbreeding
     - field.field.node.sheep.field_legacy_inv_age
     - field.field.node.sheep.field_line
-    - field.field.node.sheep.field_lot
     - field.field.node.sheep.field_notes
     - field.field.node.sheep.field_preliminary_disposal
     - field.field.node.sheep.field_rearing_type
-    - field.field.node.sheep.field_research_group
     - field.field.node.sheep.field_scrapie_tag
     - field.field.node.sheep.field_sex
-    - field.field.node.sheep.field_study
     - field.field.node.sheep.field_subtype_mating
-    - field.field.node.sheep.field_treatment
-    - field.field.node.sheep.field_treatment_pen
     - node.type.sheep
   module:
     - datetime
+    - entity_reference_revisions
     - layout_builder
     - layout_discovery
     - user
@@ -63,6 +59,23 @@ third_party_settings:
                   link: true
                 third_party_settings: {  }
             weight: 1
+            additional: {  }
+          65189d15-174e-461c-8904-d907ff2b6a8d:
+            uuid: 65189d15-174e-461c-8904-d907ff2b6a8d
+            region: content
+            configuration:
+              id: 'field_block:node:sheep:field_annual_assignments'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 2
             additional: {  }
         third_party_settings: {  }
       -
@@ -107,25 +120,6 @@ third_party_settings:
                 label: above
                 settings:
                   link_to_entity: false
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          1b8dd8a3-a848-4f67-9eb1-e4c5ed27cc84:
-            uuid: 1b8dd8a3-a848-4f67-9eb1-e4c5ed27cc84
-            region: third
-            configuration:
-              id: 'field_block:node:sheep:field_treatment_pen'
-              label: Pen
-              label_display: visible
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
                 third_party_settings: {  }
             weight: 0
             additional: {  }
@@ -184,13 +178,14 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_band:
-    type: entity_reference_label
+  field_annual_assignments:
+    type: entity_reference_revisions_entity_view
     label: above
     settings:
-      link: true
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 134
+    weight: 145
     region: content
   field_birth_season:
     type: entity_reference_label
@@ -310,14 +305,6 @@ content:
     third_party_settings: {  }
     weight: 116
     region: content
-  field_lot:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 128
-    region: content
   field_notes:
     type: entity_reference_label
     label: above
@@ -342,14 +329,6 @@ content:
     third_party_settings: {  }
     weight: 103
     region: content
-  field_research_group:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 126
-    region: content
   field_scrapie_tag:
     type: string
     label: above
@@ -366,14 +345,6 @@ content:
     third_party_settings: {  }
     weight: 119
     region: content
-  field_study:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 138
-    region: first
   field_subtype_mating:
     type: entity_reference_label
     label: above
@@ -382,22 +353,6 @@ content:
     third_party_settings: {  }
     weight: 118
     region: content
-  field_treatment:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 127
-    region: content
-  field_treatment_pen:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 129
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -405,3 +360,4 @@ content:
     region: content
 hidden:
   feeds_item: true
+  search_api_excerpt: true

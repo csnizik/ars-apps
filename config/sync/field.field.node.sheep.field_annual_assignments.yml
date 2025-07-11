@@ -1,0 +1,34 @@
+uuid: 3799c6f6-bfab-47ad-baad-9c9ae82aec5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_annual_assignments
+    - node.type.sheep
+    - paragraphs.paragraphs_type.annual_assignments
+  module:
+    - entity_reference_revisions
+id: node.sheep.field_annual_assignments
+field_name: field_annual_assignments
+entity_type: node
+bundle: sheep
+label: 'Annual assignments'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      annual_assignments: annual_assignments
+    negate: 0
+    target_bundles_drag_drop:
+      annual_assignments:
+        weight: 3
+        enabled: true
+      biometrics:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

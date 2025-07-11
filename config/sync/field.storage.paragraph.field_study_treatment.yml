@@ -1,0 +1,20 @@
+uuid: 6add8605-ce3f-4503-a632-a1f4e099a584
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_study_treatment
+field_name: field_study_treatment
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

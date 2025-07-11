@@ -1,0 +1,29 @@
+uuid: 1f448d29-a800-4b18-8fe4-631b46b3ad45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_study_treatment
+    - paragraphs.paragraphs_type.annual_assignments
+    - taxonomy.vocabulary.study_treatments
+id: paragraph.annual_assignments.field_study_treatment
+field_name: field_study_treatment
+entity_type: paragraph
+bundle: annual_assignments
+label: 'Study treatment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      study_treatments: study_treatments
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.biometrics.field_bcs
     - field.field.paragraph.biometrics.field_date
+    - field.field.paragraph.biometrics.field_notes
     - field.field.paragraph.biometrics.field_udder_score
     - field.field.paragraph.biometrics.field_weight
     - field.field.paragraph.biometrics.field_weight_fleece
@@ -12,6 +13,7 @@ dependencies:
   module:
     - datetime
     - layout_builder
+    - text
 third_party_settings:
   layout_builder:
     enabled: false
@@ -40,6 +42,13 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_notes:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_udder_score:
     type: number_integer
@@ -72,4 +81,5 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

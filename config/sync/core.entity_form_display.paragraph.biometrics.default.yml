@@ -5,12 +5,14 @@ dependencies:
   config:
     - field.field.paragraph.biometrics.field_bcs
     - field.field.paragraph.biometrics.field_date
+    - field.field.paragraph.biometrics.field_notes
     - field.field.paragraph.biometrics.field_udder_score
     - field.field.paragraph.biometrics.field_weight
     - field.field.paragraph.biometrics.field_weight_fleece
     - paragraphs.paragraphs_type.biometrics
   module:
     - datetime
+    - text
 id: paragraph.biometrics.default
 targetEntityType: paragraph
 bundle: biometrics
@@ -28,6 +30,14 @@ content:
     weight: 0
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_notes:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_udder_score:
     type: number

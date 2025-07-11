@@ -1,0 +1,26 @@
+uuid: 28497640-dd4b-4b68-be99-46913a0d8d2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_notes
+    - filter.format.basic_html
+    - filter.format.plain_text
+    - paragraphs.paragraphs_type.annual_assignments
+  module:
+    - text
+id: paragraph.annual_assignments.field_notes
+field_name: field_notes
+entity_type: paragraph
+bundle: annual_assignments
+label: Notes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - plain_text
+field_type: text_long

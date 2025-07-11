@@ -1,0 +1,29 @@
+uuid: e00b9fb5-7bfd-470b-ab00-1ab6d0460f69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_shed
+    - paragraphs.paragraphs_type.annual_assignments
+    - taxonomy.vocabulary.sheds
+id: paragraph.annual_assignments.field_shed
+field_name: field_shed
+entity_type: paragraph
+bundle: annual_assignments
+label: Shed
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sheds: sheds
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

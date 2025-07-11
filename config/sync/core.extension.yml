@@ -43,6 +43,7 @@ module:
   menu_ui: 0
   migmag: 0
   migrate: 0
+  migrate_child_entity_generate: 0
   migrate_conditions: 0
   migrate_plus: 0
   migrate_source_csv: 0
@@ -54,7 +55,7 @@ module:
   path: 0
   path_alias: 0
   rest: 0
-  search: 0
+  search_api: 0
   serialization: 0
   sheep_migration: 0
   shortcut: 0

@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Contains functions for the sheep_migration module.
+ */
+
+/**
+ * Expands a two-digit year into a four-digit year.
+ *
+ * @param int|string $value
+ *   The year value to expand.
+ *
+ * @return int|null
+ *   The expanded four-digit year, or NULL if input is not numeric.
+ */
+function sheep_migration_expand_year(int|string $value): ?int {
+  if (!is_numeric($value)) {
+    return NULL;
+  }
+  $value = (int) $value;
+
+  if ($value >= 50 && $value <= 99) {
+    return 1900 + $value;
+  }
+  elseif ($value >= 0 && $value <= 49) {
+    return 2000 + $value;
+  }
+
+  return $value;
+}

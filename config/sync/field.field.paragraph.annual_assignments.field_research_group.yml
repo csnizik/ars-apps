@@ -1,0 +1,29 @@
+uuid: 6d120811-4bc4-4dd5-a6bc-acda2d2ed768
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_research_group
+    - paragraphs.paragraphs_type.annual_assignments
+    - taxonomy.vocabulary.research_groups
+id: paragraph.annual_assignments.field_research_group
+field_name: field_research_group
+entity_type: paragraph
+bundle: annual_assignments
+label: 'Research group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      research_groups: research_groups
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

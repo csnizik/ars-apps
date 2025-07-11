@@ -1,0 +1,29 @@
+uuid: cf8f10ad-ee8a-4f29-9c44-4e9d2c4e0504
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_treatment_pen
+    - paragraphs.paragraphs_type.annual_assignments
+    - taxonomy.vocabulary.treatment_pens
+id: paragraph.annual_assignments.field_treatment_pen
+field_name: field_treatment_pen
+entity_type: paragraph
+bundle: annual_assignments
+label: 'Treatment pen'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      treatment_pens: treatment_pens
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

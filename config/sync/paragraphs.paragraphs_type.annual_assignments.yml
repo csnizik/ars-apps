@@ -1,0 +1,10 @@
+uuid: 81a82938-4ba7-493c-b76a-4795a388b270
+langcode: en
+status: true
+dependencies: {  }
+id: annual_assignments
+label: 'Annual Assignments'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

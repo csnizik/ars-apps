@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.sheep.feeds_item
     - field.field.node.sheep.field_altid
-    - field.field.node.sheep.field_band
+    - field.field.node.sheep.field_annual_assignments
     - field.field.node.sheep.field_birth_season
     - field.field.node.sheep.field_birth_year
     - field.field.node.sheep.field_breed
@@ -20,20 +20,16 @@ dependencies:
     - field.field.node.sheep.field_inbreeding
     - field.field.node.sheep.field_legacy_inv_age
     - field.field.node.sheep.field_line
-    - field.field.node.sheep.field_lot
     - field.field.node.sheep.field_notes
     - field.field.node.sheep.field_preliminary_disposal
     - field.field.node.sheep.field_rearing_type
-    - field.field.node.sheep.field_research_group
     - field.field.node.sheep.field_scrapie_tag
     - field.field.node.sheep.field_sex
-    - field.field.node.sheep.field_study
     - field.field.node.sheep.field_subtype_mating
-    - field.field.node.sheep.field_treatment
-    - field.field.node.sheep.field_treatment_pen
     - node.type.sheep
   module:
     - datetime
+    - paragraphs
     - path
 id: node.sheep.default
 targetEntityType: node
@@ -54,15 +50,23 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_band:
-    type: entity_reference_autocomplete
-    weight: 146
+  field_annual_assignments:
+    type: paragraphs
+    weight: 157
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_birth_season:
     type: entity_reference_autocomplete
@@ -179,16 +183,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_lot:
-    type: entity_reference_autocomplete
-    weight: 143
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_notes:
     type: entity_reference_autocomplete
     weight: 135
@@ -219,16 +213,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_research_group:
-    type: entity_reference_autocomplete
-    weight: 141
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_scrapie_tag:
     type: string_textfield
     weight: 9
@@ -247,39 +231,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_study:
-    type: entity_reference_autocomplete
-    weight: 150
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_subtype_mating:
     type: entity_reference_autocomplete
     weight: 133
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_treatment:
-    type: entity_reference_autocomplete
-    weight: 142
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_treatment_pen:
-    type: entity_reference_autocomplete
-    weight: 144
     region: content
     settings:
       match_operator: CONTAINS

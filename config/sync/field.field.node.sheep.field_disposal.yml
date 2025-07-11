@@ -1,0 +1,29 @@
+uuid: cb0babfb-0a6d-47ee-b662-31463b91df97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_disposal
+    - node.type.sheep
+    - taxonomy.vocabulary.disposal_codes
+id: node.sheep.field_disposal
+field_name: field_disposal
+entity_type: node
+bundle: sheep
+label: Disposal
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      disposal_codes: disposal_codes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

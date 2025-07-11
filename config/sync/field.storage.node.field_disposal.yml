@@ -1,0 +1,20 @@
+uuid: 8de15bc3-83da-49f5-8669-ccb5883b2496
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_disposal
+field_name: field_disposal
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,173 @@
+id: sheep_inventory
+label: Sheep Inventory Import
+migration_group: sheep_data
+migration_tags:
+  - csv
+  - inventory
+  - test
+source:
+  track_changes: true
+  plugin: csv
+  path: modules/custom/sheep_migration/data/INV2024_test.csv
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  ids:
+    - ETAG
+
+# TODO: need to process paragraph values for measurements
+# TODO: replace band, group, etc. with paragraphs (date, assignment)
+
+process:
+  title:
+    - plugin: skip_on_empty
+      method: row # If etag is empty we want to skip the entire row, not just processing of this field
+      source: ETAG
+      message: 'Field ETAG is empty'
+  field_id10:
+    - plugin: default_value
+      source: ID10
+      default_value: 'No ID10 found'
+  field_altid:
+    - plugin: skip_on_empty
+      source: ALTID
+      method: process
+  field_legacy_inv_age:
+    - plugin: skip_on_empty
+      source: AGE
+      method: process
+  field_birth_year:
+    - plugin: substr
+      source: ID10
+      start: 2
+      length: 2
+  field_breed:
+    - plugin: skip_on_empty
+      source: BRD
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: breeds
+      value_key: name
+      ignore_case: true
+  field_color:
+    - plugin: skip_on_empty
+      source: CLR
+      method: process
+  field_date_disposal:
+    - plugin: skip_on_empty
+      source: DAYDIS
+      method: process
+  field_disposal:
+    - plugin: skip_on_empty
+      source: DISP
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: disposal_codes
+      value_key: name
+      ignore_case: true
+  field_dna:
+    - plugin: skip_on_empty
+      source: DNA
+      method: process
+  field_etag: ETAG
+  field_scrapie_tag:
+    - plugin: skip_on_empty
+      source: IDZ65
+      method: process
+  field_inbreeding:
+    - plugin: skip_on_empty
+      source: INBRL
+      method: process
+  field_line:
+    - plugin: skip_on_empty
+      source: LINE
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: lines
+      value_key: name
+      ignore_case: true
+  field_preliminary_disposal:
+    - plugin: skip_on_empty
+      source: PD
+      method: process
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: preliminary_disposals
+      value_key: name
+      ignore_case: true
+  field_birth_season:
+    - plugin: skip_on_empty
+      source: SEA
+      method: process
+    - plugin: static_map
+      source: SEA
+      map:
+        '1': 41
+        '2': 43
+  field_sex:
+    - plugin: skip_on_empty
+      source: SEX
+      method: process
+    - plugin: static_map
+      source: SEX
+      map:
+        '1': 33
+        '2': 34
+        '3': 35
+  field_subtype_mating:
+    - plugin: skip_on_empty
+      source: STM
+      method: process
+  field_temp_season:
+    - plugin: skip_on_empty
+      source: SEA
+
+
+
+
+
+
+
+  # See https://www.drupal.org/node/2129651 on how to define
+  # process map for the migration.
+  # nid: nid
+  # uuid: uuid
+  # vid: vid
+  # langcode: langcode
+  # type: type
+  # revision_timestamp: revision_timestamp
+  # revision_uid: revision_uid
+  # revision_log: revision_log
+  # status: status
+  # uid: uid
+  # title: title
+  # created: created
+  # changed: changed
+  # promote: promote
+  # sticky: sticky
+  # default_langcode: default_langcode
+  # revision_default: revision_default
+  # revision_translation_affected: revision_translation_affected
+destination:
+  plugin: entity:node
+  default_bundle: sheep
+# The general rule of thumb is that any migrations referenced by migration
+# process plugins should be required here.
+#migration_dependencies:
+#  required:
+#    - example

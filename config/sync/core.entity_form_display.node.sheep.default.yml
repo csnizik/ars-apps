@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.sheep.field_color
     - field.field.node.sheep.field_date_birth
     - field.field.node.sheep.field_date_disposal
+    - field.field.node.sheep.field_disposal
     - field.field.node.sheep.field_dna
     - field.field.node.sheep.field_etag
     - field.field.node.sheep.field_id10
@@ -118,6 +119,16 @@ content:
     weight: 151
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_disposal:
+    type: entity_reference_autocomplete
+    weight: 156
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_dna:
     type: string_textarea

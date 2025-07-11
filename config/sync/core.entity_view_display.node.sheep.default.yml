@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.sheep.field_color
     - field.field.node.sheep.field_date_birth
     - field.field.node.sheep.field_date_disposal
+    - field.field.node.sheep.field_disposal
     - field.field.node.sheep.field_dna
     - field.field.node.sheep.field_etag
     - field.field.node.sheep.field_id10
@@ -47,36 +48,21 @@ third_party_settings:
           label: ''
           context_mapping: {  }
         components:
-          f99ec518-a87c-438e-b334-b2d0de89ee84:
-            uuid: f99ec518-a87c-438e-b334-b2d0de89ee84
+          3649d11d-59b9-437b-a0cf-c55d8777c19a:
+            uuid: 3649d11d-59b9-437b-a0cf-c55d8777c19a
             region: content
             configuration:
-              id: 'field_block:node:sheep:revision_timestamp'
-              label: 'Revision create time'
-              label_display: visible
-              provider: layout_builder
+              id: 'field_block:node:sheep:field_disposal'
+              label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-                view_mode: view_mode
               formatter:
-                type: timestamp
-                label: hidden
+                type: entity_reference_label
+                label: above
                 settings:
-                  date_format: short
-                  custom_date_format: ''
-                  timezone: ''
-                  tooltip:
-                    date_format: long
-                    custom_date_format: ''
-                  time_diff:
-                    enabled: false
-                    future_format: '@interval hence'
-                    past_format: '@interval ago'
-                    granularity: 2
-                    refresh: 60
-                    description: ''
+                  link: true
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -266,6 +252,14 @@ content:
     third_party_settings: {  }
     weight: 139
     region: first
+  field_disposal:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 144
+    region: content
   field_dna:
     type: basic_string
     label: above

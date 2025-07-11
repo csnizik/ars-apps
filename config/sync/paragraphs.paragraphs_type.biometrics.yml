@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: biometrics
-label: Biometrics
+label: 'Annual Biometrics'
 icon_uuid: null
 icon_default: null
 description: ''
